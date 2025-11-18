@@ -241,6 +241,11 @@ main {
     border: 1px solid #333;
 }
 
+.p-FREEZING {
+    background-color: #fec0fe; /* Azul Marinho/Índigo - Cor forte para Freezing */
+    border-color: #fec0fe;
+}
+
 .p-MENSAL {
     background-color: #DA9694; /* Vermelho-salmão */
     border-color: #DA9694;
@@ -268,6 +273,10 @@ main {
 }
 
 /* --- NOVAS CLASSES PARA COR DA FAIXA LATERAL (Borda esquerda) --- */
+
+.activity-item.border-p-FREEZING {
+    border-left-color: #fec0fe; /* Usa a mesma cor forte do fundo da tag */
+}
 
 .activity-item.border-p-MENSAL {
     border-left-color: #DA9694;

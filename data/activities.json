@@ -7,6 +7,13 @@
     "periodicity": "ANUAL"
   },
   {
+    "date": "2026-01-01",
+    "company": "TBRA",
+    "description": "Frezzing Faturamento",
+    "priority": "FREEZING",
+    "periodicity": "FREEZING"
+  },
+  {
     "date": "2026-01-08",
     "company": "Segurança e Cia.",
     "description": "Inspeção e troca de baterias dos sensores de presença.",
@@ -15,9 +22,9 @@
   },
   {
     "date": "2026-02-14",
-    "company": "Elevadores Rápidos S.A.",
-    "description": "Manutenção mensal obrigatória dos elevadores.",
-    "priority": "MEDIUM",
+    "company": "FERIADO",
+    "description": "Feriado Carnaval",
+    "priority": "FREEZING",
     "periodicity": "MENSAL"
   },
   {

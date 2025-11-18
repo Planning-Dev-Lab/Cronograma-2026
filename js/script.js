@@ -66,7 +66,7 @@ function renderCalendar(year, month) {
             dayElement.classList.add('has-activity'); // Mantém a classe de base de atividade
 
             if (isHoliday) {
-                // Feridos em Vermelho
+                // Feridos em Rosa
                 dayElement.classList.add('holiday');
             } else if (dailyActivities.some(a => a.company === "TBRA")) {
                 // TBRA em Laranja
