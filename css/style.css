@@ -193,10 +193,10 @@ main {
 
 /* Ferido (já existe, mas garantindo a classe) */
 .day.holiday {
-    color: red;
+    color: #fec0fe;
     font-weight: bold;
     background-color: #ffebeb;
-    border-left: 5px solid red;
+    border-left: 5px solid #fec0fe;
 }
 
 /* TBRA (Laranja) */

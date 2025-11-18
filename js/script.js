@@ -27,7 +27,7 @@ function renderCalendar(year, month) {
     daysGrid.innerHTML = ''; // Limpa o calendário anterior
 
     // 1. Atualiza o cabeçalho
-    currentMonthYearHeader.textContent = `${monthNames[month]} - ${year}`;
+    currentMonthYearHeader.textContent = `${monthNames[month]}`;
 
     // 2. Cálculo dos dias
     const firstDayOfMonth = new Date(year, month, 1);
