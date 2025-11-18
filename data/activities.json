@@ -14,6 +14,20 @@
     "periodicity": "FREEZING"
   },
   {
+    "date": "2026-01-01",
+    "company": "B2B",
+    "description": "Freezing HUAWEI",
+    "priority": "FREEZING",
+    "periodicity": "FREEZING"
+  },
+  {
+    "date": "2026-01-01",
+    "company": "ENGEMON",
+    "description": "Sistema de Incêndio | Teste de Disparo | 08:00 - 18:00",
+    "priority": "LOW",
+    "periodicity": "TRIMESTRAL"
+  },
+  {
     "date": "2026-01-08",
     "company": "Segurança e Cia.",
     "description": "Inspeção e troca de baterias dos sensores de presença.",
