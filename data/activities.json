@@ -1,0 +1,22 @@
+[
+  {
+    "date": "2026-01-01",
+    "company": "FERIADO",
+    "description": "ANO NOVO"
+  },
+  {
+    "date": "2026-01-08",
+    "company": "Segurança e Cia.",
+    "description": "Inspeção e troca de baterias dos sensores de presença."
+  },
+  {
+    "date": "2026-02-14",
+    "company": "Elevadores Rápidos S.A.",
+    "description": "Manutenção mensal obrigatória dos elevadores."
+  },
+  {
+    "date": "2026-03-01",
+    "company": "Jardinagem e Paisagismo",
+    "description": "Poda geral e adubação de todos os canteiros externos."
+  }
+]

@@ -1,0 +1,189 @@
+/* Importação da Fonte */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f6;
+    color: #333;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+main {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+/* Controles de Navegação */
+.calendar-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.calendar-controls button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.calendar-controls button:hover {
+    background-color: #218838;
+}
+
+/* Estrutura do Calendário */
+.weekdays, .days-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+}
+
+.weekdays span {
+    background-color: #e9ecef;
+    padding: 10px 5px;
+    font-weight: 700;
+    border: 1px solid #ddd;
+}
+
+.days-grid {
+    border: 1px solid #ddd;
+    border-top: none;
+}
+
+/* Estilo do Dia */
+.day {
+    min-height: 100px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-top: none;
+    cursor: pointer;
+    text-align: left;
+    background-color: #fff;
+    transition: background-color 0.2s;
+}
+
+.day:hover:not(.empty) {
+    background-color: #f0f0f0;
+}
+
+.day-number {
+    font-weight: 700;
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    color: #007bff;
+}
+
+.empty {
+    background-color: #f8f8f8;
+    cursor: default;
+    border: none;
+}
+
+
+
+/* Estilo para Dias com Atividade */
+.activity-indicator {
+    background-color: #ffc107;
+    color: #333;
+    font-size: 0.8em;
+    padding: 3px 5px;
+    border-radius: 3px;
+    margin-top: 2px;
+    display: inline-block;
+}
+
+/* Modal */
+.modal {
+    display: none; /* Escondido por padrão */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4); /* Fundo preto semi-transparente */
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto; /* 15% do topo e centralizado */
+    padding: 25px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.note {
+    font-size: 0.9em;
+    margin-top: 20px;
+    padding: 10px;
+    border-left: 5px solid #ffc107;
+    background-color: #fffbe6;
+}
+
+#activities-list {
+    margin-top: 15px;
+}
+
+.activity-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-left: 5px solid #007bff;
+}
+
+.activity-item h4 {
+    margin-top: 0;
+    color: #007bff;
+}
+
+.day.holiday {
+    color: red; /* Cor do texto em vermelho */
+    font-weight: bold; /* Deixa o texto em negrito */
+    background-color: #ffebeb; /* Fundo muito claro em tons de vermelho (suave) */
+    border-left: 5px solid red; /* Linha de destaque na lateral esquerda */
+}
+
+.day.holiday:hover:not(.empty) {
+    background-color: #ffcccc;
+}
+
+/* Garante que o número do dia também seja vermelho */
+.day.holiday .day-number {
+    color: red;
+}
