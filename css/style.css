@@ -241,6 +241,11 @@ main {
     border: 1px solid #333;
 }
 
+.p-B2B-HUAWEI {
+    background-color: #BFBFBF;
+    border-color: #BFBFBF;
+
+}
 .p-FREEZING {
     background-color: #fec0fe; /* Azul Marinho/Índigo - Cor forte para Freezing */
     border-color: #fec0fe;
@@ -274,10 +279,13 @@ main {
 
 /* --- NOVAS CLASSES PARA COR DA FAIXA LATERAL (Borda esquerda) --- */
 
+.activity-item.border-p-B2B-HUAWEI {
+    border-left-color: #BFBFBF;
+}
+
 .activity-item.border-p-FREEZING {
     border-left-color: #fec0fe; /* Usa a mesma cor forte do fundo da tag */
 }
-
 .activity-item.border-p-MENSAL {
     border-left-color: #DA9694;
 }
@@ -296,3 +304,66 @@ main {
 .activity-item.border-p-ANUAL {
     border-left-color: #FF0000;
 }
+/* --- NOVAS CLASSES DE BORDA PARA ENGEMON (COR DIFERENCIADA) --- */
+
+.activity-item.border-engemon-incendio {
+    border-left-color: #92D050; /* Azul Forte: Para Incêndio/Hidrantes */
+}
+
+.activity-item.border-engemon-automacao {
+    border-left-color: #E8950E; /* Verde Claro/Lima: Para Automação/Sensores */
+}
+
+/* ========================================================== */
+/* --- ESTILOS PARA ORDENAÇÃO DE ATIVIDADES NO MODAL (NOVO) --- */
+/* ========================================================== */
+
+/* 1. Torna o container das atividades um Flexbox */
+#activities-list {
+    /* Regras já existentes: */
+    margin-top: 15px; 
+    
+    /* Regras de Flexbox adicionadas */
+    display: flex;
+    flex-direction: column; /* Garante que os itens fiquem na vertical */
+    gap: 10px; /* Adiciona um espaço entre os itens para melhor visualização */
+}
+
+/* 2. Classes de ORDENAÇÃO (Order: 0 é o mais importante/primeiro) */
+
+/* TBRA FREZZING (Order 0) */
+.activity-item.order-gr-TBRA_FREEZING {
+    order: 0;
+}
+
+/* B2B / HUAWEI FREEZING (Order 1) */
+.activity-item.order-gr-B2B_HUAWEI_FREEZING {
+    order: 1;
+}
+
+/* TBRA - NGIN e TBRA - RELEASE (Order 2) */
+.activity-item.order-gr-TBRA_NGIN,
+.activity-item.order-gr-TBRA_RELEASE {
+    order: 2;
+}
+
+/* VENDORS (Order 3) */
+.activity-item.order-gr-VENDORS {
+    order: 3;
+}
+
+/* ENGEMON (Order 4) */
+.activity-item.order-gr-ENGEMON {
+    order: 4;
+}
+
+/* FERIADOS (Order 98) - Para itens de feriado, se eles não fossem filtrados */
+.activity-item.order-gr-FERIADO {
+    order: 98;
+}
+
+/* Outros / Padrão (Order 99) - Para qualquer atividade sem 'company_group' */
+.activity-item.order-gr-DEFAULT {
+    order: 99; 
+}
+

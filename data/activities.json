@@ -1,107 +1,64 @@
 [
-  
+  {"JANEIRO": "___________________________________________________DIA 01________________________________________________________________"},
   {
     "date": "2026-01-01",
-    "company": "FERIADO",
-    "description": "ANO NOVO",
+    "company": "TBRA",
+    "description": "TBRA - FREEZING FIM DE ANO",
     "priority": "FREEZING",
-    "periodicity": "ANUAL"
+    "periodicity": "FREEZING",
+    "company_group": "TBRA_FREEZING"
   },
 
   {
     "date": "2026-01-01",
     "company": "TBRA",
-    "description": "Frezzing Faturamento",
+    "description": "B2B TBRA - FREEZING HUAWEI",
     "priority": "FREEZING",
-    "periodicity": "FREEZING"
+    "periodicity": "B2B-HUAWEI",
+    "company_group": "B2B_HUAWEI_FREEZING"
   },
 
   {
     "date": "2026-01-01",
-    "company": "TBRA",
-    "description": "FREZZING FIM DE ANO",
-    "priority": "FREEZING",
-    "periodicity": "FREEZING"
-  },
-
-  {
-    "date": "2026-01-01",
-    "company": "B2B",
-    "description": "FREEZING HUAWEI",
-    "priority": "FREEZING",
-    "periodicity": "FREEZING"
+    "company": "Engemon",
+    "description": "SISTEMA DE INCÊNDIO",
+    "priority": "",
+    "periodicity": "MENSAL",
+    "company_group": "ENGEMON"
   },
 
   {
     "date": "2026-01-01",
     "company": "ENGEMON",
-    "description": "Sistema de Incêndio | Teste de Disparo | 08:00 - 18:00",
-    "priority": "LOW",
-    "periodicity": "TRIMESTRAL"
+    "description": "SISTEMA DE AUTOMAÇÃO",
+    "priority": "",
+    "periodicity": "MENSAL",
+    "company_group": "ENGEMON"
   },
 
+  {"JANEIRO": "___________________________________________________DIA 02________________________________________________________________"},
   {
     "date": "2026-01-02",
     "company": "TBRA",
-    "description": "FREZZING FIM DE ANO",
+    "description": "TBRA - FREEZING FIM DE ANO",
     "priority": "FREEZING",
-    "periodicity": "FREEZING"
+    "periodicity": "FREEZING",
+    "company_group": "TBRA_FREEZING"
   },
 
-  {
-    "date": "2026-01-02",
-    "company": "TBRA",
-    "description": "FREZZING FATURAMENTO",
-    "priority": "FREEZING",
-    "periodicity": "FREEZING"
-  },
+  {"JANEIRO": "___________________________________________________DIA 03________________________________________________________________"},
 
-  {
-    "date": "2026-01-02",
-    "company": "B2B",
-    "description": "FREEZING HUAWEI",
-    "priority": "FREEZING",
-    "periodicity": "FREEZING"
-  },
+  {"JANEIRO": "___________________________________________________DIA 04________________________________________________________________"},
 
-  {
-    "date": "2026-01-02",
-    "company": "ENGEMON",
-    "description": "Sistema de Incêndio | Sistema de Automação | 08:00 - 18:00",
-    "priority": "LOW",
-    "periodicity": "MENSAL"
-  },
+  {"JANEIRO": "___________________________________________________DIA 05________________________________________________________________"},
+
+  {"JANEIRO": "___________________________________________________DIA 06________________________________________________________________"},
+
+  {"JANEIRO": "___________________________________________________DIA 07________________________________________________________________"},
+
+  {"JANEIRO": "___________________________________________________DIA 08________________________________________________________________"},
+
+  {"FEVEREIRO":"________________________________________________________________________________________________________________________"}
   
-  {
-    "date": "2026-01-03",
-    "company": "TBRA",
-    "description": "FREZZING FIM DE ANO",
-    "priority": "FREEZING",
-    "periodicity": "FREEZING"
-  },
-
-  {
-    "date": "2026-01-03",
-    "company": "TBRA",
-    "description": "TBRA - Janela Restritiva Início às 05h00 de Sábado",
-    "priority": "FREEZING",
-    "periodicity": "FREEZING"
-  },
-
-  {
-    "date": "2026-01-03",
-    "company": "B2B",
-    "description": "FREEZING HUAWEI",
-    "priority": "FREEZING",
-    "periodicity": "FREEZING"
-  },
-
-  {
-    "date": "2026-02-14",
-    "company": "FERIADO",
-    "description": "Feriado Carnaval",
-    "priority": "FREEZING",
-    "periodicity": "MENSAL"
-  }
-
 ]
+

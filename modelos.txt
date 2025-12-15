@@ -1,0 +1,13 @@
+{
+    "date": "",
+    "company": "",
+    "description": "",
+    "priority": "",
+    "periodicity": ""
+    "company_group": "FERIADO" // Campo adicionado
+  },
+
+
+
+
+
