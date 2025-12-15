@@ -18,6 +18,47 @@ const monthNames = [
     "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
 ];
 
+// --- LÓGICA DE ESCALA 12X36 (EQUIPE) ---
+const DIURNO_TEAMS = ['C', 'D', 'A', 'B']; 
+const NOTURNO_TEAMS = ['D', 'A', 'B', 'C'];
+// 01/01/2026 é o ponto de partida (Dia 0 do ciclo).
+const REFERENCE_DATE = new Date('2026-01-01T00:00:00'); 
+
+/**
+ * Calcula a equipe de plantão 12x36 para uma determinada data e hora.
+ * @param {string} dateString - Data no formato YYYY-MM-DD.
+ * @param {boolean} isCurrentDay - Se é o dia atual.
+ * @param {number} currentHour - A hora atual (0-23) se for o dia atual.
+ * @returns {string} Equipe de plantão (A, B, C, D) e o turno.
+ */
+function getOnCallInfo(dateString, isCurrentDay, currentHour) {
+    const targetDate = new Date(dateString + 'T00:00:00'); 
+    const dayDiffMs = targetDate.getTime() - REFERENCE_DATE.getTime();
+    const dayDiff = Math.floor(dayDiffMs / (1000 * 60 * 60 * 24)); 
+    const cycleIndex = dayDiff % 4; 
+    
+    const diurnoTeam = DIURNO_TEAMS[cycleIndex];
+    const noturnoTeam = NOTURNO_TEAMS[cycleIndex];
+    
+    let team = diurnoTeam;
+    let turn = 'Diurno'; // Padrão
+    
+    if (isCurrentDay) {
+        // Lógica sensível ao tempo para o dia atual
+        if (currentHour >= 6 && currentHour < 18) {
+            team = diurnoTeam; // 06:00h até 17:59h
+            turn = 'Diurno';
+        } else {
+            team = noturnoTeam; // 18:00h até 05:59h (do dia seguinte)
+            turn = 'Noturno';
+        }
+    } 
+    // Se não for o dia atual, vamos exibir a equipe Diurna como representação do dia.
+    
+    return { team, turn, isCurrentDay };
+}
+
+
 // --- FUNÇÕES DE LÓGICA DO CALENDÁRIO ---
 
 /**
@@ -44,7 +85,12 @@ function renderCalendar(year, month) {
         daysGrid.appendChild(emptyDay);
     }
 
-    // 4. Criação dos Dias do Mês
+    // 4. Parâmetros do dia atual para a regra de plantão
+    const today = new Date();
+    const todayString = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
+    const currentHour = today.getHours();
+
+    // 5. Criação dos Dias do Mês
     for (let day = 1; day <= daysInMonth; day++) {
         const dateString = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
         const dayElement = document.createElement('div');
@@ -57,7 +103,24 @@ function renderCalendar(year, month) {
         // Verifica se há atividades para este dia
         const dailyActivities = activities.filter(a => a.date === dateString);
 
-        // Verifica se o dia é FREEZING
+        // 🆕 LÓGICA DE EQUIPE (Plantão)
+        const isCurrentDay = dateString === todayString;
+        const onCallInfo = getOnCallInfo(dateString, isCurrentDay, currentHour);
+        
+        // ❌ Removendo: dayElement.classList.add('on-call-day'); 
+        // O destaque visual agora vem da tag da equipe, que é exibida em todos os dias.
+
+        // Lista de periodicidades que DEVEM ser contadas
+        const countablePeriodicities = [
+            "MENSAL", "BIMESTRAL", "TRIMESTRAL", "QUADRIMESTRAL", "SEMESTRAL", "ANUAL"
+        ];
+
+        // Filtra as atividades para contagem (somente as periódicas definidas)
+        const countableActivities = dailyActivities.filter(a => 
+            countablePeriodicities.includes(a.periodicity)
+        );
+        
+        // Verifica se o dia é FREEZING (para destaque de cor)
         const isFreezing = dailyActivities.some(a => a.priority === "FREEZING");
         
         // VERIFICAÇÃO DE ALTA PRIORIDADE VISUAL (FERIADO OU FREEZING COMERCIAL)
@@ -65,12 +128,14 @@ function renderCalendar(year, month) {
             a.company === "FERIADO" || a.company === "FREEZING COMERCIAL"
         );
         
-        const isHoliday = dailyActivities.some(a => a.company === "FERIADO");
+        // Verifica se há *qualquer* atividade
+        const hasActivities = dailyActivities.length > 0;
 
-
+        // --- LÓGICA DE PRIORIDADE DE CORES ---
+        // Aqui mantemos apenas as cores de atividades e freezings
+        
         if (isFreezing) {
-            dayElement.classList.add('has-activity'); 
-
+            
             // 1. MAIOR PRIORIDADE VISUAL: FERIADO OU FREEZING COMERCIAL
             if (isHighPriorityFreezingVisual) {
                 dayElement.classList.add('holiday'); 
@@ -88,19 +153,37 @@ function renderCalendar(year, month) {
                 dayElement.classList.add('freezing-b2b-huawei');
             }
 
-        } else if (dailyActivities.length > 0) {
+        } else if (hasActivities) {
             // Lógica para atividades gerais (NÃO FREEZING)
-            
             dayElement.classList.add('general-activity'); 
-
-            // Adiciona o indicador de atividade
-            const indicator = document.createElement('span');
-            indicator.classList.add('activity-indicator');
-            indicator.textContent = `${dailyActivities.length} Ativ.`;
-            dayElement.appendChild(indicator);
-            dayElement.classList.add('has-activity');
         }
 
+        // --- INSERÇÃO DOS INDICADORES ---
+        
+        // Indicador de Atividade (Contador)
+        if (hasActivities) {
+            const indicator = document.createElement('span');
+            indicator.classList.add('activity-indicator');
+            indicator.textContent = `${countableActivities.length} Ativ.`;
+            dayElement.appendChild(indicator);
+        }
+        
+        // Indicador de EQUIPE (Aparece em TODOS os dias)
+        const onCallIndicator = document.createElement('span');
+        onCallIndicator.classList.add('on-call-indicator');
+        
+        // Texto: "EQUIPE X"
+        let teamText = `EQUIPE ${onCallInfo.team}`;
+        
+        // Adiciona o turno no dia atual
+        if (onCallInfo.isCurrentDay) {
+            teamText += ` (${onCallInfo.turn})`;
+        }
+        
+        onCallIndicator.textContent = teamText;
+
+        dayElement.appendChild(onCallIndicator);
+        
 
         // Adiciona o evento de clique para abrir o modal
         dayElement.addEventListener('click', () => openActivityModal(dateString, dailyActivities, isHighPriorityFreezingVisual));
@@ -109,7 +192,7 @@ function renderCalendar(year, month) {
     }
 }
 
-// --- FUNÇÕES DE DADOS E INTERAÇÃO ---
+// --- FUNÇÕES DE DADOS E INTERAÇÃO (RESTANTE DO CÓDIGO) ---
 
 /**
  * Carrega os agendamentos do arquivo JSON.
@@ -186,7 +269,7 @@ function openActivityModal(dateString, dailyActivities, isHighPriorityFreezingVi
             // CRIA A TAGS DE ESTILO
             const periodicityTag = `<span class="periodicidade-tag p-${activity.periodicity}">${activity.periodicity}</span>`;
             
-            // >>> TAGS DE PRIORIDADE REMOVIDAS DAQUI <<<
+            // >>> TAGS DE PRIORIDADE REMOVIDAS DO MODAL <<<
 
             // >>> INÍCIO DA LÓGICA DE COR DA BORDA (Engemon) <<<
             let borderClass = `border-p-${activity.periodicity}`; // Padrão: usa a periodicidade
@@ -225,7 +308,7 @@ function openActivityModal(dateString, dailyActivities, isHighPriorityFreezingVi
             // 2. ADICIONA A CLASSE QUE DEFINE A COR DA BORDA LATERAL
             item.classList.add(borderClass); 
             
-            // CONTEÚDO FINAL DO CARD: Removed a tag de prioridade aqui.
+            // CONTEÚDO FINAL DO CARD: Sem a tag de prioridade.
             item.innerHTML = `
                 <h4>${activity.company} ${periodicityTag}</h4>
                 <p><strong>Serviço:</strong> ${activity.description}</p>

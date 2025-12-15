@@ -71,11 +71,6 @@ main {
     border: 1px solid #ddd;
 }
 
-.days-grid {
-    border: 1px solid #ddd;
-    border-top: none;
-}
-
 /* Estilo Básico do Dia - ATENÇÃO: text-align: center para centralizar o conteúdo! */
 .day {
     min-height: 100px;
@@ -106,43 +101,35 @@ main {
     border: none;
 }
 
-/* Estilo para Dias com Atividade */
-.has-activity {
-    /* Apenas marcador */
-}
-
-/* Indicador de Atividade - ATENÇÃO: display: block e margin: auto para centralizar! */
+/* Indicador de Atividade (Contador) - Centralizado */
 .activity-indicator {
     background-color: #ffc107;
     color: #333;
     font-size: 0.8em;
     padding: 3px 5px;
     border-radius: 3px;
-    
-    display: block; /* Ocupa a própria linha */
-    width: fit-content; /* Ocupa apenas o espaço do texto */
-    margin: 2px auto 0 auto; /* Centraliza horizontalmente (auto) e dá margem superior */
+    display: block; 
+    width: fit-content; 
+    margin: 2px auto 0 auto; /* Centraliza horizontalmente e dá margem superior */
 }
 
 
 /* ========================================================== */
-/* --- 3. ESTILOS DE PRIORIDADE (FREEZING) E GERAIS NO CALENDÁRIO --- */
+/* --- 3. ESTILOS DE PRIORIDADE (FREEZING, GERAL) NO CALENDÁRIO --- */
 /* ========================================================== */
 
 /* 3.1. HIGH PRIORITY (FERIADO / FREEZING COMERCIAL) */
 .day.holiday {
-    color: #fec0fe; 
-    font-weight: bold;
     background-color: #ffebeb; 
     border-left: 5px solid #fec0fe; 
 }
 
-.day.holiday:hover:not(.empty) {
-    background-color: #ffcccc;
-}
-
 .day.holiday .day-number {
     color: red; 
+}
+
+.day.holiday:hover:not(.empty) {
+    background-color: #ffcccc;
 }
 
 
@@ -154,9 +141,6 @@ main {
 .day.freezing-tbra-release-ngin .day-number {
     color: #0077aa; 
 }
-.day.freezing-tbra-release-ngin:hover:not(.empty) {
-    background-color: #a0d8f0;
-}
 
 /* 3.3. FREEZING TBRA GERAL (Laranja) */
 .day.freezing-tbra {
@@ -165,9 +149,6 @@ main {
 }
 .day.freezing-tbra .day-number {
     color: #E26B0A; 
-}
-.day.freezing-tbra:hover:not(.empty) {
-    background-color: #ffb366;
 }
 
 /* 3.4. FREEZING B2B e HUAWEI (Cinza) */
@@ -180,11 +161,7 @@ main {
     color: #7f7f7f; 
 }
 
-.day.freezing-b2b-huawei:hover:not(.empty) {
-    background-color: #cccccc;
-}
-
-/* 3.5. ATIVIDADES GERAIS (Cor Suave) */
+/* 3.5. ATIVIDADES GERAIS (Verde) */
 .day.general-activity {
     background-color: #d4edda; 
     border-left: 5px solid #155724; 
@@ -194,9 +171,23 @@ main {
     color: #155724; 
 }
 
-.day.general-activity:hover:not(.empty) {
-    background-color: #c3e6cb;
+/* 🚨 CORREÇÃO DE ESPECIFICIDADE: Garante que o indicador da EQUIPE tenha SEMPRE o fundo amarelo
+   e a cor de texto escura, corrigindo a sobrescrição indesejada. */
+div .on-call-indicator {
+    font-size: 0.75em;
+    font-weight: bold;
+    color: #333 !important; /* Cor de texto ESCURA para todos */
+    background-color: #ffc107 !important; /* Fundo amarelo para todos */
+    padding: 3px 5px;
+    border-radius: 4px;
+    margin: 4px auto 0 auto; 
+    display: block;
+    width: fit-content;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
 }
+
+/* ❌ REGRA REMOVIDA: A regra específica .day.holiday .on-call-indicator não é mais necessária, 
+   pois queremos que a cor de texto volte ao padrão #333 em todos os casos. */
 
 
 /* ========================================================== */
@@ -392,10 +383,17 @@ main {
         padding: 1px 2px;
         margin: 1px auto 0 auto; /* Ajuste a margem para telas menores */
     }
+    
+    /* Ajuste para o indicador de equipe */
+    .on-call-indicator {
+        font-size: 0.6em;
+        padding: 2px 3px;
+        margin: 2px auto 0 auto;
+    }
 
     /* MODAL - CORREÇÃO DE VAZAMENTO LATERAL */
     .modal-content {
-        width: 85%; 
+        width: 95%; 
         margin: 5% auto; 
         max-width: none; 
         max-height: 90vh; 
