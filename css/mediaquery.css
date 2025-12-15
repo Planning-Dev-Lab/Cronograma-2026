@@ -39,10 +39,24 @@
 
     /* Modal - Ajusta o tamanho para ocupar mais espaço na vertical */
     .modal-content {
-        width: 95%; /* Ocupa quase toda a largura */
-        margin: 10% auto; /* Move o modal um pouco mais para cima */
-        max-height: 90vh; /* Limita a altura máxima do modal */
-        overflow-y: auto; /* Permite rolar o conteúdo do modal se for muito longo */
+        width: 90%; 
+        margin: 10% auto; 
+        max-width: none; /* Remove qualquer limite de largura que possa estar forçando o vazamento */
+        max-height: 90vh;
+        overflow-y: auto;
+        padding: 15px;
+    }
+
+    /* Adicione esta regra de quebra se o título do modal for o que está vazando */
+    .modal-content h3 {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        font-size: 1.2em;
+    }
+
+    /* Os itens de atividade devem se ajustar */
+    .activity-item {
+        padding: 8px;
     }
     
     /* Ajuste de Fonte e Espaçamento nos itens do modal */
