@@ -76,14 +76,14 @@ main {
     border-top: none;
 }
 
-/* Estilo Básico do Dia */
+/* Estilo Básico do Dia - ATENÇÃO: text-align: center para centralizar o conteúdo! */
 .day {
     min-height: 100px;
     padding: 10px;
     border: 1px solid #ddd;
     border-top: none;
     cursor: pointer;
-    text-align: left;
+    text-align: center; /* Centraliza o conteúdo horizontalmente */
     background-color: #fff;
     transition: background-color 0.2s;
 }
@@ -97,6 +97,7 @@ main {
     font-size: 1.2em;
     margin-bottom: 5px;
     color: #007bff;
+    display: block; /* Garante que o número ocupe toda a largura */
 }
 
 .empty {
@@ -106,17 +107,21 @@ main {
 }
 
 /* Estilo para Dias com Atividade */
+.has-activity {
+    /* Apenas marcador */
+}
 
-
-/* Indicador de Atividade (a tag amarela/verde/etc) */
+/* Indicador de Atividade - ATENÇÃO: display: block e margin: auto para centralizar! */
 .activity-indicator {
     background-color: #ffc107;
     color: #333;
     font-size: 0.8em;
     padding: 3px 5px;
     border-radius: 3px;
-    margin-top: 2px;
-    display: inline-block;
+    
+    display: block; /* Ocupa a própria linha */
+    width: fit-content; /* Ocupa apenas o espaço do texto */
+    margin: 2px auto 0 auto; /* Centraliza horizontalmente (auto) e dá margem superior */
 }
 
 
@@ -126,10 +131,10 @@ main {
 
 /* 3.1. HIGH PRIORITY (FERIADO / FREEZING COMERCIAL) */
 .day.holiday {
-    color: #fec0fe; /* Cor da borda e número, mas sobreposto pelo red */
+    color: #fec0fe; 
     font-weight: bold;
-    background-color: #ffebeb; /* Fundo suave */
-    border-left: 5px solid #fec0fe; /* Linha de destaque na lateral */
+    background-color: #ffebeb; 
+    border-left: 5px solid #fec0fe; 
 }
 
 .day.holiday:hover:not(.empty) {
@@ -137,14 +142,14 @@ main {
 }
 
 .day.holiday .day-number {
-    color: red; /* Garante que o número do dia seja vermelho (melhor contraste) */
+    color: red; 
 }
 
 
 /* 3.2. FREEZING TBRA RELEASE / NGIN (AZUL) */
 .day.freezing-tbra-release-ngin {
-    background-color: #c9e6f3; /* Azul Claro */
-    border-left: 5px solid #0099cc; /* Azul Médio */
+    background-color: #c9e6f3; 
+    border-left: 5px solid #0099cc; 
 }
 .day.freezing-tbra-release-ngin .day-number {
     color: #0077aa; 
@@ -155,8 +160,8 @@ main {
 
 /* 3.3. FREEZING TBRA GERAL (Laranja) */
 .day.freezing-tbra {
-    background-color: #ffcc99; /* Laranja Claro */
-    border-left: 5px solid orange; /* Laranja Mais Escuro */
+    background-color: #ffcc99; 
+    border-left: 5px solid orange; 
 }
 .day.freezing-tbra .day-number {
     color: #E26B0A; 
@@ -167,8 +172,8 @@ main {
 
 /* 3.4. FREEZING B2B e HUAWEI (Cinza) */
 .day.freezing-b2b-huawei {
-    background-color: #e6e6e6; /* Cinza Claro */
-    border-left: 5px solid #BFBFBF; /* Cinza Mais Escuro */
+    background-color: #e6e6e6; 
+    border-left: 5px solid #BFBFBF; 
 }
 
 .day.freezing-b2b-huawei .day-number {
@@ -181,10 +186,7 @@ main {
 
 /* 3.5. ATIVIDADES GERAIS (Cor Suave) */
 .day.general-activity {
-    /* Cor de fundo suave (Verde-água claro) */
     background-color: #d4edda; 
-    
-    /* Borda de destaque lateral (Verde escuro) */
     border-left: 5px solid #155724; 
 }
 
@@ -225,7 +227,7 @@ main {
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
-/* Correção para garantir quebra de linha em títulos longos do modal */
+/* Garante quebra de linha em títulos longos do modal */
 .modal-content h3 {
     word-wrap: break-word;
     overflow-wrap: break-word;
@@ -253,7 +255,7 @@ main {
     background-color: #fffbe6;
 }
 
-/* Container de atividades (agora Flexbox para ordenação) */
+/* Container de atividades (Flexbox para ordenação) */
 #activities-list {
     margin-top: 15px;
     display: flex;
@@ -264,7 +266,7 @@ main {
 .activity-item {
     border: 1px solid #ccc;
     padding: 10px;
-    margin-bottom: 0; /* Removido o margin-bottom para usar o 'gap' */
+    margin-bottom: 0; 
     border-left: 5px solid #ccc; /* Cor de fallback neutra/cinza */
 }
 
@@ -280,7 +282,7 @@ main {
 }
 
 /* ========================================================== */
-/* --- 5. ORDENAÇÃO E CORES DE BORDAS NO MODAL (CLASSES DINÂMICAS) --- */
+/* --- 5. ORDENAÇÃO E CORES NO MODAL --- */
 /* ========================================================== */
 
 /* 5.1. CORES DA BORDA LATERAL (Periodicidade e Engemon) */
@@ -297,13 +299,13 @@ main {
 
 /* Cores de Borda ENGEMON (Lógica especial do JS) */
 .activity-item.border-engemon-incendio {
-    border-left-color: #92D050; /* Azul Forte */
+    border-left-color: #92D050; 
 }
 .activity-item.border-engemon-automacao {
-    border-left-color: #E8950E; /* Verde Claro/Lima */
+    border-left-color: #E8950E; 
 }
 
-/* 5.2. ESTILO DAS TAGS (Periodicidade e Prioridade) */
+/* 5.2. ESTILO DAS TAGS (Periodicidade) */
 
 .periodicidade-tag {
     font-size: 0.8em;
@@ -334,12 +336,10 @@ main {
 
 .activity-item.order-gr-TBRA_FREEZING { order: 0; }
 .activity-item.order-gr-B2B_HUAWEI_FREEZING { order: 1; }
-
-/* TBRA - NGIN e TBRA - RELEASE (Order 2) */
 .activity-item.order-gr-TBRA_NGIN,
 .activity-item.order-gr-TBRA_RELEASE {
     order: 2;
-    border-left-color: orange; /* Overrides a cor de periodicidade se necessário */
+    border-left-color: orange; 
 }
 
 .activity-item.order-gr-VENDORS { order: 3; }
@@ -350,7 +350,6 @@ main {
 
 /* ========================================================== */
 /* --- 6. RESPONSIVIDADE (MEDIA QUERIES) --- */
-/* CORREÇÃO PARA QUEBRA DE LAYOUT NO CELULAR */
 /* ========================================================== */
 
 @media (max-width: 768px) {
@@ -379,24 +378,25 @@ main {
 
     /* Reduz a altura mínima dos dias e o número do dia */
     .day {
-        min-height: 55px; /* Reduz a altura mínima do card do dia */
+        min-height: 55px; 
         padding: 4px;
     }
     
     .day-number {
-        font-size: 0.9em; /* Reduz o tamanho do número */
+        font-size: 0.9em; 
     }
 
     /* Ajuste para o indicador de atividade */
     .activity-indicator {
         font-size: 0.6em;
         padding: 1px 2px;
+        margin: 1px auto 0 auto; /* Ajuste a margem para telas menores */
     }
 
     /* MODAL - CORREÇÃO DE VAZAMENTO LATERAL */
     .modal-content {
-        width: 80%; 
-        margin: 5% auto; /* Ajustado para subir um pouco */
+        width: 95%; 
+        margin: 5% auto; 
         max-width: none; 
         max-height: 90vh; 
         overflow-y: auto; 
@@ -418,7 +418,6 @@ main {
     .activity-item h4 {
         font-size: 0.85em;
         margin-bottom: 5px;
-        /* Garante quebra em títulos muito longos */
         word-wrap: break-word; 
     }
 
@@ -426,8 +425,8 @@ main {
         font-size: 0.75em;
     }
 
-    /* Ajuste para as tags de prioridade e periodicidade no modal */
-    .periodicidade-tag, .priority-tag {
+    /* Ajuste para as tags de periodicidade no modal */
+    .periodicidade-tag {
         font-size: 0.65em;
         padding: 2px 3px;
     }

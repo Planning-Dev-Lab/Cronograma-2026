@@ -5,18 +5,18 @@
     "company": "FERIADO",
     "description": "FERIADO FIM DE ANO"
   },
+
   {
     "date": "2026-01-01",
-    "company": "TBRA",
+    "company": "FREEZING COMERCIAL",
     "description": "TBRA - FREEZING FIM DE ANO",
-    "priority": " ",
     "periodicity": "FREEZING",
     "company_group": "TBRA_FREEZING"
   },
 
   {
     "date": "2026-01-01",
-    "company": "TBRA",
+    "company": "B2B",
     "description": "B2B TBRA - FREEZING HUAWEI",
     "priority": "FREEZING",
     "periodicity": "B2B-HUAWEI",
@@ -27,7 +27,6 @@
     "date": "2026-01-01",
     "company": "Engemon",
     "description": "(08:00 - 18:00) SISTEMA DE INCÊNDIO",
-    "priority": " ",
     "periodicity": "MENSAL",
     "company_group": "ENGEMON"
   },
@@ -38,16 +37,15 @@
     "date": "2026-01-02",
     "company": "FREEZING COMERCIAL",
     "description": "TBRA - FREEZING FIM DE ANO",
-    "priority": " ",
+    "priority": "FREEZING",
     "periodicity": "FREEZING",
     "company_group": "TBRA_FREEZING"
   },
 
    {
     "date": "2026-01-02",
-    "company": "TBRA",
+    "company": "B2B",
     "description": "B2B TBRA - FREEZING HUAWEI",
-    "priority": "FREEZING",
     "periodicity": "B2B-HUAWEI",
     "company_group": "B2B_HUAWEI_FREEZING"
   },
@@ -56,7 +54,6 @@
     "date": "2026-01-02",
     "company": "ENGEMON",
     "description": "SISTEMA DE AUTOMAÇÃO",
-    "priority": " ",
     "periodicity": "MENSAL",
     "company_group": "ENGEMON"
   },
@@ -75,9 +72,8 @@
 
    {
     "date": "2026-01-03",
-    "company": "TBRA",
+    "company": "B2B",
     "description": "B2B TBRA - FREEZING HUAWEI",
-    "priority": "FREEZING",
     "periodicity": "B2B-HUAWEI",
     "company_group": "B2B_HUAWEI_FREEZING"
   },
