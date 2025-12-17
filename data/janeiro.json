@@ -87,7 +87,7 @@
         "vendors": [
             {
                 "company": "VERTIV",
-                "description": "SISTEMA DE AUTOMAÇÃO",
+                "description": "BATERIAS",
                 "periodicity": "TRIMESTRAL",
                 "company_group": "VERTIV_POWER",
                 "service_type": ""
@@ -110,7 +110,7 @@
         "vendors": [
             {
                 "company": "VERTIV",
-                "description": "SISTEMA DE AUTOMAÇÃO",
+                "description": "BATERIAS",
                 "periodicity": "TRIMESTRAL",
                 "company_group": "VERTIV_POWER",
                 "service_type": ""
@@ -133,7 +133,149 @@
         "vendors": [
             {
                 "company": "VERTIV",
-                "description": "SISTEMA DE AUTOMAÇÃO",
+                "description": "BATERIAS",
+                "periodicity": "TRIMESTRAL",
+                "company_group": "VERTIV_POWER",
+                "service_type": ""
+            },
+            {
+                "company": "Engemon",
+                "description": "(08:00 - 18:00) SISTEMA DE INCÊNDIO - TESTE DE DISPARO",
+                "periodicity": "MENSAL",
+                "company_group": "ENGEMON",
+                "service_type": "engemon-incendio"
+            }
+        ]
+    },
+
+    {
+        "data": "2026-01-08",
+        "on_call_dia": "Equipe A",
+        "on_call_noite": "Equipe B",
+        "freezing": [],
+        "vendors": [
+            {
+                "company": "VERTIV",
+                "description": "BATERIAS",
+                "periodicity": "TRIMESTRAL",
+                "company_group": "VERTIV_POWER",
+                "service_type": ""
+            },
+            {
+                "company": "Engemon",
+                "description": "(08:00 - 18:00) SISTEMA DE AUTOMAÇÃO",
+                "periodicity": "MENSAL",
+                "company_group": "ENGEMON",
+                "service_type": "engemon-automacao"
+            }
+        ]
+    },
+
+    {
+        "data": "2026-01-09",
+        "on_call_dia": "Equipe C",
+        "on_call_noite": "Equipe D",
+        "freezing": [],
+        "vendors": [
+            {
+                "company": "VERTIV",
+                "description": "BATERIAS",
+                "periodicity": "TRIMESTRAL",
+                "company_group": "VERTIV_POWER",
+                "service_type": ""
+            },
+            {
+                "company": "Engemon",
+                "description": "(08:00 - 18:00) SISTEMA DE AUTOMAÇÃO",
+                "periodicity": "MENSAL",
+                "company_group": "ENGEMON",
+                "service_type": "engemon-automacao"
+            }
+        ]
+    },
+
+    {
+        "data": "2026-01-10",
+        "on_call_dia": "Equipe A",
+        "on_call_noite": "Equipe B",
+        "freezing": [
+            {
+                "group": "TBRA",
+                "description": "TBRA - RELEASE"
+            }
+        ],
+        "vendors": []
+    },
+    {
+        "data": "2026-01-11",
+        "on_call_dia": "Equipe C",
+        "on_call_noite": "Equipe D",
+        "freezing": [
+            {
+                "group": "TBRA",
+                "description": "TBRA - RELEASE"
+            }
+        ],
+        "vendors": []
+    },
+    {
+        "data": "2026-01-12",
+        "on_call_dia": "Equipe A",
+        "on_call_noite": "Equipe B",
+        "freezing": [
+            {
+                "group": "TBRA",
+                "description": "TBRA - RELEASE"
+            }
+        ],
+        "vendors": [
+            {
+                "company": "VERTIV",
+                "description": "BATERIAS",
+                "periodicity": "TRIMESTRAL",
+                "company_group": "VERTIV_POWER",
+                "service_type": ""
+            },
+            {
+                "company": "Engemon",
+                "description": "(08:00 - 18:00) SISTEMA DE INCÊNDIO - TESTE DE DISPARO",
+                "periodicity": "MENSAL",
+                "company_group": "ENGEMON",
+                "service_type": "engemon-incendio"
+            }
+        ]
+    },
+    {
+        "data": "2026-01-13",
+        "on_call_dia": "Equipe C",
+        "on_call_noite": "Equipe D",
+        "freezing": [],
+        "vendors": [
+            {
+                "company": "VERTIV",
+                "description": "BATERIAS",
+                "periodicity": "TRIMESTRAL",
+                "company_group": "VERTIV_POWER",
+                "service_type": ""
+            },
+            {
+                "company": "Engemon",
+                "description": "(08:00 - 18:00) SISTEMA DE INCÊNDIO - TESTE DE DISPARO",
+                "periodicity": "MENSAL",
+                "company_group": "ENGEMON",
+                "service_type": "engemon-incendio"
+            }
+        ]
+    },
+    {
+        "data": "2026-01-14",
+        "on_call_dia": "Equipe A",
+        "on_call_noite": "Equipe B",
+        "freezing": [],
+        "vendors": [
+            {
+                "company": "VERTIV",
+                "description": "BATERIAS",
                 "periodicity": "TRIMESTRAL",
                 "company_group": "VERTIV_POWER",
                 "service_type": ""
