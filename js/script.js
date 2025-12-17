@@ -24,10 +24,10 @@ const MONTH_NAMES = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
 const COUNTABLE_PERIODICITIES = ['MENSAL', 'BIMESTRAL', 'TRIMESTRAL', 'QUADRIMESTRAL', 'SEMESTRAL', 'ANUAL'];
 
 const DAY_CLASS_MAP = {
-    'FREEZING_COMERCIAIS': 'freezing-tbra', 
-    'TBRA': 'freezing-tbra-release-ngin', 
+    'FREEZING_COMERCIAIS': 'holiday', // Rosa
+    'TBRA': 'freezing-tbra', 
     'B2B_TBRA': 'freezing-b2b-tbra',
-    'FERIADO': 'holiday'
+    'FERIADO': 'holiday' // Rosa
 };
 
 const DAY_COLOR_PRIORITY_ORDER = ['FREEZING_COMERCIAIS', 'TBRA', 'B2B_TBRA'];
@@ -73,9 +73,16 @@ async function loadActivities(year, month) {
                     let groupKey = f.group;
                     let displayTitle = f.group.replace(/_/g, ' ');
 
-                    if (groupKey === 'TBRA_FREEZING') { groupKey = 'FREEZING_COMERCIAIS'; displayTitle = 'FREEZING COMERCIAIS'; }
-                    else if (groupKey === 'TBRA_RELEASE' || groupKey === 'TBRA_NGIN') { groupKey = 'TBRA'; displayTitle = 'TBRA'; }
-                    else if (groupKey === 'B2B_HUAWEI_FREEZING' || groupKey === 'B2B_TBRA') { groupKey = 'B2B_TBRA'; displayTitle = 'B2B TBRA'; }
+                    if (groupKey === 'TBRA_FREEZING') { 
+                        groupKey = 'FREEZING_COMERCIAIS'; 
+                        displayTitle = 'FREEZING COMERCIAIS'; 
+                    } else if (groupKey === 'TBRA_RELEASE' || groupKey === 'TBRA_NGIN') { 
+                        groupKey = 'TBRA'; 
+                        displayTitle = 'TBRA'; 
+                    } else if (groupKey === 'B2B_HUAWEI_FREEZING' || groupKey === 'B2B_TBRA') { 
+                        groupKey = 'B2B_TBRA'; 
+                        displayTitle = 'B2B TBRA'; 
+                    }
 
                     activities.push({
                         date: data, company: displayTitle, description: f.description,
@@ -118,9 +125,15 @@ function renderCalendar(year, month) {
             dayElement.innerHTML += `<span class="activity-indicator">${countables.length} Ativ.</span>`;
         }
 
+        // Lógica de Classes
         let appliedClass = null;
+
+        // Limpa qualquer classe de feriado antes de decidir
+        dayElement.classList.remove('is-holiday-red', 'holiday');
+
         if (daily.some(a => a.isHoliday)) {
             appliedClass = DAY_CLASS_MAP['FERIADO'];
+            dayElement.classList.add('is-holiday-red'); // SÓ FERIADO REAL FICA VERMELHO
         } else {
             const presentGroups = daily.map(a => a.company_group);
             const winner = DAY_COLOR_PRIORITY_ORDER.find(p => presentGroups.includes(p));
@@ -142,7 +155,6 @@ function openActivityModal(dateString, daily) {
     activitiesList.innerHTML = '';
     modalTeamInfo.innerHTML = '';
 
-    // O botão de PDF só aparece se houver pelo menos uma atividade com periodicidade válida
     const hasPeriodicActivity = daily.some(a => a.periodicity && COUNTABLE_PERIODICITIES.includes(normalizeText(a.periodicity)));
     exportPdfBtn.style.display = hasPeriodicActivity ? 'block' : 'none';
 
@@ -163,7 +175,6 @@ function openActivityModal(dateString, daily) {
         const div = document.createElement('div');
         div.className = 'activity-item'; 
         
-        // Atribui uma classe extra para identificar atividades que têm periodicidade
         const pText = normalizeText(activity.periodicity);
         const isPeriodic = COUNTABLE_PERIODICITIES.includes(pText);
         if (isPeriodic) div.classList.add('is-countable-task');
@@ -189,7 +200,7 @@ function openActivityModal(dateString, daily) {
 }
 
 // ==========================================================
-// 7. EXPORTAÇÃO PDF (SOMENTE ATIVIDADES COM PERIODICIDADE)
+// 7. EXPORTAÇÃO PDF
 // ==========================================================
 async function exportToPDF() {
     const { jsPDF } = window.jspdf;
@@ -200,7 +211,6 @@ async function exportToPDF() {
     tempContainer.style.backgroundColor = '#fff';
     tempContainer.style.fontFamily = 'Arial, sans-serif';
 
-    // Cabeçalho do PDF
     const title = document.createElement('h2');
     title.innerText = `Relatório de Manutenções - ${modalDateDisplay.textContent}`;
     title.style.color = '#007bff';
@@ -208,14 +218,12 @@ async function exportToPDF() {
     title.style.paddingBottom = '10px';
     tempContainer.appendChild(title);
 
-    // Info da Equipe
     if (modalTeamInfo.innerHTML !== '') {
         const teamClone = modalTeamInfo.cloneNode(true);
         teamClone.style.marginBottom = '20px';
         tempContainer.appendChild(teamClone);
     }
 
-    // LISTAGEM FILTRADA: Apenas itens com a classe 'is-countable-task'
     const listClone = document.createElement('div');
     const originalItems = activitiesList.querySelectorAll('.activity-item.is-countable-task');
     
@@ -243,7 +251,7 @@ async function exportToPDF() {
         const pdfWidth = pdf.internal.pageSize.getWidth() - 20;
         const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
 
-        pdf.addImage(imgData, 'PNG', 10, 10, pdfWidth, pdfHeight);
+        pdf.addImage(imgData, 'PNG', 10, 15, pdfWidth, pdfHeight);
         pdf.save(`manutencoes_${modalDateDisplay.textContent.replace(/\//g, '-')}.pdf`);
     } catch (error) {
         console.error("Erro ao gerar PDF:", error);

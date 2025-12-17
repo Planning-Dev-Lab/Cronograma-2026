@@ -90,7 +90,7 @@ main {
     font-weight: 700;
     font-size: 1.2em;
     margin-bottom: 5px;
-    color: #007bff;
+    color: #007bff; /* Azul padrão */
     display: block;
 }
 
@@ -115,27 +115,33 @@ main {
 /* --- 4. CORES DE STATUS DO DIA (CALENDÁRIO) --- */
 /* ========================================================== */
 
+/* FUNDO ROSA: Compartilhado por Feriado e Freezing Comerciais */
 .day.holiday {
     background-color: #ffebeb;
     border-left: 5px solid #fec0fe;
 }
 
-.day.holiday .day-number {
-    color: red;
+/* NÚMERO VERMELHO: Apenas se for feriado real */
+.day.is-holiday-red .day-number {
+    color: red !important;
 }
 
-/* FREEZINGS - ATUALIZADO PARA AS NOVAS REGRAS */
-.day.freezing-tbra { /* FREEZING COMERCIAIS */
+/* NÚMERO AZUL: Se for Rosa (holiday) mas NÃO for feriado real (ex: dia 02) */
+.day.holiday:not(.is-holiday-red) .day-number {
+    color: #007bff;
+}
+
+.day.freezing-tbra { 
     background-color: #ffcc99;
     border-left: 5px solid orange;
 }
 
-.day.freezing-tbra-release-ngin { /* TBRA (RELEASE/NGIN) */
+.day.freezing-tbra-release-ngin { 
     background-color: #c9e6f3;
     border-left: 5px solid #0099cc;
 }
 
-.day.freezing-b2b-tbra { /* B2B TBRA - NOVA COR SOLICITADA */
+.day.freezing-b2b-tbra { 
     background-color: #e6e6e6;
     border-left: 5px solid #bfbfbf;
 }
@@ -254,16 +260,13 @@ main {
 /* --- 7. CORES DE BORDA POR GRUPO/SERVIÇO --- */
 /* ========================================================== */
 
-/* A. Prioridade Máxima: Engemon (Mantido original) */
 .activity-item.border-engemon-incendio { border-left-color: #92D050 !important; } 
 .activity-item.border-engemon-automacao { border-left-color: #E8950E !important; } 
 
-/* B. Freezings - Atualizado para as novas nomenclaturas do JS */
 .activity-item.border-group-FREEZING_COMERCIAIS { border-left-color: #fec0fe; }
 .activity-item.border-group-TBRA { border-left-color: #FFC000; }
 .activity-item.border-group-B2B_TBRA { border-left-color: #BFBFBF; }
 
-/* C. Vendors e Grupos Originais */
 .activity-item.border-group-VERTIV_POWER { border-left-color: #FFFF00; }
 .activity-item.border-group-VERTIV_COOLING { border-left-color: #92CDDC; }
 .activity-item.border-group-CARRIER { border-left-color: #BFBFBF; }
@@ -271,7 +274,6 @@ main {
 .activity-item.border-group-ENERG { border-left-color: #E6B8B7; }
 .activity-item.border-group-COTEPE { border-left-color: #DEC97C; }
 
-/* D. Periodicidade Fallback */
 .p-FREEZING, .activity-item.border-p-FREEZING { background-color: #fec0fe; border-left-color: #fec0fe; }
 .p-MENSAL, .activity-item.border-p-MENSAL { background-color: #da9694; border-left-color: #da9694; }
 .p-BIMESTRAL, .activity-item.border-p-BIMESTRAL { background-color: #e26b0a; border-left-color: #e26b0a; }
