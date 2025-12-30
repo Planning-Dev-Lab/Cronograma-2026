@@ -72,7 +72,7 @@ main {
 }
 
 .day {
-    font-size: 0.9em;
+    
     min-height: 100px;
     padding: 10px;
     border: 1px solid #ddd;
@@ -291,6 +291,6 @@ main {
     main { margin: 10px; padding: 10px; }
     .calendar-controls { justify-content: space-evenly; gap: 10px; }
     .weekdays span { font-size: 0.75em; padding: 5px 2px; }
-    .day { min-height: 55px; padding: 4px; }
+    .day { min-height: 55px; padding: 4px; font-size: 0.8em; }
     .modal-content { width: 85%; margin: 5% auto; max-height: 90vh; overflow-y: auto; }
 }
