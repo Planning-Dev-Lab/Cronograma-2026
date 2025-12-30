@@ -1,0 +1,39 @@
+[
+    {
+        "data": "2026-02-01",
+        "on_call_dia": "Equipe A",
+        "on_call_noite": "Equipe B",
+        "freezing": [],
+        "vendors": []
+    },
+    {
+        "data": "2026-02-02",
+        "on_call_dia": "Equipe C",
+        "on_call_noite": "Equipe D",
+        "freezing": [],
+        "vendors": [
+            {
+                "company": "VERTIV",
+                "description": "BATERIAS UPS BMS | NOC | TI | PREDIAL | PORTARIA",
+                "periodicity": "ANUAL",
+                "company_group": "VERTIV_POWER",
+                "service_type": ""
+            }
+        ]
+    },
+    {
+        "data": "2026-02-03",
+        "on_call_dia": "Equipe A",
+        "on_call_noite": "Equipe B",
+        "freezing": [],
+        "vendors": [
+            {
+                "company": "VERTIV",
+                "description": "BATERIAS UPS BMS | NOC | TI | PREDIAL | PORTARIA",
+                "periodicity": "ANUAL",
+                "company_group": "VERTIV_POWER",
+                "service_type": ""
+            }
+        ]
+    }
+]

@@ -90,10 +90,10 @@
             },
             {
                 "company": "Engemon",
-                "description": "(08:00 - 18:00) SISTEMA DE INCÊNDIO - TESTE DE DISPARO",
+                "description": "(08:00 - 18:00) SISTEMA DE AUTOMAÇÃO",
                 "periodicity": "MENSAL",
                 "company_group": "ENGEMON",
-                "service_type": "engemon-incendio"
+                "service_type": "engemon-automacao"
             }
         ]
     },
@@ -112,10 +112,10 @@
             },
             {
                 "company": "Engemon",
-                "description": "(08:00 - 18:00) SISTEMA DE INCÊNDIO - TESTE DE DISPARO",
+                "description": "(08:00 - 18:00) SISTEMA DE AUTOMAÇÃO",
                 "periodicity": "MENSAL",
                 "company_group": "ENGEMON",
-                "service_type": "engemon-incendio"
+                "service_type": "engemon-automacao"
             }
         ]
     },
@@ -157,10 +157,10 @@
             },
             {
                 "company": "Engemon",
-                "description": "(08:00 - 18:00) SISTEMA DE AUTOMAÇÃO",
+                "description": "(08:00 - 18:00) SISTEMA DE INCÊNDIO - TESTE DE DISPARO",
                 "periodicity": "MENSAL",
                 "company_group": "ENGEMON",
-                "service_type": "engemon-automacao"
+                "service_type": "engemon-incendio"
             }
         ]
     },
@@ -180,10 +180,10 @@
             },
             {
                 "company": "Engemon",
-                "description": "(08:00 - 18:00) SISTEMA DE AUTOMAÇÃO",
+                "description": "(08:00 - 18:00) SISTEMA DE INCÊNDIO - TESTE DE DISPARO",
                 "periodicity": "MENSAL",
                 "company_group": "ENGEMON",
-                "service_type": "engemon-automacao"
+                "service_type": "engemon-incendio"
             }
         ]
     },
@@ -232,10 +232,10 @@
             },
             {
                 "company": "Engemon",
-                "description": "(08:00 - 18:00) SISTEMA DE INCÊNDIO - TESTE DE DISPARO",
+                "description": "(08:00 - 18:00) SISTEMA DE AUTOMAÇÃO",
                 "periodicity": "MENSAL",
                 "company_group": "ENGEMON",
-                "service_type": "engemon-incendio"
+                "service_type": "engemon-automacao"
             }
         ]
     },
@@ -254,10 +254,10 @@
             },
             {
                 "company": "Engemon",
-                "description": "(08:00 - 18:00) SISTEMA DE INCÊNDIO - TESTE DE DISPARO",
+                "description": "(08:00 - 18:00) SISTEMA DE AUTOMAÇÃO",
                 "periodicity": "MENSAL",
                 "company_group": "ENGEMON",
-                "service_type": "engemon-incendio"
+                "service_type": "engemon-automacao"
             }
         ]
     },
@@ -305,10 +305,10 @@
             },
             {
                 "company": "Engemon",
-                "description": "(08:00 - 18:00) SISTEMA DE AUTOMAÇÃO",
+                "description": "(08:00 - 18:00) SISTEMA DE INCÊNDIO - TESTE DE DISPARO",
                 "periodicity": "MENSAL",
                 "company_group": "ENGEMON",
-                "service_type": "engemon-automacao"
+                "service_type": "engemon-incendio"
             }
         ]
     },
@@ -334,10 +334,10 @@
             },
             {
                 "company": "Engemon",
-                "description": "(08:00 - 18:00) SISTEMA DE AUTOMAÇÃO",
+                "description": "(08:00 - 18:00) SISTEMA DE INCÊNDIO - TESTE DE DISPARO",
                 "periodicity": "MENSAL",
                 "company_group": "ENGEMON",
-                "service_type": "engemon-automacao"
+                "service_type": "engemon-incendio"
             }
         ]
     },
@@ -393,10 +393,10 @@
             },
             {
                 "company": "Engemon",
-                "description": "(08:00 - 18:00) SISTEMA DE INCÊNDIO - TESTE DE DISPARO",
+                "description": "(08:00 - 18:00) SISTEMA DE AUTOMAÇÃO",
                 "periodicity": "MENSAL",
                 "company_group": "ENGEMON",
-                "service_type": "engemon-incendio"
+                "service_type": "engemon-automacao"
             }
         ]
     },
@@ -422,10 +422,10 @@
             },
             {
                 "company": "Engemon",
-                "description": "(08:00 - 18:00) SISTEMA DE INCÊNDIO - TESTE DE DISPARO",
+                "description": "(08:00 - 18:00) SISTEMA DE AUTOMAÇÃO",
                 "periodicity": "MENSAL",
                 "company_group": "ENGEMON",
-                "service_type": "engemon-incendio"
+                "service_type": "engemon-automacao"
             }
         ]
     },
@@ -480,10 +480,10 @@
             },
             {
                 "company": "Engemon",
-                "description": "(08:00 - 18:00) SISTEMA DE AUTOMAÇÃO",
+                "description": "(08:00 - 18:00) SISTEMA DE INCÊNDIO - TESTE DE DISPARO",
                 "periodicity": "MENSAL",
                 "company_group": "ENGEMON",
-                "service_type": "engemon-automacao"
+                "service_type": "engemon-incendio"
             }
         ]
     },
@@ -509,10 +509,10 @@
             },
             {
                 "company": "Engemon",
-                "description": "(08:00 - 18:00) SISTEMA DE AUTOMAÇÃO",
+                "description": "(08:00 - 18:00) SISTEMA DE INCÊNDIO - TESTE DE DISPARO",
                 "periodicity": "MENSAL",
                 "company_group": "ENGEMON",
-                "service_type": "engemon-automacao"
+                "service_type": "engemon-incendio"
             }
         ]
     },
@@ -559,13 +559,6 @@
                 "periodicity": "BIMESTRAL",
                 "company_group": "SOTREQ",
                 "service_type": ""
-            },
-            {
-                "company": "Engemon",
-                "description": "(08:00 - 18:00) SISTEMA DE INCÊNDIO - TESTE DE DISPARO",
-                "periodicity": "MENSAL",
-                "company_group": "ENGEMON",
-                "service_type": "engemon-incendio"
             }
         ]
     },
@@ -593,13 +586,6 @@
                 "periodicity": "BIMESTRAL",
                 "company_group": "SOTREQ",
                 "service_type": ""
-            },
-            {
-                "company": "Engemon",
-                "description": "(08:00 - 18:00) SISTEMA DE INCÊNDIO - TESTE DE DISPARO",
-                "periodicity": "MENSAL",
-                "company_group": "ENGEMON",
-                "service_type": "engemon-incendio"
             }
         ]
     },
@@ -631,13 +617,6 @@
                 "periodicity": "BIMESTRAL",
                 "company_group": "SOTREQ",
                 "service_type": ""
-            },
-            {
-                "company": "Engemon",
-                "description": "(08:00 - 18:00) SISTEMA DE INCÊNDIO - TESTE DE DISPARO",
-                "periodicity": "MENSAL",
-                "company_group": "ENGEMON",
-                "service_type": "engemon-incendio"
             }
         ]
     },
@@ -662,13 +641,6 @@
                 "periodicity": "BIMESTRAL",
                 "company_group": "SOTREQ",
                 "service_type": ""
-            },
-            {
-                "company": "Engemon",
-                "description": "(08:00 - 18:00) SISTEMA DE AUTOMAÇÃO",
-                "periodicity": "MENSAL",
-                "company_group": "ENGEMON",
-                "service_type": "engemon-automacao"
             }
         ]
     },
@@ -693,13 +665,6 @@
                 "periodicity": "BIMESTRAL",
                 "company_group": "SOTREQ",
                 "service_type": ""
-            },
-            {
-                "company": "Engemon",
-                "description": "(08:00 - 18:00) SISTEMA DE AUTOMAÇÃO",
-                "periodicity": "MENSAL",
-                "company_group": "ENGEMON",
-                "service_type": "engemon-automacao"
             }
         ]
     },
