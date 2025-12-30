@@ -49,8 +49,8 @@
     },
     {
         "data": "2026-01-03",
-        "on_call_dia": "Equipe C",
-        "on_call_noite": "Equipe D",
+        "on_call_dia": "Equipe A",
+        "on_call_noite": "Equipe B",
         "freezing": [
             {
                 "group": "TBRA_FREEZING",
@@ -83,7 +83,7 @@
         "vendors": [
             {
                 "company": "VERTIV",
-                "description": "BATERIAS",
+                "description": "BATERIAS UPS | DATAHALL",
                 "periodicity": "TRIMESTRAL",
                 "company_group": "VERTIV_POWER",
                 "service_type": ""
@@ -105,7 +105,7 @@
         "vendors": [
             {
                 "company": "VERTIV",
-                "description": "BATERIAS",
+                "description": "BATERIAS UPS | DATAHALL",
                 "periodicity": "TRIMESTRAL",
                 "company_group": "VERTIV_POWER",
                 "service_type": ""
@@ -127,7 +127,7 @@
         "vendors": [
             {
                 "company": "VERTIV",
-                "description": "BATERIAS",
+                "description": "BATERIAS UPS | DATAHALL",
                 "periodicity": "TRIMESTRAL",
                 "company_group": "VERTIV_POWER",
                 "service_type": ""
@@ -150,7 +150,7 @@
         "vendors": [
             {
                 "company": "VERTIV",
-                "description": "BATERIAS",
+                "description": "BATERIAS UPS | DATAHALL",
                 "periodicity": "TRIMESTRAL",
                 "company_group": "VERTIV_POWER",
                 "service_type": ""
@@ -173,7 +173,7 @@
         "vendors": [
             {
                 "company": "VERTIV",
-                "description": "BATERIAS",
+                "description": "BATERIAS UPS | DATAHALL",
                 "periodicity": "TRIMESTRAL",
                 "company_group": "VERTIV_POWER",
                 "service_type": ""
@@ -190,8 +190,8 @@
 
     {
         "data": "2026-01-10",
-        "on_call_dia": "Equipe A",
-        "on_call_noite": "Equipe B",
+        "on_call_dia": "Equipe C",
+        "on_call_noite": "Equipe D",
         "freezing": [
             {
                 "group": "TBRA",
@@ -225,7 +225,7 @@
         "vendors": [
             {
                 "company": "VERTIV",
-                "description": "BATERIAS",
+                "description": "BATERIAS UPS | DATAHALL",
                 "periodicity": "TRIMESTRAL",
                 "company_group": "VERTIV_POWER",
                 "service_type": ""
@@ -247,7 +247,7 @@
         "vendors": [
             {
                 "company": "VERTIV",
-                "description": "BATERIAS",
+                "description": "BATERIAS UPS | DATAHALL",
                 "periodicity": "TRIMESTRAL",
                 "company_group": "VERTIV_POWER",
                 "service_type": ""
@@ -269,7 +269,7 @@
         "vendors": [
             {
                 "company": "VERTIV",
-                "description": "BATERIAS",
+                "description": "BATERIAS UPS BMS | NOC | TI | PREDIAL | PORTARIA | FCC",
                 "periodicity": "TRIMESTRAL",
                 "company_group": "VERTIV_POWER",
                 "service_type": ""
@@ -291,8 +291,15 @@
         "vendors": [
             {
                 "company": "VERTIV",
-                "description": "BATERIAS",
+                "description": "BATERIAS UPS BMS | NOC | TI | PREDIAL | PORTARIA | FCC",
                 "periodicity": "TRIMESTRAL",
+                "company_group": "VERTIV_POWER",
+                "service_type": ""
+            },
+            {
+                "company": "VERTIV",
+                "description": "TESTE DE DESCARGA BB 1.R1.6",
+                "periodicity": "ANUAL",
                 "company_group": "VERTIV_POWER",
                 "service_type": ""
             },
@@ -313,8 +320,15 @@
         "vendors": [
             {
                 "company": "VERTIV",
-                "description": "BATERIAS",
+                "description": "BATERIAS UPS BMS | NOC | TI | PREDIAL | PORTARIA | FCC",
                 "periodicity": "TRIMESTRAL",
+                "company_group": "VERTIV_POWER",
+                "service_type": ""
+            },
+            {
+                "company": "VERTIV",
+                "description": "TESTE DE DESCARGA BB 1.R1.6",
+                "periodicity": "ANUAL",
                 "company_group": "VERTIV_POWER",
                 "service_type": ""
             },
@@ -329,17 +343,33 @@
     },
     {
         "data": "2026-01-17",
-        "on_call_dia": "Equipe C",
-        "on_call_noite": "Equipe D",
+        "on_call_dia": "Equipe A",
+        "on_call_noite": "Equipe B",
         "freezing": [],
-        "vendors": []
+        "vendors": [
+            {
+                "company": "COTEPE",
+                "description": "MANUTENÇAO DA SUBESTAÇÃO",
+                "periodicity": "ANUAL",
+                "company_group": "COTEPE",
+                "service_type": ""
+            }
+        ]
     },
     {
         "data": "2026-01-18",
         "on_call_dia": "Equipe A",
         "on_call_noite": "Equipe B",
         "freezing": [],
-        "vendors": []
+        "vendors": [
+            {
+                "company": "COTEPE",
+                "description": "MANUTENÇAO DA SUBESTAÇÃO",
+                "periodicity": "ANUAL",
+                "company_group": "COTEPE",
+                "service_type": ""
+            }
+        ]
     },
     {
         "data": "2026-01-19",
@@ -347,6 +377,13 @@
         "on_call_noite": "Equipe D",
         "freezing": [],
         "vendors": [
+            {
+                "company": "VERTIV",
+                "description": "TESTE DE DESCARGA BB 2.1.2",
+                "periodicity": "ANUAL",
+                "company_group": "VERTIV_POWER",
+                "service_type": ""
+            },
             {
                 "company": "ENERG",
                 "description": "SISTEMA DIESEL",
@@ -369,7 +406,14 @@
         "on_call_noite": "Equipe B",
         "freezing": [],
         "vendors": [
-            {
+                {
+                "company": "VERTIV",
+                "description": "TESTE DE DESCARGA BB 2.1.2",
+                "periodicity": "ANUAL",
+                "company_group": "VERTIV_POWER",
+                "service_type": ""
+            },
+                {
                 "company": "ENERG",
                 "description": "SISTEMA DIESEL",
                 "periodicity": "BIMESTRAL",
@@ -391,6 +435,13 @@
         "on_call_noite": "Equipe D",
         "freezing": [],
         "vendors": [
+            {
+                "company": "VERTIV",
+                "description": "TESTE DE DESCARGA BB 2.2.2",
+                "periodicity": "ANUAL",
+                "company_group": "VERTIV_POWER",
+                "service_type": ""
+            },
             {
                 "company": "ENERG",
                 "description": "SISTEMA DIESEL",
@@ -414,6 +465,13 @@
         "freezing": [],
         "vendors": [
             {
+                "company": "VERTIV",
+                "description": "TESTE DE DESCARGA BB 2.2.2",
+                "periodicity": "ANUAL",
+                "company_group": "VERTIV_POWER",
+                "service_type": ""
+            },
+            {
                 "company": "ENERG",
                 "description": "SISTEMA DIESEL",
                 "periodicity": "BIMESTRAL",
@@ -436,17 +494,17 @@
         "freezing": [],
         "vendors": [
             {
+                "company": "COTEPE",
+                "description": "INSPEÇÃO TRANSFORMADORES",
+                "periodicity": "MENSAL",
+                "company_group": "COTEPE",
+                "service_type": ""
+            },
+            {
                 "company": "ENERG",
                 "description": "SISTEMA DIESEL",
                 "periodicity": "BIMESTRAL",
                 "company_group": "ENERG",
-                "service_type": ""
-            },
-            {
-                "company": "COTEPE",
-                "description": "SUBESTAÇÃO",
-                "periodicity": "MENSAL",
-                "company_group": "COTEPE",
                 "service_type": ""
             },
             {
@@ -457,5 +515,204 @@
                 "service_type": "engemon-automacao"
             }
         ]
+    },
+    {
+        "data": "2026-01-24",
+        "on_call_dia": "Equipe C",
+        "on_call_noite": "Equipe D",
+        "freezing": [],
+        "vendors": []
+    },
+    {
+        "data": "2026-01-25",
+        "on_call_dia": "Equipe C",
+        "on_call_noite": "Equipe D",
+        "freezing": [
+            {
+                "group": "TBRA",
+                "description": "TBRA - NGIM"
+            }
+        ],
+        "vendors": []
+    },
+    {
+        "data": "2026-01-26",
+        "on_call_dia": "Equipe A",
+        "on_call_noite": "Equipe B",
+        "freezing": [
+            {
+                "group": "TBRA",
+                "description": "TBRA - NGIM"
+            }
+        ],
+        "vendors": [
+            {
+                "company": "CARRIER",
+                "description": "PREV. CHILLERS",
+                "periodicity": "BIMESTRAL",
+                "company_group": "CARRIER",
+                "service_type": ""
+            },
+            {
+                "company": "SOTREQ",
+                "description": "PREV. GERADORES",
+                "periodicity": "BIMESTRAL",
+                "company_group": "SOTREQ",
+                "service_type": ""
+            },
+            {
+                "company": "Engemon",
+                "description": "(08:00 - 18:00) SISTEMA DE INCÊNDIO - TESTE DE DISPARO",
+                "periodicity": "MENSAL",
+                "company_group": "ENGEMON",
+                "service_type": "engemon-incendio"
+            }
+        ]
+    },
+    {
+        "data": "2026-01-27",
+        "on_call_dia": "Equipe C",
+        "on_call_noite": "Equipe D",
+        "freezing": [
+            {
+                "group": "TBRA",
+                "description": "TBRA - NGIM"
+            }
+        ],
+        "vendors": [
+            {
+                "company": "CARRIER",
+                "description": "PREV. CHILLERS",
+                "periodicity": "BIMESTRAL",
+                "company_group": "CARRIER",
+                "service_type": ""
+            },
+            {
+                "company": "SOTREQ",
+                "description": "PREV. GERADORES",
+                "periodicity": "BIMESTRAL",
+                "company_group": "SOTREQ",
+                "service_type": ""
+            },
+            {
+                "company": "Engemon",
+                "description": "(08:00 - 18:00) SISTEMA DE INCÊNDIO - TESTE DE DISPARO",
+                "periodicity": "MENSAL",
+                "company_group": "ENGEMON",
+                "service_type": "engemon-incendio"
+            }
+        ]
+    },
+    {
+        "data": "2026-01-28",
+        "on_call_dia": "Equipe A",
+        "on_call_noite": "Equipe B",
+        "freezing": [
+            {
+                "group": "B2B_HUAWEI_FREEZING",
+                "description": "INÍCIO DA COPA FEMININA"
+            },
+            {
+                "group": "TBRA",
+                "description": "TBRA - NGIM"
+            }
+        ],
+        "vendors": [
+            {
+                "company": "CARRIER",
+                "description": "PREV. CHILLERS",
+                "periodicity": "BIMESTRAL",
+                "company_group": "CARRIER",
+                "service_type": ""
+            },
+            {
+                "company": "SOTREQ",
+                "description": "PREV. GERADORES",
+                "periodicity": "BIMESTRAL",
+                "company_group": "SOTREQ",
+                "service_type": ""
+            },
+            {
+                "company": "Engemon",
+                "description": "(08:00 - 18:00) SISTEMA DE INCÊNDIO - TESTE DE DISPARO",
+                "periodicity": "MENSAL",
+                "company_group": "ENGEMON",
+                "service_type": "engemon-incendio"
+            }
+        ]
+    },
+    {
+        "data": "2026-01-29",
+        "on_call_dia": "Equipe C",
+        "on_call_noite": "Equipe D",
+        "freezing": [
+            {
+                "group": "B2B_HUAWEI_FREEZING",
+                "description": "COPA FEMININA"
+            },
+            {
+                "group": "TBRA",
+                "description": "TBRA - NGIM"
+            }
+        ],
+        "vendors": [
+            {
+                "company": "SOTREQ",
+                "description": "PREV. GERADORES",
+                "periodicity": "BIMESTRAL",
+                "company_group": "SOTREQ",
+                "service_type": ""
+            },
+            {
+                "company": "Engemon",
+                "description": "(08:00 - 18:00) SISTEMA DE AUTOMAÇÃO",
+                "periodicity": "MENSAL",
+                "company_group": "ENGEMON",
+                "service_type": "engemon-automacao"
+            }
+        ]
+    },
+    {
+        "data": "2026-01-30",
+        "on_call_dia": "Equipe A",
+        "on_call_noite": "Equipe B",
+        "freezing": [
+            {
+                "group": "B2B_HUAWEI_FREEZING",
+                "description": "COPA FEMININA"
+            },
+            {
+                "group": "TBRA",
+                "description": "TBRA - NGIM"
+            }
+        ],
+        "vendors": [
+            {
+                "company": "SOTREQ",
+                "description": "PREV. GERADORES",
+                "periodicity": "BIMESTRAL",
+                "company_group": "SOTREQ",
+                "service_type": ""
+            },
+            {
+                "company": "Engemon",
+                "description": "(08:00 - 18:00) SISTEMA DE AUTOMAÇÃO",
+                "periodicity": "MENSAL",
+                "company_group": "ENGEMON",
+                "service_type": "engemon-automacao"
+            }
+        ]
+    },
+    {
+        "data": "2026-01-31",
+        "on_call_dia": "Equipe A",
+        "on_call_noite": "Equipe B",
+        "freezing": [
+            {
+                "group": "TBRA",
+                "description": "TBRA - NGIM"
+            }
+        ],
+        "vendors": []
     }
 ]
