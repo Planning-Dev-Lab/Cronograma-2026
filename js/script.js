@@ -247,16 +247,43 @@ async function exportToPDF() {
         const imgData = canvas.toDataURL('image/png');
         const pdf = new jsPDF('p', 'mm', 'a4');
         
-        const imgProps = pdf.getImageProperties(imgData);
         const pdfWidth = pdf.internal.pageSize.getWidth() - 20;
-        const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+        const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
 
         pdf.addImage(imgData, 'PNG', 10, 15, pdfWidth, pdfHeight);
-        pdf.save(`manutencoes_${modalDateDisplay.textContent.replace(/\//g, '-')}.pdf`);
+
+        const fileName = `manutencoes_${modalDateDisplay.textContent.replace(/\//g, '-')}.pdf`;
+        const pdfBlob = pdf.output('blob');
+        const pdfUrl = URL.createObjectURL(pdfBlob);
+
+        // Verifica se é mobile para usar a Web Share API
+        if (navigator.share && /Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+            const file = new File([pdfBlob], fileName, { type: 'application/pdf' });
+            
+            try {
+                await navigator.share({
+                    title: 'Relatório de Manutenção',
+                    text: 'Segue o relatório gerado.',
+                    files: [file]
+                });
+            } catch (shareError) {
+                // Se o usuário cancelar o compartilhamento, abre no navegador
+                window.open(pdfUrl, '_blank');
+            }
+        } else {
+            // Desktop: Baixa e abre em nova aba
+            pdf.save(fileName);
+            window.open(pdfUrl, '_blank');
+        }
+
     } catch (error) {
         console.error("Erro ao gerar PDF:", error);
+        alert("Houve um erro ao gerar o arquivo.");
     } finally {
-        document.body.removeChild(tempContainer);
+        // IMPORTANTE: Limpa o elemento criado para não poluir o HTML
+        if (document.body.contains(tempContainer)) {
+            document.body.removeChild(tempContainer);
+        }
     }
 }
 
