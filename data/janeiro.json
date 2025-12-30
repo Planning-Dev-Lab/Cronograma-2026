@@ -13,15 +13,7 @@
                 "description": "FREEZING HUAWEI"
             }
         ],
-        "vendors": [
-            {
-                "company": "Engemon",
-                "description": "(08:00 - 18:00) SISTEMA DE INCÊNDIO - TESTE DE DISPARO",
-                "periodicity": "MENSAL",
-                "company_group": "ENGEMON",
-                "service_type": "engemon-incendio"
-            }
-        ]
+        "vendors": []
     },
     {
         "data": "2026-01-02",
@@ -40,10 +32,10 @@
         "vendors": [
             {
                 "company": "Engemon",
-                "description": "SISTEMA DE AUTOMAÇÃO",
+                "description": "(08:00 - 18:00) SISTEMA DE INCÊNDIO - TESTE DE DISPARO",
                 "periodicity": "MENSAL",
                 "company_group": "ENGEMON",
-                "service_type": "engemon-automacao"
+                "service_type": "engemon-incendio"
             }
         ]
     },
