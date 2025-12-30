@@ -30,7 +30,7 @@ const DAY_CLASS_MAP = {
     'FERIADO': 'holiday' // Rosa
 };
 
-const DAY_COLOR_PRIORITY_ORDER = ['FREEZING_COMERCIAIS', 'TBRA', 'B2B_TBRA'];
+const DAY_COLOR_PRIORITY_ORDER = ['FREEZING_COMERCIAIS', 'B2B_TBRA', 'TBRA'];
 
 // ==========================================================
 // 3. FUNÇÕES AUXILIARES
@@ -75,7 +75,7 @@ async function loadActivities(year, month) {
 
                     if (groupKey === 'TBRA_FREEZING') { 
                         groupKey = 'FREEZING_COMERCIAIS'; 
-                        displayTitle = 'FREEZING COMERCIAIS'; 
+                        displayTitle = 'FREEZING COMERCIAL'; 
                     } else if (groupKey === 'TBRA_RELEASE' || groupKey === 'TBRA_NGIN') { 
                         groupKey = 'TBRA'; 
                         displayTitle = 'TBRA'; 

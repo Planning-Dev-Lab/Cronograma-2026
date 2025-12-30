@@ -75,7 +75,7 @@ async function loadActivities(year, month) {
 
                     if (groupKey === 'TBRA_FREEZING') { 
                         groupKey = 'FREEZING_COMERCIAIS'; 
-                        displayTitle = 'FREEZING COMERCIAIS'; 
+                        displayTitle = 'FREEZING COMERCIAL'; 
                     } else if (groupKey === 'TBRA_RELEASE' || groupKey === 'TBRA_NGIN') { 
                         groupKey = 'TBRA'; 
                         displayTitle = 'TBRA'; 
