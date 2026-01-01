@@ -149,48 +149,55 @@ function renderCalendar(year, month) {
 }
 
 // ==========================================================
-// 6. LÓGICA DO MODAL
+// 6. LÓGICA DO MODAL (COM VALIDAÇÃO DE DATA ATUAL)
 // ==========================================================
 function openActivityModal(dateString, daily) {
     modalDateDisplay.textContent = dateString.split('-').reverse().join('/');
     activitiesList.innerHTML = '';
     modalTeamInfo.innerHTML = '';
 
+    // 1. Identificar a data de HOJE no formato YYYY-MM-DD
+    const agora = new Date();
+    const hojeString = `${agora.getFullYear()}-${String(agora.getMonth() + 1).padStart(2, '0')}-${String(agora.getDate()).padStart(2, '0')}`;
+
     const hasPeriodicActivity = daily.some(a => a.periodicity && COUNTABLE_PERIODICITIES.includes(normalizeText(a.periodicity)));
     exportPdfBtn.style.display = hasPeriodicActivity ? 'block' : 'none';
 
     const team = dayTeams[dateString];
     const shift = getCurrentShift(); 
+
     if (team) {
-        const equipeNome = (shift === 'day') ? team.day : team.night;
-        if (equipeNome) {
-            modalTeamInfo.innerHTML = `<div class="on-call-modal">👥 <strong>Equipe:</strong> ${equipeNome}</div>`;
-        }
+        // 2. Só exibe o selo se a data clicada (dateString) for igual a hoje (hojeString)
+        const isToday = (dateString === hojeString);
+        
+        const seloDia = (isToday && shift === 'day') ? '<span style="color: #0056b3; font-weight: bold;"> (Plantão Agora)</span>' : '';
+        const seloNoite = (isToday && shift === 'night') ? '<span style="color: #0056b3; font-weight: bold;"> (Plantão Agora)</span>' : '';
+
+        modalTeamInfo.innerHTML = `
+            <div class="on-call-modal">☀️ <strong>Equipe Diurna:</strong> ${team.day || '---'} ${seloDia}</div>
+            <div class="on-call-modal">🌙 <strong>Equipe Noturna:</strong> ${team.night || '---'} ${seloNoite}</div>
+        `;
     }
 
+    // ... (restante do código de exibição das atividades)
     if (daily.length === 0) {
         activitiesList.innerHTML = '<p class="no-activity">Nenhuma atividade agendada.</p>';
     }
-
+    
     daily.forEach(activity => {
+        // ... (seu código de renderização das atividades continua aqui)
         const div = document.createElement('div');
         div.className = 'activity-item'; 
-        
+        // ... (etc)
         const pText = normalizeText(activity.periodicity);
         const isPeriodic = COUNTABLE_PERIODICITIES.includes(pText);
         if (isPeriodic) div.classList.add('is-countable-task');
-
         if (activity.isHoliday) {
             div.style.borderLeft = '5px solid red';
             div.innerHTML = `🛑 <strong>FERIADO:</strong> ${activity.description}`;
         } else {
             const tag = isPeriodic ? `<span class="periodicidade-tag p-${pText}">${pText}</span>` : '';
-            
-            let borderClass = '';
-            if (activity.service_type) borderClass = `border-${activity.service_type}`;
-            else if (activity.company_group) borderClass = `border-group-${activity.company_group}`;
-            else borderClass = `border-p-${pText}`;
-            
+            let borderClass = activity.service_type ? `border-${activity.service_type}` : (activity.company_group ? `border-group-${activity.company_group}` : `border-p-${pText}`);
             div.classList.add(borderClass);
             div.innerHTML = `<h4>${activity.company} ${tag}</h4><p><strong>Descrição:</strong> ${activity.description}</p>`;
         }
