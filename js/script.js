@@ -1,8 +1,9 @@
 // ==========================================================
 // 1. VARIÁVEIS DE ESTADO E ELEMENTOS DO DOM
 // ==========================================================
-let currentYear = 2026;
-let currentMonth = 0; 
+const now = new Date();
+let currentYear = now.getFullYear();
+let currentMonth = now.getMonth(); 
 let activities = [];
 let dayTeams = {};
 
