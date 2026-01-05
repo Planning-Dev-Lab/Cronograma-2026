@@ -1,7 +1,15 @@
 [
     {
         "date": "2026-01-01",
-        "description": "FERIADO - Ano Novo"
+        "description": "Ano Novo"
+    },
+    {
+        "date": "2026-02-16",
+        "description": "Carnaval"
+    },
+    {
+        "date": "2026-02-17",
+        "description": "Carnaval"
     },
     {
         "date": "2026-04-21",

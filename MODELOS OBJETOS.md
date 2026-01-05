@@ -11,6 +11,9 @@
 "description": "TBRA - RELEASE"
 
 "group": "B2B_HUAWEI_FREEZING",
+"description": "FREEZING HUAWEI"
+
+"group": "B2B_HUAWEI_FREEZING",
 "description": "DESCRIÇÃO"
  
 "company": "VERTIV",
@@ -20,7 +23,7 @@
 "service_type": ""
   
 "company": "Engemon",
-"description": "(08:00 - 18:00) SISTEMA DE INCÊNDIO - TESTE DE DISPARO",
+"description": "(08:00 - 18:00) SISTEMA DE INCÊNDIO",
 "periodicity": "MENSAL",
 "company_group": "ENGEMON",
 "service_type": "engemon-incendio"
