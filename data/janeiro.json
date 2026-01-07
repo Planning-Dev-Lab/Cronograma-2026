@@ -290,7 +290,7 @@
             },
             {
                 "company": "VERTIV",
-                "description": "TESTE DE DESCARGA BB 1.R1.6",
+                "description": "TESTE DE DESCARGA BB 1.R1.6 (CHG0176145)",
                 "periodicity": "ANUAL",
                 "company_group": "VERTIV_POWER",
                 "service_type": ""
@@ -319,7 +319,7 @@
             },
             {
                 "company": "VERTIV",
-                "description": "TESTE DE DESCARGA BB 1.R1.6",
+                "description": "TESTE DE DESCARGA BB 1.R1.6 (CHG0176145)",
                 "periodicity": "ANUAL",
                 "company_group": "VERTIV_POWER",
                 "service_type": ""
@@ -525,7 +525,15 @@
                 "description": "FREEZING - NGIM"
             }
         ],
-        "vendors": []
+        "vendors": [
+            {
+                "company": "COTEPE",
+                "description": "MANUTENÇAO DA SUBESTAÇÃO (CHG0176047)",
+                "periodicity": "ANUAL",
+                "company_group": "COTEPE",
+                "service_type": ""
+            }
+        ]
     },
     {
         "data": "2026-01-26",
