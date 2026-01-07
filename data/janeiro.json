@@ -6,11 +6,11 @@
         "freezing": [
             {
                 "group": "TBRA_FREEZING",
-                "description": "FREEZING FIM DE ANO"
+                "description": "FREEZING - ANO NOVO"
             },
             {
                 "group": "B2B_HUAWEI_FREEZING",
-                "description": "ANO NOVO"
+                "description": "FREEZING - ANO NOVO"
             }
         ],
         "vendors": []
@@ -22,11 +22,11 @@
         "freezing": [
             {
                 "group": "TBRA_FREEZING",
-                "description": "FREEZING FIM DE ANO"
+                "description": "FREEZING - ANO NOVO"
             },
             {
                 "group": "B2B_HUAWEI_FREEZING",
-                "description": "ANO NOVO"
+                "description": "FREEZING - ANO NOVO"
             }
         ],
         "vendors": [
@@ -46,11 +46,11 @@
         "freezing": [
             {
                 "group": "TBRA_FREEZING",
-                "description": "FREEZING FIM DE ANO"
+                "description": "FREEZING - ANO NOVO"
             },
             {
                 "group": "B2B_HUAWEI_FREEZING",
-                "description": "ANO NOVO"
+                "description": "FREEZING - ANO NOVO"
             }
         ],
         "vendors": []
@@ -62,7 +62,7 @@
         "freezing": [
             {
                 "group": "TBRA_FREEZING",
-                "description": "FREEZING FIM DE ANO"
+                "description": "FREEZING - ANO NOVO"
             }
         ],
         "vendors": []
@@ -187,7 +187,7 @@
         "freezing": [
             {
                 "group": "TBRA",
-                "description": "TBRA - RELEASE"
+                "description": "FREEZING - RELEASE"
             }
         ],
         "vendors": []
@@ -199,7 +199,7 @@
         "freezing": [
             {
                 "group": "TBRA",
-                "description": "TBRA - RELEASE"
+                "description": "FREEZING  - RELEASE"
             }
         ],
         "vendors": []
@@ -211,7 +211,7 @@
         "freezing": [
             {
                 "group": "TBRA",
-                "description": "TBRA - RELEASE"
+                "description": "FREEZING - RELEASE"
             }
         ],
         "vendors": [
@@ -522,7 +522,7 @@
         "freezing": [
             {
                 "group": "TBRA",
-                "description": "TBRA - NGIM"
+                "description": "FREEZING - NGIM"
             }
         ],
         "vendors": []
@@ -534,7 +534,7 @@
         "freezing": [
             {
                 "group": "TBRA",
-                "description": "TBRA - NGIM"
+                "description": "FREEZING - NGIM"
             }
         ],
         "vendors": [
@@ -561,7 +561,7 @@
         "freezing": [
             {
                 "group": "TBRA",
-                "description": "TBRA - NGIM"
+                "description": "FREEZING - NGIM"
             }
         ],
         "vendors": [
@@ -588,11 +588,11 @@
         "freezing": [
             {
                 "group": "B2B_HUAWEI_FREEZING",
-                "description": "INÍCIO DA COPA FEMININA"
+                "description": "FREEZING - INÍCIO DA COPA FEMININA"
             },
             {
                 "group": "TBRA",
-                "description": "TBRA - NGIM"
+                "description": "FREEZING - NGIM"
             }
         ],
         "vendors": [
@@ -619,11 +619,11 @@
         "freezing": [
             {
                 "group": "B2B_HUAWEI_FREEZING",
-                "description": "COPA FEMININA"
+                "description": "FREEZING - COPA FEMININA"
             },
             {
                 "group": "TBRA",
-                "description": "TBRA - NGIM"
+                "description": "FREEZING - NGIM"
             }
         ],
         "vendors": [
@@ -643,11 +643,11 @@
         "freezing": [
             {
                 "group": "B2B_HUAWEI_FREEZING",
-                "description": "COPA FEMININA"
+                "description": "FREEZING - COPA FEMININA"
             },
             {
                 "group": "TBRA",
-                "description": "TBRA - NGIM"
+                "description": "FREEZING - NGIM"
             }
         ],
         "vendors": [
@@ -667,7 +667,7 @@
         "freezing": [
             {
                 "group": "TBRA",
-                "description": "TBRA - NGIM"
+                "description": "FREEZING - NGIM"
             }
         ],
         "vendors": []
