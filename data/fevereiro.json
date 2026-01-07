@@ -158,7 +158,7 @@
         "freezing": [
             {
                 "group": "TBRA",
-                "description": "TBRA - RELEASE"
+                "description": "FREEZING - RELEASE"
             }
         ],
         "vendors": []
@@ -170,7 +170,7 @@
         "freezing": [
             {
                 "group": "TBRA",
-                "description": "TBRA - RELEASE"
+                "description": "FREEZING - RELEASE"
             }
         ],
         "vendors": []
@@ -182,7 +182,7 @@
         "freezing": [
             {
                 "group": "TBRA",
-                "description": "TBRA - RELEASE"
+                "description": "FREEZING - RELEASE"
             }
         ],
         "vendors": [
@@ -438,7 +438,29 @@
                 "description": "ANO NOVO CHINÊS"
             }
         ],
-        "vendors": []
+        "vendors": [
+            {
+                "company": "VERTIV",
+                "description": "STS - DATAHALL",
+                "periodicity": "QUADRIMESTRAL",
+                "company_group": "VERTIV_POWER",
+                "service_type": ""
+            },
+            {
+                "company": "VERTIV",
+                "description": "RPP - DATAHALL | TI",
+                "periodicity": "QUADRIMESTRAL",
+                "company_group": "VERTIV_POWER",
+                "service_type": ""
+            },
+            {
+                "company": "Engemon",
+                "description": "(08:00 - 18:00) SISTEMA DE AUTOMAÇÃO",
+                "periodicity": "MENSAL",
+                "company_group": "ENGEMON",
+                "service_type": "engemon-automacao"
+            }
+        ]
     },
     {
         "data": "2026-02-20",
@@ -450,7 +472,29 @@
                 "description": "ANO NOVO CHINÊS"
             }
         ],
-        "vendors": []
+        "vendors": [
+            {
+                "company": "VERTIV",
+                "description": "STS - DATAHALL",
+                "periodicity": "QUADRIMESTRAL",
+                "company_group": "VERTIV_POWER",
+                "service_type": ""
+            },
+            {
+                "company": "VERTIV",
+                "description": "RPP - DATAHALL | TI",
+                "periodicity": "QUADRIMESTRAL",
+                "company_group": "VERTIV_POWER",
+                "service_type": ""
+            },
+            {
+                "company": "Engemon",
+                "description": "(08:00 - 18:00) SISTEMA DE AUTOMAÇÃO",
+                "periodicity": "MENSAL",
+                "company_group": "ENGEMON",
+                "service_type": "engemon-automacao"
+            }
+        ]
     },
     {
         "data": "2026-02-21",
@@ -486,41 +530,178 @@
                 "description": "ANO NOVO CHINÊS"
             }
         ],
-        "vendors": []
+        "vendors": [
+            {
+                "company": "VERTIV",
+                "description": "STS - DATAHALL",
+                "periodicity": "QUADRIMESTRAL",
+                "company_group": "VERTIV_POWER",
+                "service_type": ""
+            },
+            {
+                "company": "VERTIV",
+                "description": "RPP - DATAHALL | TI",
+                "periodicity": "QUADRIMESTRAL",
+                "company_group": "VERTIV_POWER",
+                "service_type": ""
+            },
+            {
+                "company": "Engemon",
+                "description": "(08:00 - 18:00) SISTEMA DE INCÊNDIO",
+                "periodicity": "MENSAL",
+                "company_group": "ENGEMON",
+                "service_type": "engemon-incendio"
+            }
+        ]
     },
     {
         "data": "2026-02-24",
         "on_call_dia": "Equipe C",
         "on_call_noite": "Equipe D",
         "freezing": [],
-        "vendors": []
+        "vendors": [
+            {
+                "company": "COTEPE",
+                "description": "INSPEÇÃO TRANSFORMADORES",
+                "periodicity": "MENSAL",
+                "company_group": "COTEPE",
+                "service_type": ""
+            },
+            {
+                "company": "VERTIV",
+                "description": "UPS DATAHALL | TI",
+                "periodicity": "ANUAL",
+                "company_group": "VERTIV_POWER",
+                "service_type": ""
+            },
+            {
+                "company": "VERTIV",
+                "description": "STS - DATAHALL",
+                "periodicity": "QUADRIMESTRAL",
+                "company_group": "VERTIV_POWER",
+                "service_type": ""
+            },
+            {
+                "company": "VERTIV",
+                "description": "RPP - DATAHALL | TI",
+                "periodicity": "QUADRIMESTRAL",
+                "company_group": "VERTIV_POWER",
+                "service_type": ""
+            },
+            {
+                "company": "Engemon",
+                "description": "(08:00 - 18:00) SISTEMA DE INCÊNDIO",
+                "periodicity": "MENSAL",
+                "company_group": "ENGEMON",
+                "service_type": "engemon-incendio"
+            }
+        ]
     },
     {
         "data": "2026-02-25",
         "on_call_dia": "Equipe A",
         "on_call_noite": "Equipe B",
-        "freezing": [],
-        "vendors": []
+        "freezing": [
+            {
+                "group": "TBRA",
+                "description": "FREEZING - NGIM"
+            }
+        ],
+        "vendors": [
+            {
+                "company": "VERTIV",
+                "description": "STS - DATAHALL",
+                "periodicity": "QUADRIMESTRAL",
+                "company_group": "VERTIV_POWER",
+                "service_type": ""
+            },
+            {
+                "company": "VERTIV",
+                "description": "RPP - DATAHALL | TI",
+                "periodicity": "QUADRIMESTRAL",
+                "company_group": "VERTIV_POWER",
+                "service_type": ""
+            },
+            {
+                "company": "Engemon",
+                "description": "(08:00 - 18:00) SISTEMA DE INCÊNDIO",
+                "periodicity": "MENSAL",
+                "company_group": "ENGEMON",
+                "service_type": "engemon-incendio"
+            }
+        ]
     },
     {
         "data": "2026-02-26",
         "on_call_dia": "Equipe C",
         "on_call_noite": "Equipe D",
-        "freezing": [],
-        "vendors": []
+        "freezing": [
+            {
+                "group": "TBRA",
+                "description": "FREEZING - NGIM"
+            }
+        ],
+        "vendors": [
+            {
+                "company": "VERTIV",
+                "description": "STS - DATAHALL",
+                "periodicity": "QUADRIMESTRAL",
+                "company_group": "VERTIV_POWER",
+                "service_type": ""
+            },
+            {
+                "company": "VERTIV",
+                "description": "RPP - DATAHALL | TI",
+                "periodicity": "QUADRIMESTRAL",
+                "company_group": "VERTIV_POWER",
+                "service_type": ""
+            },
+            {
+                "company": "Engemon",
+                "description": "(08:00 - 18:00) SISTEMA DE AUTOMAÇÃO",
+                "periodicity": "MENSAL",
+                "company_group": "ENGEMON",
+                "service_type": "engemon-automacao"
+            }
+        ]
     },
     {
         "data": "2026-02-27",
         "on_call_dia": "Equipe A",
         "on_call_noite": "Equipe B",
-        "freezing": [],
-        "vendors": []
+        "freezing": [
+            {
+                "group": "TBRA",
+                "description": "FREEZING - NGIM"
+            }
+        ],
+        "vendors": [
+            {
+                "company": "VERTIV",
+                "description": "RPP - DATAHALL | TI",
+                "periodicity": "QUADRIMESTRAL",
+                "company_group": "VERTIV_POWER",
+                "service_type": ""
+            },
+            {
+                "company": "Engemon",
+                "description": "(08:00 - 18:00) SISTEMA DE AUTOMAÇÃO",
+                "periodicity": "MENSAL",
+                "company_group": "ENGEMON",
+                "service_type": "engemon-automacao"
+            }
+        ]
     },
     {
         "data": "2026-02-28",
         "on_call_dia": "Equipe A",
         "on_call_noite": "Equipe B",
-        "freezing": [],
+        "freezing": [
+            {
+                "group": "TBRA",
+                "description": "FREEZING - NGIM"
+            }
+        ],
         "vendors": []
     }
 ]
