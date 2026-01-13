@@ -3,9 +3,13 @@
 // ==========================================================
 const now = new Date();
 let currentYear = now.getFullYear();
-let currentMonth = now.getMonth(); 
+let currentMonth = now.getMonth();
 let activities = [];
 let dayTeams = {};
+let activeFilters = {
+    company: '',
+    description: ''
+};
 
 const daysGrid = document.getElementById('days-grid');
 const currentMonthYearHeader = document.getElementById('current-month-year');
@@ -26,7 +30,7 @@ const COUNTABLE_PERIODICITIES = ['MENSAL', 'BIMESTRAL', 'TRIMESTRAL', 'QUADRIMES
 
 const DAY_CLASS_MAP = {
     'FREEZING_COMERCIAIS': 'holiday', // Rosa
-    'TBRA': 'freezing-tbra', 
+    'TBRA': 'freezing-tbra',
     'B2B_TBRA': 'freezing-b2b-tbra',
     'FERIADO': 'holiday' // Rosa
 };
@@ -36,6 +40,7 @@ const DAY_COLOR_PRIORITY_ORDER = ['FREEZING_COMERCIAIS', 'B2B_TBRA', 'TBRA'];
 // ==========================================================
 // 3. FUNÇÕES AUXILIARES
 // ==========================================================
+
 function getCurrentShift() {
     const hour = new Date().getHours();
     return (hour >= 6 && hour < 18) ? 'day' : 'night';
@@ -43,6 +48,19 @@ function getCurrentShift() {
 
 const normalizeText = (text) => text ? text.toUpperCase().replace(/-/g, '_').trim() : 'N_A';
 const sanitizeFileName = (text) => text.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+function applyFilters(activitiesArray, filters) {
+    return activitiesArray.filter(activity => {
+        // Verificar filtro de empresa
+        const companyMatch = !filters.company || 
+            (activity.company && activity.company.toLowerCase().includes(filters.company.toLowerCase()));
+        
+        // Verificar filtro de descrição
+        const descriptionMatch = !filters.description || 
+            (activity.description && activity.description.toLowerCase().includes(filters.description.toLowerCase()));
+        
+        return companyMatch && descriptionMatch;
+    });
+}
 
 // ==========================================================
 // 4. CARREGAMENTO DOS DADOS (JSON)
@@ -74,15 +92,15 @@ async function loadActivities(year, month) {
                     let groupKey = f.group;
                     let displayTitle = f.group.replace(/_/g, ' ');
 
-                    if (groupKey === 'TBRA_FREEZING') { 
-                        groupKey = 'FREEZING_COMERCIAIS'; 
-                        displayTitle = 'FREEZING COMERCIAL'; 
-                    } else if (groupKey === 'TBRA_RELEASE' || groupKey === 'TBRA_NGIN') { 
-                        groupKey = 'TBRA'; 
-                        displayTitle = 'TBRA'; 
-                    } else if (groupKey === 'B2B_HUAWEI_FREEZING' || groupKey === 'B2B_TBRA') { 
-                        groupKey = 'B2B_TBRA'; 
-                        displayTitle = 'B2B TBRA'; 
+                    if (groupKey === 'TBRA_FREEZING') {
+                        groupKey = 'FREEZING_COMERCIAIS';
+                        displayTitle = 'FREEZING COMERCIAL';
+                    } else if (groupKey === 'TBRA_RELEASE' || groupKey === 'TBRA_NGIN') {
+                        groupKey = 'TBRA';
+                        displayTitle = 'TBRA';
+                    } else if (groupKey === 'B2B_HUAWEI_FREEZING' || groupKey === 'B2B_TBRA') {
+                        groupKey = 'B2B_TBRA';
+                        displayTitle = 'B2B TBRA';
                     }
 
                     activities.push({
@@ -110,7 +128,7 @@ function renderCalendar(year, month) {
     const startDayOfWeek = new Date(year, month, 1).getDay();
 
     for (let i = 0; i < startDayOfWeek; i++) {
-        daysGrid.appendChild(Object.assign(document.createElement('div'), {className: 'day empty'}));
+        daysGrid.appendChild(Object.assign(document.createElement('div'), { className: 'day empty' }));
     }
 
     for (let day = 1; day <= daysInMonth; day++) {
@@ -121,10 +139,16 @@ function renderCalendar(year, month) {
 
         const daily = activities.filter(a => a.date === dateString);
 
-        const countables = daily.filter(a => a.periodicity && COUNTABLE_PERIODICITIES.includes(normalizeText(a.periodicity)));
+        // === MODIFICAÇÃO 1: Aplicar filtros às atividades ===
+        const filteredDaily = applyFilters(daily, activeFilters);
+        // ====================================================
+
+        // === MODIFICAÇÃO 2: Usar filteredDaily para contagem ===
+        const countables = filteredDaily.filter(a => a.periodicity && COUNTABLE_PERIODICITIES.includes(normalizeText(a.periodicity)));
         if (countables.length > 0) {
             dayElement.innerHTML += `<span class="activity-indicator">${countables.length} Ativ.</span>`;
         }
+        // =======================================================
 
         // Lógica de Classes
         let appliedClass = null;
@@ -132,44 +156,52 @@ function renderCalendar(year, month) {
         // Limpa qualquer classe de feriado antes de decidir
         dayElement.classList.remove('is-holiday-red', 'holiday');
 
-        if (daily.some(a => a.isHoliday)) {
+        // === MODIFICAÇÃO 3: Usar filteredDaily para determinar cores ===
+        if (filteredDaily.some(a => a.isHoliday)) {
             appliedClass = DAY_CLASS_MAP['FERIADO'];
             dayElement.classList.add('is-holiday-red'); // SÓ FERIADO REAL FICA VERMELHO
         } else {
-            const presentGroups = daily.map(a => a.company_group);
+            // CORREÇÃO: Usar filteredDaily aqui também
+            const presentGroups = filteredDaily.map(a => a.company_group);
             const winner = DAY_COLOR_PRIORITY_ORDER.find(p => presentGroups.includes(p));
             if (winner) appliedClass = DAY_CLASS_MAP[winner];
-            else if (daily.length > 0) appliedClass = 'general-activity';
+            else if (filteredDaily.length > 0) appliedClass = 'general-activity';
         }
+        // ================================================================
 
         if (appliedClass) dayElement.classList.add(appliedClass);
-        dayElement.onclick = () => openActivityModal(dateString, daily);
+
+        // === MODIFICAÇÃO 4: Passar ambos daily e filteredDaily para o modal ===
+        dayElement.onclick = () => openActivityModal(dateString, daily, filteredDaily);
+        // ======================================================================
+
         daysGrid.appendChild(dayElement);
     }
 }
-
 // ==========================================================
 // 6. LÓGICA DO MODAL (COM VALIDAÇÃO DE DATA ATUAL)
 // ==========================================================
-function openActivityModal(dateString, daily) {
+function openActivityModal(dateString, daily, filteredActivities  = null) {
     modalDateDisplay.textContent = dateString.split('-').reverse().join('/');
     activitiesList.innerHTML = '';
     modalTeamInfo.innerHTML = '';
+
+    const activitiesToShow = filteredActivities !== null ? filteredActivities : daily;
 
     // 1. Identificar a data de HOJE no formato YYYY-MM-DD
     const agora = new Date();
     const hojeString = `${agora.getFullYear()}-${String(agora.getMonth() + 1).padStart(2, '0')}-${String(agora.getDate()).padStart(2, '0')}`;
 
-    const hasPeriodicActivity = daily.some(a => a.periodicity && COUNTABLE_PERIODICITIES.includes(normalizeText(a.periodicity)));
+    const hasPeriodicActivity = activitiesToShow.some(a => a.periodicity && COUNTABLE_PERIODICITIES.includes(normalizeText(a.periodicity)));
     exportPdfBtn.style.display = hasPeriodicActivity ? 'block' : 'none';
 
     const team = dayTeams[dateString];
-    const shift = getCurrentShift(); 
+    const shift = getCurrentShift();
 
     if (team) {
         // 2. Só exibe o selo se a data clicada (dateString) for igual a hoje (hojeString)
         const isToday = (dateString === hojeString);
-        
+
         const seloDia = (isToday && shift === 'day') ? '<span style="color: #0056b3; font-weight: bold;"> (Plantão Agora)</span>' : '';
         const seloNoite = (isToday && shift === 'night') ? '<span style="color: #0056b3; font-weight: bold;"> (Plantão Agora)</span>' : '';
 
@@ -180,14 +212,14 @@ function openActivityModal(dateString, daily) {
     }
 
     // ... (restante do código de exibição das atividades)
-    if (daily.length === 0) {
+    if (activitiesToShow.length === 0) {
         activitiesList.innerHTML = '<p class="no-activity">Nenhuma atividade agendada.</p>';
     }
-    
-    daily.forEach(activity => {
+
+    activitiesToShow.forEach(activity => {
         // ... (seu código de renderização das atividades continua aqui)
         const div = document.createElement('div');
-        div.className = 'activity-item'; 
+        div.className = 'activity-item';
         // ... (etc)
         const pText = normalizeText(activity.periodicity);
         const isPeriodic = COUNTABLE_PERIODICITIES.includes(pText);
@@ -212,7 +244,7 @@ function openActivityModal(dateString, daily) {
 // ==========================================================
 async function exportToPDF() {
     const { jsPDF } = window.jspdf;
-    
+
     const tempContainer = document.createElement('div');
     tempContainer.style.padding = '30px';
     tempContainer.style.width = '700px';
@@ -234,7 +266,7 @@ async function exportToPDF() {
 
     const listClone = document.createElement('div');
     const originalItems = activitiesList.querySelectorAll('.activity-item.is-countable-task');
-    
+
     originalItems.forEach(item => {
         const itemClone = item.cloneNode(true);
         itemClone.style.marginBottom = '15px';
@@ -254,7 +286,7 @@ async function exportToPDF() {
         const canvas = await html2canvas(tempContainer, { scale: 2, useCORS: true });
         const imgData = canvas.toDataURL('image/png');
         const pdf = new jsPDF('p', 'mm', 'a4');
-        
+
         const pdfWidth = pdf.internal.pageSize.getWidth() - 20;
         const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
 
@@ -267,7 +299,7 @@ async function exportToPDF() {
         // Verifica se é mobile para usar a Web Share API
         if (navigator.share && /Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
             const file = new File([pdfBlob], fileName, { type: 'application/pdf' });
-            
+
             try {
                 await navigator.share({
                     title: 'Relatório de Manutenção',
@@ -309,8 +341,53 @@ prevMonthBtn.addEventListener('click', () => navigateMonth('prev'));
 nextMonthBtn.addEventListener('click', () => navigateMonth('next'));
 closeModalBtn.addEventListener('click', () => activityModal.style.display = 'none');
 exportPdfBtn.addEventListener('click', exportToPDF);
+const companyFilterInput = document.getElementById('company-filter');
+const descriptionFilterInput = document.getElementById('description-filter');
+const clearFiltersBtn = document.getElementById('clear-filters');
 
 window.onclick = (e) => { if (e.target === activityModal) activityModal.style.display = 'none'; };
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+// Aplicar filtro com debounce de 300ms
+const applyFilterWithDebounce = debounce(() => {
+    renderCalendar(currentYear, currentMonth);
+}, 300);
+
+// Event listeners para filtros
+if (companyFilterInput) {
+    companyFilterInput.addEventListener('input', (e) => {
+        activeFilters.company = e.target.value.trim();
+        applyFilterWithDebounce();
+    });
+}
+
+if (descriptionFilterInput) {
+    descriptionFilterInput.addEventListener('input', (e) => {
+        activeFilters.description = e.target.value.trim();
+        applyFilterWithDebounce();
+    });
+}
+
+if (clearFiltersBtn) {
+    clearFiltersBtn.addEventListener('click', () => {
+        activeFilters.company = '';
+        activeFilters.description = '';
+        if (companyFilterInput) companyFilterInput.value = '';
+        if (descriptionFilterInput) descriptionFilterInput.value = '';
+        renderCalendar(currentYear, currentMonth);
+    });
+}
+
 
 async function init() {
     await loadActivities(currentYear, currentMonth);

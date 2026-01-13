@@ -53,6 +53,24 @@ main {
     background-color: #218838;
 }
 
+/*Seção Filtros*/
+.filters-section {
+    display: flex;
+    flex-flow: row wrap;
+    align-content: center;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 10px;
+}
+
+#company-filter, #description-filter {
+   flex: 0 1 auto;
+}
+
+#company-filter:focus, #description-filter:focus {
+    background-color: #92cddcb9;
+}
+
 /* ========================================================== */
 /* --- 3. LAYOUT DO CALENDÁRIO (GRID) --- */
 /* ========================================================== */
@@ -288,10 +306,18 @@ main {
 /* ========================================================== */
 
 @media (max-width: 768px) {
+    /*.filters-section {flex-flow: column;}*/
     main { margin: 10px; padding: 10px; }
     header h1 { font-size: 1.5em; }
     .calendar-controls { justify-content: space-evenly; gap: 10px; }
     .weekdays span { font-size: 0.75em; padding: 5px 2px; }
     .day { min-height: 55px; padding: 2px; font-size: 0.8em; }
     .modal-content { width: 80%; margin: 5% auto; max-height: 90vh; overflow-y: auto; }
+}
+
+@media (max-width: 420px) {
+    .filters-section {
+        flex-flow: column nowrap;
+        align-items: right;
+    }
 }
