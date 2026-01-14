@@ -1,10 +1,21 @@
 @charset "UTF-8";
 
-/* ========================================================== */
-/* --- 9. FILTROS AVANÇADOS (EMPRESAS) --- */
-/* ========================================================== */
+.filters-section {
+    display: flex;
+    flex-flow: row wrap;
+    align-content: center;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 10px;
+}
+
+#description-filter:focus {
+    background-color: #92cddcb9;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.379);
+}
 
 /* Botão de seleção de empresa */
+
 .filter-company-btn {
     background-color: #17a2b8;
     color: white;
@@ -161,27 +172,26 @@
 }
 
 /* Responsividade */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     .filters-section {
+        flex-flow: column;
         flex-wrap: wrap;
+        align-items: flex-end;
     }
     
     .filter-company-btn {
-        order: 2;
+        order: 0;
         width: 100%;
         justify-content: center;
-        margin-top: 10px;
     }
     
     #description-filter {
+        width: 90%;
         order: 1;
-        width: 100%;
     }
     
     #clear-filters {
         order: 3;
-        width: 100%;
-        margin-top: 10px;
     }
     
     .company-modal-content {
