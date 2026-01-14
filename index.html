@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,9 +9,11 @@
     <title>Agenda de Serviços 2026 - Empresas</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    
+
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="filtroEmpresas.css">
 </head>
+
 <body>
 
     <header>
@@ -26,8 +29,10 @@
         </div>
 
         <div class="filters-section">
-            <input type="text" id="company-filter" placeholder="Filtrar por empresa...">
             <input type="text" id="description-filter" placeholder="Filtrar por descrição...">
+            <button id="company-filter-btn" class="filter-company-btn">
+                🏢 Selecionar Empresa
+            </button>
             <button id="clear-filters">Limpar filtros</button>
         </div>
 
@@ -51,22 +56,40 @@
                 <span class="close-btn" id="close-modal">&times;</span>
 
                 <div class="modal-header-controls">
-                    
+
                     <h3>
                         Detalhes do Dia:
                         <span id="modal-date-display"></span>
                     </h3>
-                    
-                    <img src="img/ico-dowload.gif" id="export-pdf" class="pdf-clickable" alt="Exportar atividades do dia para PDF" title="Exportar PDF" style="display: none;"/>
+
+                    <img src="img/ico-dowload.gif" id="export-pdf" class="pdf-clickable"
+                        alt="Exportar atividades do dia para PDF" title="Exportar PDF" style="display: none;" />
 
                 </div>
-                
+
                 <div id="modal-team-info"></div>
 
                 <div id="activities-list">
                     <p class="no-activity">Nenhuma atividade agendada neste dia.</p>
                 </div>
 
+            </div>
+        </div>
+        <!-- Adicionar após o modal de atividades, antes do fechamento do main -->
+        <div id="company-modal" class="modal">
+            <div class="modal-content company-modal-content">
+                <span class="close-btn" id="close-company-modal">&times;</span>
+
+                <h3>🏢 Selecionar Empresa</h3>
+
+                <div class="company-list">
+        
+                </div>
+
+                <div class="modal-actions">
+                    <button id="apply-company-filter" class="apply-btn">Aplicar Filtro</button>
+                    <button id="cancel-company-filter" class="cancel-btn">Cancelar</button>
+                </div>
             </div>
         </div>
 
@@ -78,4 +101,5 @@
     <script src="js/script.js"></script>
 
 </body>
+
 </html>
