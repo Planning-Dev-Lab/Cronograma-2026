@@ -70,7 +70,7 @@
 
 /* Modal específico para empresas */
 .company-modal-content {
-    max-width: 500px;
+    max-width: 85vw;
     max-height: 80vh;
     overflow-y: auto;
 }
