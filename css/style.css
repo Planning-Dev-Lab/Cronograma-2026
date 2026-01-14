@@ -2,6 +2,11 @@
 /* --- 1. CONFIGURAÇÕES BÁSICAS E ESTRUTURA GERAL --- */
 /* ========================================================== */
 
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
@@ -20,7 +25,7 @@ header {
 
 main {
     max-width: 1200px;
-    margin: 30px auto;
+    margin: 15px auto;
     padding: 20px;
 }
 
@@ -29,10 +34,10 @@ main {
 /* ========================================================== */
 
 .calendar-controls {
+    max-width: 1200px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    margin-bottom: 20px;
     background-color: white;
     padding: 15px;
     border-radius: 8px;
@@ -72,8 +77,8 @@ main {
 }
 
 .day {
-    
-    min-height: 100px;
+    /*min-height: 100px;*/
+    min-height: 80px;
     padding: 10px;
     border: 1px solid #ddd;
     border-top: none;
@@ -89,7 +94,7 @@ main {
 
 .day-number {
     font-weight: 700;
-    font-size: 1.2em;
+    font-size: 1em;
     margin-bottom: 5px;
     color: #007bff; /* Azul padrão */
     display: block;
@@ -290,9 +295,9 @@ main {
 @media (max-width: 768px) {
    
     /*.filters-section {flex-flow: column;}*/
-    main { margin: 10px; padding: 10px; }
+    main { margin: 25px; padding: 10px; }
     header h1 { font-size: 1.5em; }
-    .calendar-controls { justify-content: space-evenly; gap: 10px; }
+    .calendar-controls { justify-content: space-evenly; gap: 10px; margin-bottom: 10px;}
     .weekdays span { font-size: 0.75em; padding: 5px 2px; }
     .day { min-height: 55px; padding: 2px; font-size: 0.8em; }
     .modal-content { width: 80%; margin: 5% auto; max-height: 90vh; overflow-y: auto; }
