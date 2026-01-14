@@ -21,6 +21,12 @@ const modalDateDisplay = document.getElementById('modal-date-display');
 const activitiesList = document.getElementById('activities-list');
 const modalTeamInfo = document.getElementById('modal-team-info');
 const exportPdfBtn = document.getElementById('export-pdf');
+const companyFilterBtn = document.getElementById('company-filter-btn');
+const companyModal = document.getElementById('company-modal');
+const closeCompanyModalBtn = document.getElementById('close-company-modal');
+const applyCompanyFilterBtn = document.getElementById('apply-company-filter');
+const cancelCompanyFilterBtn = document.getElementById('cancel-company-filter');
+
 
 // ==========================================================
 // 2. CONSTANTES E CONFIGURAÇÕES
@@ -37,6 +43,11 @@ const DAY_CLASS_MAP = {
 
 const DAY_COLOR_PRIORITY_ORDER = ['FREEZING_COMERCIAIS', 'B2B_TBRA', 'TBRA'];
 
+const EMPRESAS_DISPONIVEIS = [
+    'VERTIV', 'Engemon', 'COTEPE', 'CARRIER',
+    'SOTREQ', 'ENERG', 'FERIADO', 'TBRA', 'B2B TBRA'
+];
+
 // ==========================================================
 // 3. FUNÇÕES AUXILIARES
 // ==========================================================
@@ -48,17 +59,55 @@ function getCurrentShift() {
 
 const normalizeText = (text) => text ? text.toUpperCase().replace(/-/g, '_').trim() : 'N_A';
 const sanitizeFileName = (text) => text.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+// Modificar a função applyFilters existente
 function applyFilters(activitiesArray, filters) {
     return activitiesArray.filter(activity => {
-        // Verificar filtro de empresa
-        const companyMatch = !filters.company || 
-            (activity.company && activity.company.toLowerCase().includes(filters.company.toLowerCase()));
-        
-        // Verificar filtro de descrição
-        const descriptionMatch = !filters.description || 
-            (activity.description && activity.description.toLowerCase().includes(filters.description.toLowerCase()));
-        
+        // Verificar filtro de empresa (agora busca exata ou vazia)
+        const companyMatch = !filters.company ||
+            (activity.company &&
+                activity.company.toLowerCase() === filters.company.toLowerCase());
+
+        // Verificar filtro de descrição (mantém busca parcial)
+        const descriptionMatch = !filters.description ||
+            (activity.description &&
+                activity.description.toLowerCase().includes(filters.description.toLowerCase()));
+
         return companyMatch && descriptionMatch;
+    });
+}
+
+// Na Seção 3 (Funções Auxiliares), após applyFilters
+function renderCompanyList() {
+    const companyList = document.querySelector('.company-list');
+    
+    // Verifica se encontrou
+    if (!companyList) {
+        console.error('Elemento .company-list não encontrado!');
+        return;
+    }
+    companyList.innerHTML = '';
+    
+
+    EMPRESAS_DISPONIVEIS.forEach(empresa => {
+        const label = document.createElement('label');
+        label.className = 'company-option';
+
+        const radio = document.createElement('input');
+        radio.type = 'radio';
+        radio.name = 'company';
+        radio.value = empresa;
+
+        // Marcar se já estiver selecionada
+        if (activeFilters.company.toLowerCase() === empresa.toLowerCase()) {
+            radio.checked = true;
+        }
+
+        const span = document.createElement('span');
+        span.textContent = empresa;
+
+        label.appendChild(radio);
+        label.appendChild(span);
+        companyList.appendChild(label);
     });
 }
 
@@ -181,7 +230,7 @@ function renderCalendar(year, month) {
 // ==========================================================
 // 6. LÓGICA DO MODAL (COM VALIDAÇÃO DE DATA ATUAL)
 // ==========================================================
-function openActivityModal(dateString, daily, filteredActivities  = null) {
+function openActivityModal(dateString, daily, filteredActivities = null) {
     modalDateDisplay.textContent = dateString.split('-').reverse().join('/');
     activitiesList.innerHTML = '';
     modalTeamInfo.innerHTML = '';
@@ -341,11 +390,69 @@ prevMonthBtn.addEventListener('click', () => navigateMonth('prev'));
 nextMonthBtn.addEventListener('click', () => navigateMonth('next'));
 closeModalBtn.addEventListener('click', () => activityModal.style.display = 'none');
 exportPdfBtn.addEventListener('click', exportToPDF);
-const companyFilterInput = document.getElementById('company-filter');
+
+// Elementos dos filtros (AJUSTADO)
 const descriptionFilterInput = document.getElementById('description-filter');
 const clearFiltersBtn = document.getElementById('clear-filters');
 
-window.onclick = (e) => { if (e.target === activityModal) activityModal.style.display = 'none'; };
+// Event listeners para o modal de empresas
+companyFilterBtn.addEventListener('click', () => {
+    renderCompanyList();
+    companyModal.style.display = 'block';
+});
+
+closeCompanyModalBtn.addEventListener('click', () => {
+    companyModal.style.display = 'none';
+});
+
+cancelCompanyFilterBtn.addEventListener('click', () => {
+    companyModal.style.display = 'none';
+});
+
+applyCompanyFilterBtn.addEventListener('click', () => {
+    const selectedRadio = document.querySelector('input[name="company"]:checked');
+    
+    if (selectedRadio) {
+        activeFilters.company = selectedRadio.value;
+        companyFilterBtn.classList.add('filtro-aplicado');
+        companyFilterBtn.innerHTML = `🏢 ${selectedRadio.value}`;
+    } else {
+        activeFilters.company = '';
+        companyFilterBtn.classList.remove('filtro-aplicado');
+        companyFilterBtn.innerHTML = '🏢 Selecionar Empresa';
+    }
+    
+    companyModal.style.display = 'none';
+    renderCalendar(currentYear, currentMonth);
+});
+
+// Event listener para clearFilters (VERSÃO ATUALIZADA)
+if (clearFiltersBtn) {
+    clearFiltersBtn.addEventListener('click', () => {
+        activeFilters.company = '';
+        activeFilters.description = '';
+        
+        // Resetar botão de empresa
+        companyFilterBtn.classList.remove('filtro-aplicado');
+        companyFilterBtn.innerHTML = '🏢 Selecionar Empresa';
+        
+        if (descriptionFilterInput) descriptionFilterInput.value = '';
+        
+        // Desmarcar radio no modal (quando reabrir)
+        const radios = document.querySelectorAll('input[name="company"]');
+        radios.forEach(radio => radio.checked = false);
+        
+        renderCalendar(currentYear, currentMonth);
+    });
+}
+
+// Fechar ambos modais ao clicar fora
+window.onclick = (e) => { 
+    if (e.target === activityModal) activityModal.style.display = 'none';
+    if (e.target === companyModal) companyModal.style.display = 'none';
+};
+
+// Debounce para o filtro de descrição
 function debounce(func, wait) {
     let timeout;
     return function executedFunction(...args) {
@@ -358,19 +465,11 @@ function debounce(func, wait) {
     };
 }
 
-// Aplicar filtro com debounce de 300ms
 const applyFilterWithDebounce = debounce(() => {
     renderCalendar(currentYear, currentMonth);
 }, 300);
 
-// Event listeners para filtros
-if (companyFilterInput) {
-    companyFilterInput.addEventListener('input', (e) => {
-        activeFilters.company = e.target.value.trim();
-        applyFilterWithDebounce();
-    });
-}
-
+// Event listener para descrição (mantém busca parcial)
 if (descriptionFilterInput) {
     descriptionFilterInput.addEventListener('input', (e) => {
         activeFilters.description = e.target.value.trim();
@@ -378,20 +477,15 @@ if (descriptionFilterInput) {
     });
 }
 
-if (clearFiltersBtn) {
-    clearFiltersBtn.addEventListener('click', () => {
-        activeFilters.company = '';
-        activeFilters.description = '';
-        if (companyFilterInput) companyFilterInput.value = '';
-        if (descriptionFilterInput) descriptionFilterInput.value = '';
-        renderCalendar(currentYear, currentMonth);
-    });
-}
-
-
 async function init() {
     await loadActivities(currentYear, currentMonth);
     renderCalendar(currentYear, currentMonth);
+    
+    // Garantir que o botão comece no estado correto
+    if (activeFilters.company) {
+        companyFilterBtn.classList.add('filtro-aplicado');
+        companyFilterBtn.innerHTML = `🏢 ${activeFilters.company}`;
+    }
 }
 
 init();
