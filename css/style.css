@@ -171,7 +171,7 @@ main {
 
 .modal-content {
     background-color: #fff;
-    margin: 10% auto;
+    margin: 5px auto;
     padding: 25px;
     border: 1px solid #888;
     width: 80%;
@@ -279,6 +279,7 @@ main {
 .activity-item.border-group-SOTREQ { border-left-color: #C1B991; }
 .activity-item.border-group-ENERG { border-left-color: #E6B8B7; }
 .activity-item.border-group-COTEPE { border-left-color: #DEC97C; }
+.activity-item.border-group-LG { border-left-color: #883b77; }
 
 .p-FREEZING, .activity-item.border-p-FREEZING { background-color: #fec0fe; border-left-color: #fec0fe; }
 .p-MENSAL, .activity-item.border-p-MENSAL { background-color: #da9694; border-left-color: #da9694; }
