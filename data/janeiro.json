@@ -557,6 +557,13 @@
                 "description": "PREV. GERADORES",
                 "periodicity": "BIMESTRAL",
                 "company_group": "SOTREQ",
+                "service_type": "" 
+            },
+            {
+                "company": "LG",
+                "description": "PREV. CHILLER",
+                "periodicity": "MENSAL",
+                "company_group": "LG",
                 "service_type": ""
             }
         ]

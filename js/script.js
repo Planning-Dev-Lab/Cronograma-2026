@@ -44,7 +44,7 @@ const DAY_CLASS_MAP = {
 const DAY_COLOR_PRIORITY_ORDER = ['FREEZING_COMERCIAIS', 'B2B_TBRA', 'TBRA'];
 
 const EMPRESAS_DISPONIVEIS = [
-    'VERTIV', 'Engemon', 'COTEPE', 'CARRIER',
+    'VERTIV', 'Engemon', 'COTEPE', 'CARRIER', 'LG',
     'SOTREQ', 'ENERG', 'FERIADO', 'TBRA', 'B2B TBRA'
 ];
 
