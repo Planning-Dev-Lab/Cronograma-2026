@@ -370,13 +370,6 @@
         "freezing": [],
         "vendors": [
             {
-                "company": "VERTIV",
-                "description": "TESTE DE DESCARGA BB 2.1.2",
-                "periodicity": "ANUAL",
-                "company_group": "VERTIV_POWER",
-                "service_type": ""
-            },
-            {
                 "company": "ENERG",
                 "description": "SISTEMA DIESEL",
                 "periodicity": "BIMESTRAL",
@@ -398,13 +391,6 @@
         "on_call_noite": "Equipe B",
         "freezing": [],
         "vendors": [
-                {
-                "company": "VERTIV",
-                "description": "TESTE DE DESCARGA BB 2.1.2",
-                "periodicity": "ANUAL",
-                "company_group": "VERTIV_POWER",
-                "service_type": ""
-            },
                 {
                 "company": "ENERG",
                 "description": "SISTEMA DIESEL",
@@ -428,13 +414,6 @@
         "freezing": [],
         "vendors": [
             {
-                "company": "VERTIV",
-                "description": "TESTE DE DESCARGA BB 2.2.2",
-                "periodicity": "ANUAL",
-                "company_group": "VERTIV_POWER",
-                "service_type": ""
-            },
-            {
                 "company": "ENERG",
                 "description": "SISTEMA DIESEL",
                 "periodicity": "BIMESTRAL",
@@ -456,13 +435,6 @@
         "on_call_noite": "Equipe B",
         "freezing": [],
         "vendors": [
-            {
-                "company": "VERTIV",
-                "description": "TESTE DE DESCARGA BB 2.2.2",
-                "periodicity": "ANUAL",
-                "company_group": "VERTIV_POWER",
-                "service_type": ""
-            },
             {
                 "company": "ENERG",
                 "description": "SISTEMA DIESEL",
