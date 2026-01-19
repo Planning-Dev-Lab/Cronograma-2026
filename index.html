@@ -12,9 +12,29 @@
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="filtroEmpresas.css">
+    <style>
+        #drill {
+            cursor: pointer;
+            position: fixed;
+            top: 0;
+            right: 0;
+            margin: 10px;
+            border-radius: 50%;
+            border: 0;
+            width: 50px;
+            box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.155);
+            transition: 250ms ease-in-out;
+        }
+
+        #drill:hover {
+            box-shadow: 0px 0px 7px 1px rgba(254, 254, 254, 0.318);
+            transform: scale(1.1);
+        }
+    </style>
 </head>
 
 <body>
+    <a style="display: none;" href="treinamento.html"><img id="drill" src="img/drill.png" alt=""></a>
 
     <header>
         <h1>🗓️ DCT Vendors 2026</h1>
