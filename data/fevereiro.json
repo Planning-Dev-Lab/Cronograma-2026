@@ -14,7 +14,7 @@
         "vendors": [
             {
                 "company": "VERTIV",
-                "description": "UPS BMS | NOC | TI | PREDIAL | PORTARIA",
+                "description": "UPS BMS | NOC | TI | PREDIAL | PORTARIA (Com Parada)",
                 "periodicity": "ANUAL",
                 "company_group": "VERTIV_POWER",
                 "service_type": ""
@@ -51,7 +51,7 @@
         "vendors": [
             {
                 "company": "VERTIV",
-                "description": "UPS BMS | NOC | TI | PREDIAL | PORTARIA",
+                "description": "UPS BMS | NOC | TI | PREDIAL | PORTARIA (Com Parada)",
                 "periodicity": "ANUAL",
                 "company_group": "VERTIV_POWER",
                 "service_type": ""
@@ -80,7 +80,7 @@
         "vendors": [
             {
                 "company": "VERTIV",
-                "description": "UPS BMS | NOC | TI | PREDIAL | PORTARIA",
+                "description": "UPS BMS | NOC | TI | PREDIAL | PORTARIA (Com Parada)",
                 "periodicity": "ANUAL",
                 "company_group": "VERTIV_POWER",
                 "service_type": ""
@@ -109,7 +109,7 @@
         "vendors": [
             {
                 "company": "VERTIV",
-                "description": "UPS BMS | NOC | TI | PREDIAL | PORTARIA",
+                "description": "UPS BMS | NOC | TI | PREDIAL | PORTARIA (Com Parada)",
                 "periodicity": "ANUAL",
                 "company_group": "VERTIV_POWER",
                 "service_type": ""
@@ -138,7 +138,7 @@
         "vendors": [
             {
                 "company": "VERTIV",
-                "description": "UPS DATAHALL | TI",
+                "description": "UPS DATAHALL | TI (Com Parada)",
                 "periodicity": "ANUAL",
                 "company_group": "VERTIV_POWER",
                 "service_type": ""
@@ -225,7 +225,7 @@
         "vendors": [
             {
                 "company": "VERTIV",
-                "description": "UPS DATAHALL | TI",
+                "description": "UPS DATAHALL | TI (Com Parada)",
                 "periodicity": "ANUAL",
                 "company_group": "VERTIV_POWER",
                 "service_type": ""
@@ -261,7 +261,7 @@
         "vendors": [
             {
                 "company": "VERTIV",
-                "description": "UPS DATAHALL | TI",
+                "description": "UPS DATAHALL | TI (Com Parada)",
                 "periodicity": "ANUAL",
                 "company_group": "VERTIV_POWER",
                 "service_type": ""
@@ -290,7 +290,7 @@
         "vendors": [
             {
                 "company": "VERTIV",
-                "description": "UPS DATAHALL | TI",
+                "description": "UPS DATAHALL | TI (Com Parada)",
                 "periodicity": "ANUAL",
                 "company_group": "VERTIV_POWER",
                 "service_type": ""
@@ -319,7 +319,7 @@
         "vendors": [
             {
                 "company": "VERTIV",
-                "description": "UPS DATAHALL | TI",
+                "description": "UPS DATAHALL | TI (Com Parada)",
                 "periodicity": "ANUAL",
                 "company_group": "VERTIV_POWER",
                 "service_type": ""
@@ -577,7 +577,7 @@
             },
             {
                 "company": "VERTIV",
-                "description": "UPS DATAHALL | TI",
+                "description": "UPS DATAHALL | TI (Com Parada)",
                 "periodicity": "ANUAL",
                 "company_group": "VERTIV_POWER",
                 "service_type": ""
