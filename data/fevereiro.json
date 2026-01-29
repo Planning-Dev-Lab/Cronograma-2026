@@ -203,13 +203,6 @@
             },
             {
                 "company": "VERTIV",
-                "description": "UPS DATAHALL | TI (Com Parada)",
-                "periodicity": "ANUAL",
-                "company_group": "VERTIV_POWER",
-                "service_type": ""
-            },
-            {
-                "company": "VERTIV",
                 "description": "PDU - DATAHALL / TI",
                 "periodicity": "QUADRIMESTRAL",
                 "company_group": "VERTIV_POWER",
