@@ -239,6 +239,13 @@
             },
             {
                 "company": "VERTIV",
+                "description": "PDU - DATAHALL / TI",
+                "periodicity": "QUADRIMESTRAL",
+                "company_group": "VERTIV_POWER",
+                "service_type": ""
+            },
+            {
+                "company": "VERTIV",
                 "description": "RPP - DATAHALL / TI",
                 "periodicity": "QUADRIMESTRAL",
                 "company_group": "VERTIV_POWER",
