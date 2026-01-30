@@ -11,35 +11,87 @@
         "on_call_dia": "Equipe C",
         "on_call_noite": "Equipe D",
         "freezing": [],
-        "vendors": []
+        "vendors": [
+            {
+                "company": "VERTIV",
+                "description": "UPS 2.1.1 | 2.1.2 (COM PARADA)",
+                "periodicity": "ANUAL",
+                "company_group": "VERTIV_POWER",
+                "service_type": ""
+            },
+            {
+                "company": "Engemon",
+                "description": "SISTEMA DE INCÊNDIO",
+                "periodicity": "MENSAL",
+                "company_group": "ENGEMON",
+                "service_type": "engemon-incendio"
+            }
+        ]
     },
     {
         "data": "2026-03-03",
         "on_call_dia": "Equipe A",
         "on_call_noite": "Equipe B",
-        "freezing": [],
-        "vendors": []
+        "freezing": [
+            {
+                "group": "B2B_HUAWEI_FREEZING",
+                "description": "FESTIVAL DA LANTERNA"
+            }
+        ],
+        "vendors": [
+            {
+                "company": "Engemon",
+                "description": "SISTEMA DE INCÊNDIO",
+                "periodicity": "MENSAL",
+                "company_group": "ENGEMON",
+                "service_type": "engemon-incendio"
+            }
+        ]
     },
     {
         "data": "2026-03-04",
         "on_call_dia": "Equipe C",
         "on_call_noite": "Equipe D",
         "freezing": [],
-        "vendors": []
+        "vendors": [
+            {
+                "company": "Engemon",
+                "description": "SISTEMA DE INCÊNDIO",
+                "periodicity": "MENSAL",
+                "company_group": "ENGEMON",
+                "service_type": "engemon-incendio"
+            }
+        ]
     },
     {
         "data": "2026-03-05",
         "on_call_dia": "Equipe A",
         "on_call_noite": "Equipe B",
         "freezing": [],
-        "vendors": []
+        "vendors": [
+            {
+                "company": "Engemon",
+                "description": "SISTEMA DE AUTOMAÇÃO",
+                "periodicity": "MENSAL",
+                "company_group": "ENGEMON",
+                "service_type": "engemon-automacao"
+            }
+        ]
     },
     {
         "data": "2026-03-06",
         "on_call_dia": "Equipe C",
         "on_call_noite": "Equipe D",
         "freezing": [],
-        "vendors": []
+        "vendors": [
+            {
+                "company": "Engemon",
+                "description": "SISTEMA DE AUTOMAÇÃO",
+                "periodicity": "MENSAL",
+                "company_group": "ENGEMON",
+                "service_type": "engemon-automacao"
+            }
+        ]
     },
     {
         "data": "2026-03-07",
@@ -60,35 +112,75 @@
         "on_call_dia": "Equipe A",
         "on_call_noite": "Equipe B",
         "freezing": [],
-        "vendors": []
+        "vendors": [
+            {
+                "company": "Engemon",
+                "description": "SISTEMA DE INCÊNDIO",
+                "periodicity": "MENSAL",
+                "company_group": "ENGEMON",
+                "service_type": "engemon-incendio"
+            }
+        ]
     },
     {
         "data": "2026-03-10",
         "on_call_dia": "Equipe C",
         "on_call_noite": "Equipe D",
         "freezing": [],
-        "vendors": []
+        "vendors": [
+            {
+                "company": "Engemon",
+                "description": "SISTEMA DE INCÊNDIO",
+                "periodicity": "MENSAL",
+                "company_group": "ENGEMON",
+                "service_type": "engemon-incendio"
+            }
+        ]
     },
     {
         "data": "2026-03-11",
         "on_call_dia": "Equipe A",
         "on_call_noite": "Equipe B",
         "freezing": [],
-        "vendors": []
+        "vendors": [
+            {
+                "company": "Engemon",
+                "description": "SISTEMA DE INCÊNDIO",
+                "periodicity": "MENSAL",
+                "company_group": "ENGEMON",
+                "service_type": "engemon-incendio"
+            }
+        ]
     },
     {
         "data": "2026-03-12",
         "on_call_dia": "Equipe C",
         "on_call_noite": "Equipe D",
         "freezing": [],
-        "vendors": []
+        "vendors": [
+            {
+                "company": "Engemon",
+                "description": "SISTEMA DE AUTOMAÇÃO",
+                "periodicity": "MENSAL",
+                "company_group": "ENGEMON",
+                "service_type": "engemon-automacao"
+            }
+        ]
     },
     {
         "data": "2026-03-13",
         "on_call_dia": "Equipe A",
         "on_call_noite": "Equipe B",
         "freezing": [],
-        "vendors": []
+        "vendors": [
+            {
+                "company": "Engemon",
+                "description": "SISTEMA DE AUTOMAÇÃO",
+                "periodicity": "MENSAL",
+                "company_group": "ENGEMON",
+                "service_type": "engemon-automacao"
+            }
+        ]
     },
     {
         "data": "2026-03-14",
@@ -109,35 +201,75 @@
         "on_call_dia": "Equipe C",
         "on_call_noite": "Equipe D",
         "freezing": [],
-        "vendors": []
+        "vendors": [
+            {
+                "company": "Engemon",
+                "description": "SISTEMA DE INCÊNDIO",
+                "periodicity": "MENSAL",
+                "company_group": "ENGEMON",
+                "service_type": "engemon-incendio"
+            }
+        ]
     },
     {
         "data": "2026-03-17",
         "on_call_dia": "Equipe A",
         "on_call_noite": "Equipe B",
         "freezing": [],
-        "vendors": []
+        "vendors": [
+            {
+                "company": "Engemon",
+                "description": "SISTEMA DE INCÊNDIO",
+                "periodicity": "MENSAL",
+                "company_group": "ENGEMON",
+                "service_type": "engemon-incendio"
+            }
+        ]
     },
     {
         "data": "2026-03-18",
         "on_call_dia": "Equipe C",
         "on_call_noite": "Equipe D",
         "freezing": [],
-        "vendors": []
+        "vendors": [
+            {
+                "company": "Engemon",
+                "description": "SISTEMA DE INCÊNDIO",
+                "periodicity": "MENSAL",
+                "company_group": "ENGEMON",
+                "service_type": "engemon-incendio"
+            }
+        ]
     },
     {
         "data": "2026-03-19",
         "on_call_dia": "Equipe A",
         "on_call_noite": "Equipe B",
         "freezing": [],
-        "vendors": []
+        "vendors": [
+            {
+                "company": "Engemon",
+                "description": "SISTEMA DE AUTOMAÇÃO",
+                "periodicity": "MENSAL",
+                "company_group": "ENGEMON",
+                "service_type": "engemon-automacao"
+            }
+        ]
     },
     {
         "data": "2026-03-20",
         "on_call_dia": "Equipe C",
         "on_call_noite": "Equipe D",
         "freezing": [],
-        "vendors": []
+        "vendors": [
+            {
+                "company": "Engemon",
+                "description": "SISTEMA DE AUTOMAÇÃO",
+                "periodicity": "MENSAL",
+                "company_group": "ENGEMON",
+                "service_type": "engemon-automacao"
+            }
+        ]
     },
     {
         "data": "2026-03-21",
@@ -158,35 +290,75 @@
         "on_call_dia": "Equipe A",
         "on_call_noite": "Equipe B",
         "freezing": [],
-        "vendors": []
+        "vendors": [
+            {
+                "company": "Engemon",
+                "description": "SISTEMA DE INCÊNDIO",
+                "periodicity": "MENSAL",
+                "company_group": "ENGEMON",
+                "service_type": "engemon-incendio"
+            }
+        ]
     },
     {
         "data": "2026-03-24",
         "on_call_dia": "Equipe C",
         "on_call_noite": "Equipe D",
         "freezing": [],
-        "vendors": []
+        "vendors": [
+            {
+                "company": "Engemon",
+                "description": "SISTEMA DE INCÊNDIO",
+                "periodicity": "MENSAL",
+                "company_group": "ENGEMON",
+                "service_type": "engemon-incendio"
+            }
+        ]
     },
     {
         "data": "2026-03-25",
         "on_call_dia": "Equipe A",
         "on_call_noite": "Equipe B",
         "freezing": [],
-        "vendors": []
+        "vendors": [
+            {
+                "company": "Engemon",
+                "description": "SISTEMA DE INCÊNDIO",
+                "periodicity": "MENSAL",
+                "company_group": "ENGEMON",
+                "service_type": "engemon-incendio"
+            }
+        ]
     },
     {
         "data": "2026-03-26",
         "on_call_dia": "Equipe C",
         "on_call_noite": "Equipe D",
         "freezing": [],
-        "vendors": []
+        "vendors": [
+            {
+                "company": "Engemon",
+                "description": "SISTEMA DE AUTOMAÇÃO",
+                "periodicity": "MENSAL",
+                "company_group": "ENGEMON",
+                "service_type": "engemon-automacao"
+            }
+        ]
     },
     {
         "data": "2026-03-27",
         "on_call_dia": "Equipe A",
         "on_call_noite": "Equipe B",
         "freezing": [],
-        "vendors": []
+        "vendors": [
+            {
+                "company": "Engemon",
+                "description": "SISTEMA DE AUTOMAÇÃO",
+                "periodicity": "MENSAL",
+                "company_group": "ENGEMON",
+                "service_type": "engemon-automacao"
+            }
+        ]
     },
     {
         "data": "2026-03-28",
@@ -207,13 +379,29 @@
         "on_call_dia": "Equipe C",
         "on_call_noite": "Equipe D",
         "freezing": [],
-        "vendors": []
+        "vendors": [
+            {
+                "company": "Engemon",
+                "description": "SISTEMA DE INCÊNDIO",
+                "periodicity": "MENSAL",
+                "company_group": "ENGEMON",
+                "service_type": "engemon-incendio"
+            }
+        ]
     },
     {
         "data": "2026-03-31",
         "on_call_dia": "Equipe A",
         "on_call_noite": "Equipe B",
         "freezing": [],
-        "vendors": []
+        "vendors": [
+            {
+                "company": "Engemon",
+                "description": "SISTEMA DE INCÊNDIO",
+                "periodicity": "MENSAL",
+                "company_group": "ENGEMON",
+                "service_type": "engemon-incendio"
+            }
+        ]
     }
 ]
