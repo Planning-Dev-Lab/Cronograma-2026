@@ -87,6 +87,13 @@
         "vendors": [
             {
                 "company": "VERTIV",
+                "description": "UPS 1.R1.6 | UPS 1.R2.6 (Com Parada) CHG0178600 ",
+                "periodicity": "ANUAL",
+                "company_group": "VERTIV_POWER",
+                "service_type": ""
+            },
+            {
+                "company": "VERTIV",
                 "description": "PDU - DATAHALL / TI",
                 "periodicity": "QUADRIMESTRAL",
                 "company_group": "VERTIV_POWER",
@@ -107,13 +114,6 @@
         "on_call_noite": "Equipe D",
         "freezing": [],
         "vendors": [
-            {
-                "company": "VERTIV",
-                "description": "UPS 1.R1.6 | UPS 1.R2.6 (Com Parada) CHG0178600 ",
-                "periodicity": "ANUAL",
-                "company_group": "VERTIV_POWER",
-                "service_type": ""
-            },
             {
                 "company": "VERTIV",
                 "description": "PDU - DATAHALL / TI",
