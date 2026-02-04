@@ -497,15 +497,7 @@
                 "description": "FREEZING - NGIM"
             }
         ],
-        "vendors": [
-            {
-                "company": "COTEPE",
-                "description": "MANUTENÇAO DA SUBESTAÇÃO (CHG0176191)",
-                "periodicity": "ANUAL",
-                "company_group": "COTEPE",
-                "service_type": ""
-            }
-        ]
+        "vendors": []
     },
     {
         "data": "2026-01-26",
