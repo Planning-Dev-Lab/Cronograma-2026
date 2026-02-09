@@ -548,7 +548,7 @@
             },
             {
                 "company": "VERTIV",
-                "description": "UPS 2.R1.6 | UPS 2.R2.6 (COM PARADA)",
+                "description": "UPS 2.R1.6 | UPS 2.R2.6 (22:00 - 06:00)(COM PARADA)CHG0180275",
                 "periodicity": "ANUAL",
                 "company_group": "VERTIV_POWER",
                 "service_type": ""

@@ -55,6 +55,13 @@
         "freezing": [],
         "vendors": [
             {
+                "company": "VERTIV",
+                "description": "UPS 2.1.1 | UPS 2.1.2 (22:00 - 06:00)(COM PARADA)CHG0179409",
+                "periodicity": "ANUAL",
+                "company_group": "VERTIV_POWER",
+                "service_type": ""
+            },
+            {
                 "company": "Engemon",
                 "description": "SISTEMA DE INCÊNDIO",
                 "periodicity": "MENSAL",
