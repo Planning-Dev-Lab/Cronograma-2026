@@ -497,20 +497,36 @@ applyCompanyFilterBtn.addEventListener('click', () => {
 });
 
 // Event listener para clearFilters (VERSÃO ATUALIZADA)
+// Event listener para clearFilters (VERSÃO CORRIGIDA)
 if (clearFiltersBtn) {
     clearFiltersBtn.addEventListener('click', () => {
-        activeFilters.company = '';
-        activeFilters.description = '';
+        // Verifica se veio de um link compartilhado
+        const urlCompany = getCompanyFromUrl();
         
-        // Resetar botão de empresa
-        companyFilterBtn.classList.remove('filtro-aplicado');
-        companyFilterBtn.innerHTML = '🏢 Selecionar Empresa';
-        
-        if (descriptionFilterInput) descriptionFilterInput.value = '';
-        
-        // Desmarcar radio no modal (quando reabrir)
-        const radios = document.querySelectorAll('input[name="company"]');
-        radios.forEach(radio => radio.checked = false);
+        if (urlCompany) {
+            // Se veio de link, NÃO limpa o filtro de empresa
+            activeFilters.description = '';
+            // Mantém activeFilters.company = urlCompany
+            
+            if (descriptionFilterInput) descriptionFilterInput.value = '';
+            
+            // Mostra um aviso sutil (opcional)
+            alert('Você está em modo de visualização restrita. Não é possível limpar o filtro de empresa.');
+        } else {
+            // Modo normal: limpa todos os filtros
+            activeFilters.company = '';
+            activeFilters.description = '';
+            
+            // Resetar botão de empresa
+            companyFilterBtn.classList.remove('filtro-aplicado');
+            companyFilterBtn.innerHTML = '🏢 Selecionar Empresa';
+            
+            if (descriptionFilterInput) descriptionFilterInput.value = '';
+            
+            // Desmarcar radio no modal
+            const radios = document.querySelectorAll('input[name="company"]');
+            radios.forEach(radio => radio.checked = false);
+        }
         
         renderCalendar(currentYear, currentMonth);
     });
