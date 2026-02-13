@@ -112,6 +112,76 @@ function renderCompanyList() {
 }
 
 // ==========================================================
+// 3.5 FUNÇÕES DE CRIPTOGRAFIA PARA LINKS COMPARTILHÁVEIS
+// ==========================================================
+
+// Chave secreta - em produção, use uma mais complexa e guarde no servidor
+const SECRET_KEY = 'MinhaChaveSuperSecreta2026!@#$';
+
+function encryptCompany(companyName) {
+    try {
+        // Adiciona timestamp para evitar que links sejam válidos para sempre (opcional)
+        const data = {
+            company: companyName,
+            exp: Date.now() + (30 * 24 * 60 * 60 * 1000) // 30 dias de validade
+        };
+        
+        // Criptografa
+        const encrypted = CryptoJS.AES.encrypt(JSON.stringify(data), SECRET_KEY).toString();
+        
+        // Codifica para URL
+        return encodeURIComponent(encrypted);
+    } catch (e) {
+        console.error('Erro ao criptografar:', e);
+        return null;
+    }
+}
+
+function decryptCompany(encryptedString) {
+    try {
+        if (!encryptedString) return null;
+        
+        // Decodifica da URL
+        const decoded = decodeURIComponent(encryptedString);
+        
+        // Descriptografa
+        const bytes = CryptoJS.AES.decrypt(decoded, SECRET_KEY);
+        const decryptedData = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
+        
+        // Verifica se o link expirou
+        if (decryptedData.exp && decryptedData.exp < Date.now()) {
+            console.warn('Link expirado');
+            return null;
+        }
+        
+        return decryptedData.company;
+    } catch (e) {
+        console.error('Erro ao descriptografar:', e);
+        return null;
+    }
+}
+
+// Função para gerar link compartilhável
+function generateShareableLink(companyName) {
+    const encrypted = encryptCompany(companyName);
+    if (!encrypted) return null;
+    
+    // Pega a URL atual sem parâmetros
+    const baseUrl = window.location.href.split('?')[0];
+    return `${baseUrl}?empresa=${encrypted}`;
+}
+
+// Função para ler filtro da URL
+function getCompanyFromUrl() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const encryptedParam = urlParams.get('empresa');
+    
+    if (!encryptedParam) return null;
+    
+    return decryptCompany(encryptedParam);
+}
+
+// ==========================================================
 // 4. CARREGAMENTO DOS DADOS (JSON)
 // ==========================================================
 async function loadActivities(year, month) {
@@ -479,13 +549,24 @@ if (descriptionFilterInput) {
 
 async function init() {
     await loadActivities(currentYear, currentMonth);
-    renderCalendar(currentYear, currentMonth);
     
-    // Garantir que o botão comece no estado correto
-    if (activeFilters.company) {
+    // Verifica se há empresa na URL
+    const urlCompany = getCompanyFromUrl();
+    
+    if (urlCompany) {
+        // Se veio de um link compartilhado, aplica o filtro
+        activeFilters.company = urlCompany;
         companyFilterBtn.classList.add('filtro-aplicado');
-        companyFilterBtn.innerHTML = `🏢 ${activeFilters.company}`;
+        companyFilterBtn.innerHTML = `🏢 ${urlCompany}`;
+        
+        // Opcional: Esconder o botão de filtro para não permitir trocar
+        companyFilterBtn.style.display = 'none';
+        
+        // Opcional: Mostrar mensagem de "Visualização restrita"
+        //showRestrictedViewMessage(urlCompany);
     }
+    
+    renderCalendar(currentYear, currentMonth);
 }
 
 init();
