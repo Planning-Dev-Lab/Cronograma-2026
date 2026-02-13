@@ -232,13 +232,6 @@
         "vendors": [
             {
                 "company": "VERTIV",
-                "description": "UPS 1.1.2 | UPS 1.2.2 (Com Parada) CHG0178600 ",
-                "periodicity": "ANUAL",
-                "company_group": "VERTIV_POWER",
-                "service_type": ""
-            },
-            {
-                "company": "VERTIV",
                 "description": "PDU - DATAHALL / TI",
                 "periodicity": "QUADRIMESTRAL",
                 "company_group": "VERTIV_POWER",
@@ -418,6 +411,13 @@
             }
         ],
         "vendors": [
+            {
+                "company": "VERTIV",
+                "description": "UPS 1.1.2 | UPS 1.2.2 (22:00 - 06:00)(Com Parada) CHG0180817",
+                "periodicity": "ANUAL",
+                "company_group": "VERTIV_POWER",
+                "service_type": ""
+            },
             {
                 "company": "VERTIV",
                 "description": "STS - DATAHALL",
