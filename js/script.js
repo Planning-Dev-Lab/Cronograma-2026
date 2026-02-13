@@ -123,7 +123,7 @@ function encryptCompany(companyName) {
         // Adiciona timestamp para evitar que links sejam válidos para sempre (opcional)
         const data = {
             company: companyName,
-            exp: Date.now() + (30 * 24 * 60 * 60 * 1000) // 30 dias de validade
+            exp: new Date('2026-12-31').getTime() // validade 31/12/2026
         };
         
         // Criptografa

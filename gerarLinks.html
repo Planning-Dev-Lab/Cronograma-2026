@@ -41,7 +41,7 @@
         function encryptCompany(companyName) {
             const data = {
                 company: companyName,
-                exp: Date.now() + (30 * 24 * 60 * 60 * 1000)
+                exp: new Date('2026-12-31').getTime() // Expira em 31/12/2026
             };
             const encrypted = CryptoJS.AES.encrypt(JSON.stringify(data), SECRET_KEY).toString();
             return encodeURIComponent(encrypted);
