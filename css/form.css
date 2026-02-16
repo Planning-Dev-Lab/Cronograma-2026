@@ -1,0 +1,178 @@
+@charset "UTF-8";
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 15%;
+    background-color: rgb(122, 142, 179);
+    min-height: 100vh;
+}
+
+#titulo-observacao {
+    text-align: center;
+    color: #333; /* Mais contraste */
+    margin-bottom: 5px;
+}
+
+div.container {
+    background-color: whitesmoke;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    width: fit-content;
+    min-width: 320px; /* Largura mínima em mobile */
+    max-width: 600px; /* Limite máximo */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 25px;
+    margin: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Cards de informação */
+#info-data, #info-empresa, #info-atividade {
+    background-color: #f0f4f8;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border-left: 4px solid #007bff;
+}
+
+.info-label {
+    font-weight: bold;
+    color: #555;
+    margin-right: 5px;
+}
+
+.info-value {
+    color: #007bff;
+    font-weight: 600;
+}
+
+div.container #grupo-observacao {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 5px;
+}
+
+.campo-label {
+    font-weight: bold;
+    color: #444;
+    font-size: 1.1em;
+}
+
+#grupo-observacao textarea {
+    width: 70vw;
+    max-width: 500px; /* Limite para telas grandes */
+    height: 150px;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+#grupo-observacao textarea:focus {
+    background-color: lavender;
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.campo-ajuda {
+    color: #666;
+    font-size: 12px;
+    font-style: italic;
+}
+
+#grupo-botoes {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+div.container .btn {
+    background-color: aliceblue;
+    cursor: pointer;
+    padding: 8px 16px; /* Botões maiores */
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 200ms ease;
+    min-width: 120px;
+}
+
+div.container .btn-primary {
+    background-color: #28a745;
+    color: white;
+    border-color: #218838;
+}
+
+div.container .btn-primary:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+div.container .btn-secondary {
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+div.container .btn-secondary:hover {
+    background-color: #e2e6ea;
+    transform: translateY(-1px);
+}
+
+/* Feedback mensagem */
+.feedback {
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.feedback.sucesso {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.feedback.erro {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+    body {
+        padding-top: 10%;
+    }
+    
+    div.container {
+        padding: 15px;
+        margin: 0 10px;
+        width: auto;
+    }
+    
+    #grupo-observacao textarea {
+        width: 100%;
+    }
+    
+    #grupo-botoes {
+        flex-direction: column;
+    }
+    
+    div.container .btn {
+        width: 100%;
+    }
+}
