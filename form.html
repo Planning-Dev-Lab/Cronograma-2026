@@ -59,27 +59,32 @@
     </div>
 
     <!-- Script para pré-preenchimento (quando vier de outra página) -->
+    <!-- Script ÚNICO e definitivo -->
     <script>
+        // URL no ESCOPO GLOBAL (acessível no console)
+        const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzO1iohoxrNreXG-dsjzAUxYUwKKMncjRcxzYPiuW6DwuiZlJbqpUssxl-15gUoVOlu/exec';
+
         (function () {
-            const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzO1iohoxrNreXG-dsjzAUxYUwKKMncjRcxzYPiuW6DwuiZlJbqpUssxl-15gUoVOlu/exec'
-            // Capturar parâmetros da URL se houver
+            // Capturar parâmetros da URL
             const urlParams = new URLSearchParams(window.location.search);
 
             // Elementos do DOM
             const campoData = document.getElementById('campo-data');
             const campoEmpresa = document.getElementById('campo-empresa');
             const campoDescricao = document.getElementById('campo-descricao');
+            const campoObservacao = document.getElementById('campo-observacao');
 
             const valorData = document.getElementById('valor-data');
             const valorEmpresa = document.getElementById('valor-empresa');
             const valorAtividade = document.getElementById('valor-atividade');
+            const feedback = document.getElementById('feedback-mensagem');
+            const btnEnviar = document.getElementById('btn-enviar');
 
-            // Se houver parâmetros na URL, preencher os campos
+            // Preencher dados da URL
             if (urlParams.has('data')) {
                 const dataRaw = urlParams.get('data');
                 campoData.value = dataRaw;
 
-                // Formatar para exibição (YYYY-MM-DD → DD/MM/YYYY)
                 if (dataRaw.match(/^\d{4}-\d{2}-\d{2}$/)) {
                     const [ano, mes, dia] = dataRaw.split('-');
                     valorData.textContent = `${dia}/${mes}/${ano}`;
@@ -100,45 +105,67 @@
                 valorAtividade.textContent = descricao;
             }
 
-            // Ações dos botões
+            // Botão Cancelar
             document.getElementById('btn-cancelar').addEventListener('click', function () {
-                if (confirm('Deseja realmente cancelar? As informações não serão salvas.')) {
-                    window.close(); // ou history.back()
+                if (confirm('Deseja realmente cancelar?')) {
+                    window.close();
                 }
             });
 
-            document.getElementById('form-observacao').addEventListener('submit', function (e) {
+            // Botão Enviar
+            document.getElementById('form-observacao').addEventListener('submit', async function (e) {
                 e.preventDefault();
 
-                // Validação simples
-                const observacao = document.getElementById('campo-observacao').value.trim();
+                const observacao = campoObservacao.value.trim();
 
                 if (observacao.length < 10) {
                     alert('A observação deve ter pelo menos 10 caracteres.');
                     return;
                 }
 
-                // Aqui você fará o envio para o Google Sheets
-                console.log('Dados a serem enviados:', {
+                btnEnviar.disabled = true;
+                btnEnviar.textContent = '⏳ Enviando...';
+
+                const dados = {
                     data: campoData.value,
                     empresa: campoEmpresa.value,
                     descricao_atividade: campoDescricao.value,
                     observacao: observacao
-                });
+                };
 
-                // Feedback visual
-                const feedback = document.getElementById('feedback-mensagem');
-                feedback.style.display = 'block';
-                feedback.className = 'feedback sucesso';
-                feedback.innerHTML = '✅ Observação enviada com sucesso! Aguarde aprovação.';
+                console.log('📤 Enviando para Apps Script:', dados);
+                console.log('🔗 URL:', APPS_SCRIPT_URL);
 
-                // Opcional: desabilitar botão
-                document.getElementById('btn-enviar').disabled = true;
+                try {
+                    const response = await fetch(APPS_SCRIPT_URL, {
+                        method: 'POST',
+                        mode: 'no-cors',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(dados)
+                    });
 
-                // Redirecionar após 2 segundos (opcional)
-                setTimeout(() => {
-                    window.location.href = 'index.html'; // ou voltar para o calendário
-                }, 2000);
+                    console.log('✅ Requisição enviada (no-cors, não podemos ver resposta)');
+
+                    feedback.style.display = 'block';
+                    feedback.className = 'feedback sucesso';
+                    feedback.innerHTML = '✅ Observação enviada com sucesso!';
+
+                    campoObservacao.value = '';
+
+                    setTimeout(() => {
+                        window.location.href = 'index.html';
+                    }, 2000);
+
+                } catch (error) {
+                    console.error('❌ Erro no fetch:', error);
+
+                    feedback.style.display = 'block';
+                    feedback.className = 'feedback erro';
+                    feedback.innerHTML = '❌ Erro ao enviar. Tente novamente.';
+
+                    btnEnviar.disabled = false;
+                    btnEnviar.textContent = '✅ Enviar Observação';
+                }
             });
         })();
     </script>
