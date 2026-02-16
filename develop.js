@@ -489,7 +489,7 @@ function renderActivityDetails(activity, observacoesDaAtividade) {
         const descricao = activity.description;
 
         // Construir URL com parâmetros
-        const url = `formulario.html?data=${data}&empresa=${encodeURIComponent(empresa)}&descricao=${encodeURIComponent(descricao)}`;
+        const url = `form.html?data=${data}&empresa=${encodeURIComponent(empresa)}&descricao=${encodeURIComponent(descricao)}`;
 
         // Abrir em nova aba ou na mesma?
         window.open(url, '_blank'); // Abre em nova aba
