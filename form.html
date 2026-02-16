@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Observação - Atividade</title>
+    <link rel="stylesheet" href="css/form.css">
+</head>
+
+<body>
+    <div class="container" id="container-observacao">
+        <h3 id="titulo-observacao">Adicionar Observação</h3>
+
+        <!-- Cards informativos -->
+        <div class="info-card" id="info-data">
+            <span class="info-label">📅 Data:</span>
+            <span class="info-value" id="valor-data">13/02/2026</span>
+        </div>
+
+        <div class="info-card" id="info-empresa">
+            <span class="info-label">🏢 Empresa:</span>
+            <span class="info-value" id="valor-empresa">VERTIV</span>
+        </div>
+
+        <div class="info-card" id="info-atividade">
+            <span class="info-label">🔧 Atividade:</span>
+            <span class="info-value" id="valor-atividade">RPP - DATAHALL / TI</span>
+        </div>
+
+        <!-- Formulário -->
+        <form id="form-observacao" class="form-observacao">
+            <!-- Campos ocultos (herdados) -->
+            <input type="hidden" name="data" id="campo-data" value="2026-02-13">
+            <input type="hidden" name="empresa" id="campo-empresa" value="VERTIV">
+            <input type="hidden" name="descricao_atividade" id="campo-descricao" value="RPP - DATAHALL / TI">
+
+            <!-- Campo observação -->
+            <div class="campo-grupo" id="grupo-observacao">
+                <label for="campo-observacao" class="campo-label">📝 Observação:</label>
+                <textarea id="campo-observacao" name="observacao" class="campo-textarea" rows="4" required
+                    placeholder="Digite aqui suas observações sobre esta atividade..."></textarea>
+
+            </div>
+
+            <!-- Botões -->
+            <div style="padding: 5px 0px;" class="botoes-grupo" id="grupo-botoes">
+                <button type="submit" id="btn-enviar" class="btn btn-primary">
+                    ✅ Enviar Observação
+                </button>
+                <button type="button" id="btn-cancelar" class="btn btn-secondary">
+                    ❌ Cancelar
+                </button>
+            </div>
+        </form>
+
+        <!-- Área de feedback (opcional) -->
+        <div id="feedback-mensagem" class="feedback" style="display: none;"></div>
+    </div>
+
+    <!-- Script para pré-preenchimento (quando vier de outra página) -->
+    <script>
+        (function () {
+            const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzO1iohoxrNreXG-dsjzAUxYUwKKMncjRcxzYPiuW6DwuiZlJbqpUssxl-15gUoVOlu/exec'
+            // Capturar parâmetros da URL se houver
+            const urlParams = new URLSearchParams(window.location.search);
+
+            // Elementos do DOM
+            const campoData = document.getElementById('campo-data');
+            const campoEmpresa = document.getElementById('campo-empresa');
+            const campoDescricao = document.getElementById('campo-descricao');
+
+            const valorData = document.getElementById('valor-data');
+            const valorEmpresa = document.getElementById('valor-empresa');
+            const valorAtividade = document.getElementById('valor-atividade');
+
+            // Se houver parâmetros na URL, preencher os campos
+            if (urlParams.has('data')) {
+                const dataRaw = urlParams.get('data');
+                campoData.value = dataRaw;
+
+                // Formatar para exibição (YYYY-MM-DD → DD/MM/YYYY)
+                if (dataRaw.match(/^\d{4}-\d{2}-\d{2}$/)) {
+                    const [ano, mes, dia] = dataRaw.split('-');
+                    valorData.textContent = `${dia}/${mes}/${ano}`;
+                } else {
+                    valorData.textContent = dataRaw;
+                }
+            }
+
+            if (urlParams.has('empresa')) {
+                const empresa = urlParams.get('empresa');
+                campoEmpresa.value = empresa;
+                valorEmpresa.textContent = empresa;
+            }
+
+            if (urlParams.has('descricao')) {
+                const descricao = urlParams.get('descricao');
+                campoDescricao.value = descricao;
+                valorAtividade.textContent = descricao;
+            }
+
+            // Ações dos botões
+            document.getElementById('btn-cancelar').addEventListener('click', function () {
+                if (confirm('Deseja realmente cancelar? As informações não serão salvas.')) {
+                    window.close(); // ou history.back()
+                }
+            });
+
+            document.getElementById('form-observacao').addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                // Validação simples
+                const observacao = document.getElementById('campo-observacao').value.trim();
+
+                if (observacao.length < 10) {
+                    alert('A observação deve ter pelo menos 10 caracteres.');
+                    return;
+                }
+
+                // Aqui você fará o envio para o Google Sheets
+                console.log('Dados a serem enviados:', {
+                    data: campoData.value,
+                    empresa: campoEmpresa.value,
+                    descricao_atividade: campoDescricao.value,
+                    observacao: observacao
+                });
+
+                // Feedback visual
+                const feedback = document.getElementById('feedback-mensagem');
+                feedback.style.display = 'block';
+                feedback.className = 'feedback sucesso';
+                feedback.innerHTML = '✅ Observação enviada com sucesso! Aguarde aprovação.';
+
+                // Opcional: desabilitar botão
+                document.getElementById('btn-enviar').disabled = true;
+
+                // Redirecionar após 2 segundos (opcional)
+                setTimeout(() => {
+                    window.location.href = 'index.html'; // ou voltar para o calendário
+                }, 2000);
+            });
+        })();
+    </script>
+    <script>
+        (function () {
+            const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzO1iohoxrNreXG-dsjzAUxYUwKKMncjRcxzYPiuW6DwuiZlJbqpUssxl-15gUoVOlu/exec';
+
+            // Capturar parâmetros da URL
+            const urlParams = new URLSearchParams(window.location.search);
+
+            // Elementos do DOM
+            const campoData = document.getElementById('campo-data');
+            const campoEmpresa = document.getElementById('campo-empresa');
+            const campoDescricao = document.getElementById('campo-descricao');
+            const campoObservacao = document.getElementById('campo-observacao');
+
+            const valorData = document.getElementById('valor-data');
+            const valorEmpresa = document.getElementById('valor-empresa');
+            const valorAtividade = document.getElementById('valor-atividade');
+            const feedback = document.getElementById('feedback-mensagem');
+            const btnEnviar = document.getElementById('btn-enviar');
+
+            // Preencher dados da URL
+            if (urlParams.has('data')) {
+                const dataRaw = urlParams.get('data');
+                campoData.value = dataRaw;
+
+                if (dataRaw.match(/^\d{4}-\d{2}-\d{2}$/)) {
+                    const [ano, mes, dia] = dataRaw.split('-');
+                    valorData.textContent = `${dia}/${mes}/${ano}`;
+                } else {
+                    valorData.textContent = dataRaw;
+                }
+            }
+
+            if (urlParams.has('empresa')) {
+                const empresa = urlParams.get('empresa');
+                campoEmpresa.value = empresa;
+                valorEmpresa.textContent = empresa;
+            }
+
+            if (urlParams.has('descricao')) {
+                const descricao = urlParams.get('descricao');
+                campoDescricao.value = descricao;
+                valorAtividade.textContent = descricao;
+            }
+
+            // Botão Cancelar
+            document.getElementById('btn-cancelar').addEventListener('click', function () {
+                if (confirm('Deseja realmente cancelar?')) {
+                    window.close();
+                }
+            });
+
+            // Botão Enviar
+            document.getElementById('form-observacao').addEventListener('submit', async function (e) {
+                e.preventDefault();
+
+                const observacao = campoObservacao.value.trim();
+
+                if (observacao.length < 10) {
+                    alert('A observação deve ter pelo menos 10 caracteres.');
+                    return;
+                }
+
+                btnEnviar.disabled = true;
+                btnEnviar.textContent = '⏳ Enviando...';
+
+                const dados = {
+                    data: campoData.value,
+                    empresa: campoEmpresa.value,
+                    descricao_atividade: campoDescricao.value,
+                    observacao: observacao
+                };
+
+                console.log('Enviando:', dados);
+
+                try {
+                    await fetch(APPS_SCRIPT_URL, {
+                        method: 'POST',
+                        mode: 'no-cors',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(dados)
+                    });
+
+                    feedback.style.display = 'block';
+                    feedback.className = 'feedback sucesso';
+                    feedback.innerHTML = '✅ Observação enviada com sucesso!';
+
+                    campoObservacao.value = '';
+
+                    setTimeout(() => {
+                        window.location.href = 'index.html';
+                    }, 2000);
+
+                } catch (error) {
+                    console.error('Erro:', error);
+
+                    feedback.style.display = 'block';
+                    feedback.className = 'feedback erro';
+                    feedback.innerHTML = '❌ Erro ao enviar. Tente novamente.';
+
+                    btnEnviar.disabled = false;
+                    btnEnviar.textContent = '✅ Enviar Observação';
+                }
+            });
+        })();
+    </script>
+</body>
+
+</html>
