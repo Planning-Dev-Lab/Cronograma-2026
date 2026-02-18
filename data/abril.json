@@ -1,0 +1,24 @@
+[
+    {
+        "data": "2026-03-01",
+        "on_call_dia": "Equipe C",
+        "on_call_noite": "Equipe D",
+        "freezing": [],
+        "vendors": [
+            {
+                "company": "LG",
+                "description": "PREV. CHILLER",
+                "periodicity": "MENSAL",
+                "company_group": "LG",
+                "service_type": ""
+            },
+            {
+                "company": "Engemon",
+                "description": "SISTEMA DE INCÊNDIO",
+                "periodicity": "MENSAL",
+                "company_group": "ENGEMON",
+                "service_type": "engemon-incendio"
+            }
+        ]
+    }
+]
