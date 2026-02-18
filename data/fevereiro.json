@@ -78,6 +78,13 @@
                 "service_type": ""
             },
             {
+                "company": "SOTREQ",
+                "description": "MANUTENÇÃO PREVENTIVA REVISÃO GMG 1-2",
+                "periodicity": "ANUAL",
+                "company_group": "SOTREQ",
+                "service_type": ""
+             },
+            {
                 "company": "Engemon",
                 "description": "SISTEMA DE INCÊNDIO",
                 "periodicity": "MENSAL",
