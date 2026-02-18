@@ -49,6 +49,13 @@
                 "service_type": ""
             },
             {
+                "company": "SOTREQ",
+                "description": "MANUTENÇÃO PREVENTIVA REVISÃO GMG 1-1",
+                "periodicity": "ANUAL",
+                "company_group": "SOTREQ",
+                "service_type": ""
+             },
+            {
                 "company": "Engemon",
                 "description": "SISTEMA DE INCÊNDIO",
                 "periodicity": "MENSAL",
@@ -460,13 +467,6 @@
                 "service_type": ""
             },
             {
-                "company": "VERTIV",
-                "description": "RPP - DATAHALL | TI",
-                "periodicity": "QUADRIMESTRAL",
-                "company_group": "VERTIV_POWER",
-                "service_type": ""
-            },
-            {
                 "company": "Engemon",
                 "description": "SISTEMA DE AUTOMAÇÃO",
                 "periodicity": "MENSAL",
@@ -518,13 +518,6 @@
                 "service_type": ""
             },
             {
-                "company": "VERTIV",
-                "description": "RPP - DATAHALL | TI",
-                "periodicity": "QUADRIMESTRAL",
-                "company_group": "VERTIV_POWER",
-                "service_type": ""
-            },
-            {
                 "company": "Engemon",
                 "description": "SISTEMA DE INCÊNDIO",
                 "periodicity": "MENSAL",
@@ -561,13 +554,6 @@
                 "service_type": ""
             },
             {
-                "company": "VERTIV",
-                "description": "RPP - DATAHALL | TI",
-                "periodicity": "QUADRIMESTRAL",
-                "company_group": "VERTIV_POWER",
-                "service_type": ""
-            },
-            {
                 "company": "Engemon",
                 "description": "SISTEMA DE INCÊNDIO",
                 "periodicity": "MENSAL",
@@ -590,13 +576,6 @@
             {
                 "company": "VERTIV",
                 "description": "STS - DATAHALL",
-                "periodicity": "QUADRIMESTRAL",
-                "company_group": "VERTIV_POWER",
-                "service_type": ""
-            },
-            {
-                "company": "VERTIV",
-                "description": "RPP - DATAHALL | TI",
                 "periodicity": "QUADRIMESTRAL",
                 "company_group": "VERTIV_POWER",
                 "service_type": ""
@@ -629,13 +608,6 @@
                 "service_type": ""
             },
             {
-                "company": "VERTIV",
-                "description": "RPP - DATAHALL | TI",
-                "periodicity": "QUADRIMESTRAL",
-                "company_group": "VERTIV_POWER",
-                "service_type": ""
-            },
-            {
                 "company": "Engemon",
                 "description": "SISTEMA DE AUTOMAÇÃO",
                 "periodicity": "MENSAL",
@@ -655,13 +627,6 @@
             }
         ],
         "vendors": [
-            {
-                "company": "VERTIV",
-                "description": "RPP - DATAHALL | TI",
-                "periodicity": "QUADRIMESTRAL",
-                "company_group": "VERTIV_POWER",
-                "service_type": ""
-            },
             {
                 "company": "Engemon",
                 "description": "SISTEMA DE AUTOMAÇÃO",
