@@ -6,9 +6,18 @@ let currentYear = now.getFullYear();
 let currentMonth = now.getMonth();
 let activities = [];
 let dayTeams = {};
+let observacoes = []; // NOVO: armazenar observações carregadas
 let activeFilters = {
     company: '',
     description: ''
+};
+
+// NOVO: Controlar estado da navegação no modal
+let modalState = {
+    level: 1, // 1 = lista de atividades, 2 = detalhes da atividade
+    date: null,
+    selectedActivity: null,
+    atividadesDoDia: []
 };
 
 const daysGrid = document.getElementById('days-grid');
@@ -26,7 +35,6 @@ const companyModal = document.getElementById('company-modal');
 const closeCompanyModalBtn = document.getElementById('close-company-modal');
 const applyCompanyFilterBtn = document.getElementById('apply-company-filter');
 const cancelCompanyFilterBtn = document.getElementById('cancel-company-filter');
-
 
 // ==========================================================
 // 2. CONSTANTES E CONFIGURAÇÕES
@@ -59,15 +67,13 @@ function getCurrentShift() {
 
 const normalizeText = (text) => text ? text.toUpperCase().replace(/-/g, '_').trim() : 'N_A';
 const sanitizeFileName = (text) => text.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-// Modificar a função applyFilters existente
+
 function applyFilters(activitiesArray, filters) {
     return activitiesArray.filter(activity => {
-        // Verificar filtro de empresa (agora busca exata ou vazia)
         const companyMatch = !filters.company ||
             (activity.company &&
                 activity.company.toLowerCase() === filters.company.toLowerCase());
 
-        // Verificar filtro de descrição (mantém busca parcial)
         const descriptionMatch = !filters.description ||
             (activity.description &&
                 activity.description.toLowerCase().includes(filters.description.toLowerCase()));
@@ -76,17 +82,14 @@ function applyFilters(activitiesArray, filters) {
     });
 }
 
-// Na Seção 3 (Funções Auxiliares), após applyFilters
 function renderCompanyList() {
     const companyList = document.querySelector('.company-list');
-    
-    // Verifica se encontrou
+
     if (!companyList) {
         console.error('Elemento .company-list não encontrado!');
         return;
     }
     companyList.innerHTML = '';
-    
 
     EMPRESAS_DISPONIVEIS.forEach(empresa => {
         const label = document.createElement('label');
@@ -97,7 +100,6 @@ function renderCompanyList() {
         radio.name = 'company';
         radio.value = empresa;
 
-        // Marcar se já estiver selecionada
         if (activeFilters.company.toLowerCase() === empresa.toLowerCase()) {
             radio.checked = true;
         }
@@ -115,21 +117,16 @@ function renderCompanyList() {
 // 3.5 FUNÇÕES DE CRIPTOGRAFIA PARA LINKS COMPARTILHÁVEIS
 // ==========================================================
 
-// Chave secreta - em produção, use uma mais complexa e guarde no servidor
 const SECRET_KEY = 'MinhaChaveSuperSecreta2026!@#$';
 
 function encryptCompany(companyName) {
     try {
-        // Adiciona timestamp para evitar que links sejam válidos para sempre (opcional)
         const data = {
             company: companyName,
-            exp: new Date('2026-12-31').getTime() // validade 31/12/2026
+            exp: new Date('2026-12-31').getTime()
         };
-        
-        // Criptografa
+
         const encrypted = CryptoJS.AES.encrypt(JSON.stringify(data), SECRET_KEY).toString();
-        
-        // Codifica para URL
         return encodeURIComponent(encrypted);
     } catch (e) {
         console.error('Erro ao criptografar:', e);
@@ -140,20 +137,16 @@ function encryptCompany(companyName) {
 function decryptCompany(encryptedString) {
     try {
         if (!encryptedString) return null;
-        
-        // Decodifica da URL
+
         const decoded = decodeURIComponent(encryptedString);
-        
-        // Descriptografa
         const bytes = CryptoJS.AES.decrypt(decoded, SECRET_KEY);
         const decryptedData = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
-        
-        // Verifica se o link expirou
+
         if (decryptedData.exp && decryptedData.exp < Date.now()) {
             console.warn('Link expirado');
             return null;
         }
-        
+
         return decryptedData.company;
     } catch (e) {
         console.error('Erro ao descriptografar:', e);
@@ -161,29 +154,45 @@ function decryptCompany(encryptedString) {
     }
 }
 
-// Função para gerar link compartilhável
 function generateShareableLink(companyName) {
     const encrypted = encryptCompany(companyName);
     if (!encrypted) return null;
-    
-    // Pega a URL atual sem parâmetros
+
     const baseUrl = window.location.href.split('?')[0];
     return `${baseUrl}?empresa=${encrypted}`;
 }
 
-// Função para ler filtro da URL
 function getCompanyFromUrl() {
     const urlParams = new URLSearchParams(window.location.search);
     const encryptedParam = urlParams.get('empresa');
-    
+
     if (!encryptedParam) return null;
-    
+
     return decryptCompany(encryptedParam);
 }
 
 // ==========================================================
 // 4. CARREGAMENTO DOS DADOS (JSON)
 // ==========================================================
+
+// NOVA FUNÇÃO: Carregar observações do info.json
+async function loadObservacoes() {
+    try {
+        const response = await fetch(`data/info.json`);
+        if (response.ok) {
+            const data = await response.json();
+            observacoes = data.observacoes || [];
+            console.log(`Carregadas ${observacoes.length} observações`);
+        } else {
+            console.log('Arquivo de observações não encontrado, criando array vazio');
+            observacoes = [];
+        }
+    } catch (error) {
+        console.error("Erro ao carregar observações:", error);
+        observacoes = [];
+    }
+}
+
 async function loadActivities(year, month) {
     try {
         const monthFileName = sanitizeFileName(MONTH_NAMES[month]);
@@ -257,70 +266,263 @@ function renderCalendar(year, month) {
         dayElement.innerHTML = `<span class="day-number">${day}</span>`;
 
         const daily = activities.filter(a => a.date === dateString);
-
-        // === MODIFICAÇÃO 1: Aplicar filtros às atividades ===
         const filteredDaily = applyFilters(daily, activeFilters);
-        // ====================================================
 
-        // === MODIFICAÇÃO 2: Usar filteredDaily para contagem ===
         const countables = filteredDaily.filter(a => a.periodicity && COUNTABLE_PERIODICITIES.includes(normalizeText(a.periodicity)));
         if (countables.length > 0) {
             dayElement.innerHTML += `<span class="activity-indicator">${countables.length} Ativ.</span>`;
         }
-        // =======================================================
 
-        // Lógica de Classes
         let appliedClass = null;
-
-        // Limpa qualquer classe de feriado antes de decidir
         dayElement.classList.remove('is-holiday-red', 'holiday');
 
-        // === MODIFICAÇÃO 3: Usar filteredDaily para determinar cores ===
         if (filteredDaily.some(a => a.isHoliday)) {
             appliedClass = DAY_CLASS_MAP['FERIADO'];
-            dayElement.classList.add('is-holiday-red'); // SÓ FERIADO REAL FICA VERMELHO
+            dayElement.classList.add('is-holiday-red');
         } else {
-            // CORREÇÃO: Usar filteredDaily aqui também
             const presentGroups = filteredDaily.map(a => a.company_group);
             const winner = DAY_COLOR_PRIORITY_ORDER.find(p => presentGroups.includes(p));
             if (winner) appliedClass = DAY_CLASS_MAP[winner];
             else if (filteredDaily.length > 0) appliedClass = 'general-activity';
         }
-        // ================================================================
 
         if (appliedClass) dayElement.classList.add(appliedClass);
 
-        // === MODIFICAÇÃO 4: Passar ambos daily e filteredDaily para o modal ===
         dayElement.onclick = () => openActivityModal(dateString, daily, filteredDaily);
-        // ======================================================================
 
         daysGrid.appendChild(dayElement);
     }
 }
+
 // ==========================================================
-// 6. LÓGICA DO MODAL (COM VALIDAÇÃO DE DATA ATUAL)
+// NOVAS FUNÇÕES PARA NAVEGAÇÃO NO MODAL
+// ==========================================================
+
+// NOVA FUNÇÃO: Voltar para lista de atividades
+function backToActivityList() {
+    modalState.level = 1;
+    renderActivityList(modalState.date, modalState.atividadesDoDia);
+}
+
+// NOVA FUNÇÃO: Mostrar detalhes de uma atividade específica
+function showActivityDetails(activity) {
+    modalState.level = 2;
+    modalState.selectedActivity = activity;
+
+    // Filtrar observações desta atividade
+    const observacoesDaAtividade = observacoes.filter(obs =>
+        obs.data === modalState.date &&
+        obs.empresa === activity.company &&
+        obs.descricao_atividade === activity.description
+    );
+
+    renderActivityDetails(activity, observacoesDaAtividade);
+}
+
+// NOVA FUNÇÃO: Renderizar lista de atividades (nível 1)
+function renderActivityList(dateString, atividades) {
+    activitiesList.innerHTML = '';
+
+    // Adicionar botão de voltar se necessário (mas no nível 1 não aparece)
+
+    if (atividades.length === 0) {
+        activitiesList.innerHTML = '<p class="no-activity">Nenhuma atividade agendada.</p>';
+        return;
+    }
+
+    // Agrupar atividades por empresa
+    const atividadesPorEmpresa = {};
+    atividades.forEach(activity => {
+        if (!atividadesPorEmpresa[activity.company]) {
+            atividadesPorEmpresa[activity.company] = [];
+        }
+        atividadesPorEmpresa[activity.company].push(activity);
+    });
+
+    // Renderizar cada empresa com suas atividades
+    Object.keys(atividadesPorEmpresa).sort().forEach(empresa => {
+        const empresaAtividades = atividadesPorEmpresa[empresa];
+
+        // Cabeçalho da empresa
+        const empresaHeader = document.createElement('h4');
+        empresaHeader.textContent = `${empresa} (${empresaAtividades.length})`;
+        empresaHeader.style.marginTop = '15px';
+        empresaHeader.style.marginBottom = '5px';
+        empresaHeader.style.color = '#007bff';
+        activitiesList.appendChild(empresaHeader);
+
+        // Atividades desta empresa
+        empresaAtividades.forEach(activity => {
+            const div = document.createElement('div');
+            div.className = 'activity-item';
+            div.style.cursor = 'pointer';
+
+            const pText = normalizeText(activity.periodicity);
+            const isPeriodic = COUNTABLE_PERIODICITIES.includes(pText);
+
+            let borderClass = activity.service_type ? `border-${activity.service_type}` :
+                (activity.company_group ? `border-group-${activity.company_group}` : `border-p-${pText}`);
+            div.classList.add(borderClass);
+
+            // Verificar se tem observações
+            const temObservacoes = observacoes.some(obs =>
+                obs.data === dateString &&
+                obs.empresa === activity.company &&
+                obs.descricao_atividade === activity.description
+            );
+
+            const tag = isPeriodic ? `<span class="periodicidade-tag p-${pText}">${pText}</span>` : '';
+            const observacaoIcon = temObservacoes ? ' 📝' : '';
+
+            div.innerHTML = `
+                <h4>${activity.company} ${tag} ${observacaoIcon}</h4>
+                <p><strong>Descrição:</strong> ${activity.description}</p>
+            `;
+
+            div.onclick = (e) => {
+                e.stopPropagation();
+                showActivityDetails(activity);
+            };
+
+            activitiesList.appendChild(div);
+        });
+    });
+}
+
+// NOVA FUNÇÃO: Renderizar detalhes da atividade (nível 2)
+function renderActivityDetails(activity, observacoesDaAtividade) {
+    activitiesList.innerHTML = '';
+
+    // Botão Voltar
+    const backButton = document.createElement('button');
+    backButton.textContent = '← Voltar para lista';
+    backButton.style.cssText = `
+        background: #f0f0f0;
+        border: 1px solid #ddd;
+        padding: 8px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-bottom: 15px;
+        font-size: 14px;
+    `;
+    backButton.onclick = backToActivityList;
+    activitiesList.appendChild(backButton);
+
+    // Detalhes da atividade
+    const activityDetail = document.createElement('div');
+    activityDetail.className = 'activity-item';
+
+    const pText = normalizeText(activity.periodicity);
+    const isPeriodic = COUNTABLE_PERIODICITIES.includes(pText);
+
+    let borderClass = activity.service_type ? `border-${activity.service_type}` :
+        (activity.company_group ? `border-group-${activity.company_group}` : `border-p-${pText}`);
+    activityDetail.classList.add(borderClass);
+
+    const tag = isPeriodic ? `<span class="periodicidade-tag p-${pText}">${pText}</span>` : '';
+
+    activityDetail.innerHTML = `
+        <h4>${activity.company} ${tag}</h4>
+        <p><strong>Descrição:</strong> ${activity.description}</p>
+    `;
+    activitiesList.appendChild(activityDetail);
+
+    // Seção de observações
+    if (observacoesDaAtividade.length > 0) {
+        const obsTitle = document.createElement('h5');
+        obsTitle.textContent = '📋 Observações:';
+        obsTitle.style.marginTop = '20px';
+        obsTitle.style.marginBottom = '10px';
+        obsTitle.style.color = '#555';
+        activitiesList.appendChild(obsTitle);
+
+        observacoesDaAtividade.forEach(obs => {
+            const obsDiv = document.createElement('div');
+            obsDiv.style.cssText = `
+                background: #f9f9f9;
+                border-left: 3px solid #007bff;
+                padding: 10px;
+                margin-bottom: 10px;
+                border-radius: 0 4px 4px 0;
+            `;
+
+            // Formatar data de envio
+            let dataEnvio = '';
+            if (obs.data_envio) {
+                const data = new Date(obs.data_envio);
+                dataEnvio = data.toLocaleString('pt-BR');
+            }
+
+            obsDiv.innerHTML = `
+                <p style="margin: 0 0 5px 0;"><strong>Observação:</strong> ${obs.observacao}</p>
+                ${dataEnvio ? `<small style="color: #888;">Enviado em: ${dataEnvio}</small>` : ''}
+            `;
+
+            activitiesList.appendChild(obsDiv);
+        });
+    } else {
+        const noObs = document.createElement('p');
+        noObs.textContent = 'Nenhuma observação para esta atividade.';
+        noObs.style.cssText = 'color: #888; font-style: italic; margin-top: 15px;';
+        activitiesList.appendChild(noObs);
+    }
+
+    // Botão para adicionar observação (futuro)
+    // Botão para adicionar observação
+    const addButton = document.createElement('button');
+    addButton.textContent = '+ Adicionar Observação';
+    addButton.style.cssText = `
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 14px;
+    width: 100%;
+`;
+    addButton.onclick = () => {
+        // Pegar dados da atividade atual
+        const data = modalState.date;
+        const empresa = activity.company;
+        const descricao = activity.description;
+
+        // Construir URL com parâmetros
+        const url = `form.html?data=${data}&empresa=${encodeURIComponent(empresa)}&descricao=${encodeURIComponent(descricao)}`;
+
+        // Abrir em nova aba ou na mesma?
+        window.open(url, '_blank'); // Abre em nova aba
+        // ou window.location.href = url; // Abre na mesma aba
+    };
+    activitiesList.appendChild(addButton);
+}
+
+// ==========================================================
+// 6. LÓGICA DO MODAL (MODIFICADA)
 // ==========================================================
 function openActivityModal(dateString, daily, filteredActivities = null) {
     modalDateDisplay.textContent = dateString.split('-').reverse().join('/');
-    activitiesList.innerHTML = '';
+
+    // Guardar estado
+    modalState.date = dateString;
+    modalState.level = 1;
+    modalState.atividadesDoDia = filteredActivities !== null ? filteredActivities : daily;
+    modalState.selectedActivity = null;
+
+    // Info da equipe (mantido igual)
     modalTeamInfo.innerHTML = '';
-
-    const activitiesToShow = filteredActivities !== null ? filteredActivities : daily;
-
-    // 1. Identificar a data de HOJE no formato YYYY-MM-DD
     const agora = new Date();
     const hojeString = `${agora.getFullYear()}-${String(agora.getMonth() + 1).padStart(2, '0')}-${String(agora.getDate()).padStart(2, '0')}`;
 
-    const hasPeriodicActivity = activitiesToShow.some(a => a.periodicity && COUNTABLE_PERIODICITIES.includes(normalizeText(a.periodicity)));
+    const hasPeriodicActivity = modalState.atividadesDoDia.some(a => a.periodicity && COUNTABLE_PERIODICITIES.includes(normalizeText(a.periodicity)));
     exportPdfBtn.style.display = hasPeriodicActivity ? 'block' : 'none';
 
     const team = dayTeams[dateString];
     const shift = getCurrentShift();
 
     if (team) {
-        // 2. Só exibe o selo se a data clicada (dateString) for igual a hoje (hojeString)
         const isToday = (dateString === hojeString);
-
         const seloDia = (isToday && shift === 'day') ? '<span style="color: #0056b3; font-weight: bold;"> (Plantão Agora)</span>' : '';
         const seloNoite = (isToday && shift === 'night') ? '<span style="color: #0056b3; font-weight: bold;"> (Plantão Agora)</span>' : '';
 
@@ -330,36 +532,14 @@ function openActivityModal(dateString, daily, filteredActivities = null) {
         `;
     }
 
-    // ... (restante do código de exibição das atividades)
-    if (activitiesToShow.length === 0) {
-        activitiesList.innerHTML = '<p class="no-activity">Nenhuma atividade agendada.</p>';
-    }
-
-    activitiesToShow.forEach(activity => {
-        // ... (seu código de renderização das atividades continua aqui)
-        const div = document.createElement('div');
-        div.className = 'activity-item';
-        // ... (etc)
-        const pText = normalizeText(activity.periodicity);
-        const isPeriodic = COUNTABLE_PERIODICITIES.includes(pText);
-        if (isPeriodic) div.classList.add('is-countable-task');
-        if (activity.isHoliday) {
-            div.style.borderLeft = '5px solid red';
-            div.innerHTML = `🛑 <strong>FERIADO:</strong> ${activity.description}`;
-        } else {
-            const tag = isPeriodic ? `<span class="periodicidade-tag p-${pText}">${pText}</span>` : '';
-            let borderClass = activity.service_type ? `border-${activity.service_type}` : (activity.company_group ? `border-group-${activity.company_group}` : `border-p-${pText}`);
-            div.classList.add(borderClass);
-            div.innerHTML = `<h4>${activity.company} ${tag}</h4><p><strong>Descrição:</strong> ${activity.description}</p>`;
-        }
-        activitiesList.appendChild(div);
-    });
+    // Renderizar lista de atividades (nível 1)
+    renderActivityList(dateString, modalState.atividadesDoDia);
 
     activityModal.style.display = 'block';
 }
 
 // ==========================================================
-// 7. EXPORTAÇÃO PDF
+// 7. EXPORTAÇÃO PDF (MODIFICADA PARA SUPORTAR O NOVO MODAL)
 // ==========================================================
 async function exportToPDF() {
     const { jsPDF } = window.jspdf;
@@ -384,17 +564,53 @@ async function exportToPDF() {
     }
 
     const listClone = document.createElement('div');
-    const originalItems = activitiesList.querySelectorAll('.activity-item.is-countable-task');
 
-    originalItems.forEach(item => {
-        const itemClone = item.cloneNode(true);
-        itemClone.style.marginBottom = '15px';
-        itemClone.style.padding = '15px';
-        itemClone.style.border = '1px solid #eee';
-        itemClone.style.borderLeft = item.style.borderLeft || window.getComputedStyle(item).borderLeft;
-        itemClone.style.pageBreakInside = 'avoid';
-        listClone.appendChild(itemClone);
-    });
+    // Se estiver no nível 2, mostrar a atividade selecionada
+    if (modalState.level === 2 && modalState.selectedActivity) {
+        const activity = modalState.selectedActivity;
+        const activityDiv = document.createElement('div');
+        activityDiv.className = 'activity-item';
+        activityDiv.innerHTML = `
+            <h4>${activity.company}</h4>
+            <p><strong>Descrição:</strong> ${activity.description}</p>
+        `;
+        listClone.appendChild(activityDiv);
+
+        // Adicionar observações
+        const observacoesDaAtividade = observacoes.filter(obs =>
+            obs.data === modalState.date &&
+            obs.empresa === activity.company &&
+            obs.descricao_atividade === activity.description
+        );
+
+        if (observacoesDaAtividade.length > 0) {
+            const obsTitle = document.createElement('h5');
+            obsTitle.textContent = 'Observações:';
+            obsTitle.style.marginTop = '15px';
+            listClone.appendChild(obsTitle);
+
+            observacoesDaAtividade.forEach(obs => {
+                const obsDiv = document.createElement('div');
+                obsDiv.style.marginBottom = '10px';
+                obsDiv.style.padding = '10px';
+                obsDiv.style.background = '#f9f9f9';
+                obsDiv.innerHTML = `<p>${obs.observacao}</p>`;
+                listClone.appendChild(obsDiv);
+            });
+        }
+    } else {
+        // Nível 1: mostrar todas as atividades do dia
+        const originalItems = activitiesList.querySelectorAll('.activity-item');
+        originalItems.forEach(item => {
+            const itemClone = item.cloneNode(true);
+            itemClone.style.marginBottom = '15px';
+            itemClone.style.padding = '15px';
+            itemClone.style.border = '1px solid #eee';
+            itemClone.style.borderLeft = item.style.borderLeft || window.getComputedStyle(item).borderLeft;
+            itemClone.style.pageBreakInside = 'avoid';
+            listClone.appendChild(itemClone);
+        });
+    }
 
     tempContainer.appendChild(listClone);
     tempContainer.style.position = 'absolute';
@@ -415,7 +631,6 @@ async function exportToPDF() {
         const pdfBlob = pdf.output('blob');
         const pdfUrl = URL.createObjectURL(pdfBlob);
 
-        // Verifica se é mobile para usar a Web Share API
         if (navigator.share && /Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
             const file = new File([pdfBlob], fileName, { type: 'application/pdf' });
 
@@ -426,11 +641,9 @@ async function exportToPDF() {
                     files: [file]
                 });
             } catch (shareError) {
-                // Se o usuário cancelar o compartilhamento, abre no navegador
                 window.open(pdfUrl, '_blank');
             }
         } else {
-            // Desktop: Baixa e abre em nova aba
             pdf.save(fileName);
             window.open(pdfUrl, '_blank');
         }
@@ -439,7 +652,6 @@ async function exportToPDF() {
         console.error("Erro ao gerar PDF:", error);
         alert("Houve um erro ao gerar o arquivo.");
     } finally {
-        // IMPORTANTE: Limpa o elemento criado para não poluir o HTML
         if (document.body.contains(tempContainer)) {
             document.body.removeChild(tempContainer);
         }
@@ -458,14 +670,15 @@ async function navigateMonth(direction) {
 
 prevMonthBtn.addEventListener('click', () => navigateMonth('prev'));
 nextMonthBtn.addEventListener('click', () => navigateMonth('next'));
-closeModalBtn.addEventListener('click', () => activityModal.style.display = 'none');
+closeModalBtn.addEventListener('click', () => {
+    activityModal.style.display = 'none';
+    modalState.level = 1; // Resetar estado ao fechar
+});
 exportPdfBtn.addEventListener('click', exportToPDF);
 
-// Elementos dos filtros (AJUSTADO)
 const descriptionFilterInput = document.getElementById('description-filter');
 const clearFiltersBtn = document.getElementById('clear-filters');
 
-// Event listeners para o modal de empresas
 companyFilterBtn.addEventListener('click', () => {
     renderCompanyList();
     companyModal.style.display = 'block';
@@ -481,7 +694,7 @@ cancelCompanyFilterBtn.addEventListener('click', () => {
 
 applyCompanyFilterBtn.addEventListener('click', () => {
     const selectedRadio = document.querySelector('input[name="company"]:checked');
-    
+
     if (selectedRadio) {
         activeFilters.company = selectedRadio.value;
         companyFilterBtn.classList.add('filtro-aplicado');
@@ -491,54 +704,44 @@ applyCompanyFilterBtn.addEventListener('click', () => {
         companyFilterBtn.classList.remove('filtro-aplicado');
         companyFilterBtn.innerHTML = '🏢 Selecionar Empresa';
     }
-    
+
     companyModal.style.display = 'none';
     renderCalendar(currentYear, currentMonth);
 });
 
-// Event listener para clearFilters (VERSÃO ATUALIZADA)
-// Event listener para clearFilters (VERSÃO CORRIGIDA)
 if (clearFiltersBtn) {
     clearFiltersBtn.addEventListener('click', () => {
-        // Verifica se veio de um link compartilhado
         const urlCompany = getCompanyFromUrl();
-        
+
         if (urlCompany) {
-            // Se veio de link, NÃO limpa o filtro de empresa
             activeFilters.description = '';
-            // Mantém activeFilters.company = urlCompany
-            
             if (descriptionFilterInput) descriptionFilterInput.value = '';
-            
-            // Mostra um aviso sutil (opcional)
             alert('Você está em modo de visualização restrita. Não é possível limpar o filtro de empresa.');
         } else {
-            // Modo normal: limpa todos os filtros
             activeFilters.company = '';
             activeFilters.description = '';
-            
-            // Resetar botão de empresa
+
             companyFilterBtn.classList.remove('filtro-aplicado');
             companyFilterBtn.innerHTML = '🏢 Selecionar Empresa';
-            
+
             if (descriptionFilterInput) descriptionFilterInput.value = '';
-            
-            // Desmarcar radio no modal
+
             const radios = document.querySelectorAll('input[name="company"]');
             radios.forEach(radio => radio.checked = false);
         }
-        
+
         renderCalendar(currentYear, currentMonth);
     });
 }
 
-// Fechar ambos modais ao clicar fora
-window.onclick = (e) => { 
-    if (e.target === activityModal) activityModal.style.display = 'none';
+window.onclick = (e) => {
+    if (e.target === activityModal) {
+        activityModal.style.display = 'none';
+        modalState.level = 1; // Resetar estado ao fechar
+    }
     if (e.target === companyModal) companyModal.style.display = 'none';
 };
 
-// Debounce para o filtro de descrição
 function debounce(func, wait) {
     let timeout;
     return function executedFunction(...args) {
@@ -555,7 +758,6 @@ const applyFilterWithDebounce = debounce(() => {
     renderCalendar(currentYear, currentMonth);
 }, 300);
 
-// Event listener para descrição (mantém busca parcial)
 if (descriptionFilterInput) {
     descriptionFilterInput.addEventListener('input', (e) => {
         activeFilters.description = e.target.value.trim();
@@ -565,23 +767,17 @@ if (descriptionFilterInput) {
 
 async function init() {
     await loadActivities(currentYear, currentMonth);
-    
-    // Verifica se há empresa na URL
+    await loadObservacoes(); // NOVO: Carregar observações
+
     const urlCompany = getCompanyFromUrl();
-    
+
     if (urlCompany) {
-        // Se veio de um link compartilhado, aplica o filtro
         activeFilters.company = urlCompany;
         companyFilterBtn.classList.add('filtro-aplicado');
         companyFilterBtn.innerHTML = `🏢 ${urlCompany}`;
-        
-        // Opcional: Esconder o botão de filtro para não permitir trocar
         companyFilterBtn.style.display = 'none';
-        
-        // Opcional: Mostrar mensagem de "Visualização restrita"
-        //showRestrictedViewMessage(urlCompany);
     }
-    
+
     renderCalendar(currentYear, currentMonth);
 }
 
