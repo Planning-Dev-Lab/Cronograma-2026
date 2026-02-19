@@ -5,7 +5,37 @@
       "data": "2026-02-13",
       "empresa": "VERTIV",
       "descricao_atividade": "RPP - DATAHALL / TI",
-      "observacao": "<br>Equipamentos - DH 01:<br>(RPP - 1135A  RPP - 1135B)<br>(RPP - 1145A  RPP - 1145B)<br>(RPP - 1235A  RPP - 1235B)<br>(RPP - 1245A  RPP - 1245B)<br><br>Equipamentos - DH 02:<br>(RPP - 2111A - 2111B - 2111C - 2111D)<br>(RPP - 2121A - 2121B - 2121C)<br>(RPP -2131A -2131B -2131C -2131D)<br>(RPP - 2141A - 2141B - 2141C)"
-    }
+      "observacao": "<br><b>Equipamentos - DH 01</b>:<br>(1135A - 1135B) (1145A - 1145B)<br>(1235A - 1235B) (1245A - 1245B)<br><br><b>Equipamentos - DH 02</b>:<br>(2111A - 2111B - 2111C - 2111D)<br>(2121A - 2121B - 2121C)<br>(2131A - 2131B - 2131C - 2131D)<br>(2141A - 2141B - 2141C)"
+    },
+    {
+      "data": "2026-02-19",
+      "empresa": "VERTIV",
+      "descricao_atividade": "RPP - DATAHALL | TI",
+      "observacao": "<b>RPP's</b><br>(2212A - 2212B) - (2222A - 2222B)<br>(2211A - 2211B) - (2211C - 2221A)<br>(2221B - 2221C) - (2231A - 2231B)<br>(2231C - 2241A) - (2241B - 2241C)"
+    },
+    {
+      "data": "2026-02-19",
+      "empresa": "VERTIV",
+      "descricao_atividade": "STS - DATAHALL",
+      "observacao": "<br><b>SALA 1-1</b> <br>(1-1-1-1) - (1-2-1-1)<br>(1-1-2-1) - (1-2-2-1)<br>(1-1-3-1) - (1-2-3-1)<br>(1-1-4-1) - (1-2-4-1)<br><br><b>SALA 1-2</b> <br>(1-1-1-2) - (1-2-1-2)<br>(1-1-2-2) - (1-2-2-2)<br>(1-1-3-2) - (1-2-3-2)<br>(1-1-4-2) - (1-2-4-2)"
+    },
+    {
+      "data": "2026-02-20",
+      "empresa": "VERTIV",
+      "descricao_atividade": "STS - DATAHALL",
+      "observacao": "<br><b>SALA 1-3</b><br>(1-1-1-3) - (1-2-1-3)<br>(1-1-2-3) - (1-2-2-3)<br>(1-1-3-3) - (1-2-3-3)<br>(1-1-4-3) - (1-2-4-3)<br><br><b>SALA 1-4</b><br>(1-1-1-4) - (1-1-2-4)<br>(1-1-3-4) - (1-1-4-4)"
+    },
+    {
+    "data": "2026-02-23",
+    "empresa": "VERTIV",
+    "descricao_atividade": "STS - DATAHALL",
+    "observacao": "<br><b>SALA 1-5</b> <br>(1-1-1-5) - (1-2-1-5)<br>(1-1-2-5) - (1-2-2-5)<br>(1-1-3-5) - (1-2-3-5)<br>(1-1-4-5) - (1-2-4-5)<br><br><b>SALA 2-1</b><br>(2-1-1-1) - (2-2-1-1)<br>(2-1-2-1) - (2-2-2-1)<br>(2-1-3-1) - (2-2-3-1)<br>(2-1-4-1) - (2-2-4-1)"
+  },
+  {
+    "data": "2026-02-24",
+    "empresa": "VERTIV",
+    "descricao_atividade": "STS - DATAHALL",
+    "observacao": "<br><b>SALA 2-2</b> <br>(2-1-1-2) - (2-1-3-2)<br>(2-2-3-2) - (2-2-4-2)<br><br><b>SALA NOC</b> <br>(NOC - 1) - (NOC - 2)<br><br><b>SALA TI</b><br>(TI - 1) - (TI - 2)"
+  }
   ]
 }
