@@ -101,7 +101,7 @@
         "vendors": [
             {
                 "company": "VERTIV",
-                "description": "UPS 1.R1.6 | UPS 1.R2.6 (22:00 - 06:00)(Com Parada) CHG0178600 ",
+                "description": "UPS 1.R1.6 | UPS 1.R2.6<br>Manutençao Com Parada<br>CHG0178600 ",
                 "periodicity": "ANUAL",
                 "company_group": "VERTIV_POWER",
                 "service_type": ""
@@ -210,7 +210,7 @@
         "vendors": [
             {
                 "company": "VERTIV",
-                "description": "UPS 1.1.1 | UPS 1.2.1 (Com Parada) CHG0178600 ",
+                "description": "UPS 1.1.1 | UPS 1.2.1<br>Manutenção Com Parada<br>CHG0178600 ",
                 "periodicity": "ANUAL",
                 "company_group": "VERTIV_POWER",
                 "service_type": ""
@@ -275,7 +275,7 @@
         "vendors": [
             {
                 "company": "VERTIV",
-                "description": "UPS 1.1.3 | UPS 1.2.3 (COM PARADA) CHG0178600 ",
+                "description": "UPS 1.1.3 | UPS 1.2.3<br>Manutenção Com Parada<br>CHG0178600 ",
                 "periodicity": "ANUAL",
                 "company_group": "VERTIV_POWER",
                 "service_type": ""
@@ -427,7 +427,7 @@
         "vendors": [
             {
                 "company": "VERTIV",
-                "description": "UPS 1.1.2 | UPS 1.2.2 (22:00 - 06:00)(Com Parada) CHG0180817",
+                "description": "UPS 1.1.2 | UPS 1.2.2<br>Manutenção Com Parada<br>CHG0180817",
                 "periodicity": "ANUAL",
                 "company_group": "VERTIV_POWER",
                 "service_type": ""
@@ -548,7 +548,7 @@
             },
             {
                 "company": "VERTIV",
-                "description": "UPS 2.R1.6 | UPS 2.R2.6 (22:00 - 06:00)(COM PARADA)CHG0180275",
+                "description": "UPS 2.R1.6 | UPS 2.R2.6<br>Manutenção Com Parada<br>CHG0180275",
                 "periodicity": "ANUAL",
                 "company_group": "VERTIV_POWER",
                 "service_type": ""
