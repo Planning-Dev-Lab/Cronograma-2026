@@ -581,13 +581,6 @@
         ],
         "vendors": [
             {
-                "company": "VERTIV",
-                "description": "STS - DATAHALL",
-                "periodicity": "QUADRIMESTRAL",
-                "company_group": "VERTIV_POWER",
-                "service_type": ""
-            },
-            {
                 "company": "Engemon",
                 "description": "SISTEMA DE INCÊNDIO",
                 "periodicity": "MENSAL",
@@ -607,13 +600,6 @@
             }
         ],
         "vendors": [
-            {
-                "company": "VERTIV",
-                "description": "STS - DATAHALL",
-                "periodicity": "QUADRIMESTRAL",
-                "company_group": "VERTIV_POWER",
-                "service_type": ""
-            },
             {
                 "company": "Engemon",
                 "description": "SISTEMA DE AUTOMAÇÃO",
