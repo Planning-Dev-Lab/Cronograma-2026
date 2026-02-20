@@ -2,6 +2,24 @@
   "versao": "1.0",
   "observacoes": [
     {
+      "data": "2026-02-05",
+      "empresa": "VERTIV",
+      "descricao_atividade": "UPS 1.R1.6 | UPS 1.R2.6<br>Manutençao Com Parada<br>CHG0178600",
+      "observacao": "<img style=\"width: 100%;\" src=\"../img-CHG/CHG017860000.png\" alt=\"\" />"
+    },
+    {
+      "data": "2026-02-10",
+      "empresa": "VERTIV",
+      "descricao_atividade": "UPS 1.1.1 | UPS 1.2.1<br>Manutenção Com Parada<br>CHG0178600",
+      "observacao": "<img style=\"width: 100%;\" src=\"../img-CHG/CHG017860000.png\" alt=\"\" />"
+    },
+    {
+      "data": "2026-02-12",
+      "empresa": "VERTIV",
+      "descricao_atividade": "UPS 1.1.3 | UPS 1.2.3<br>Manutenção Com Parada<br>CHG0178600",
+      "observacao": "<img style=\"width: 100%;\" src=\"../img-CHG/CHG017860000.png\" alt=\"\" />"
+    },
+    {
       "data": "2026-02-13",
       "empresa": "VERTIV",
       "descricao_atividade": "RPP - DATAHALL / TI",
@@ -16,6 +34,12 @@
     {
       "data": "2026-02-19",
       "empresa": "VERTIV",
+      "descricao_atividade": "UPS 1.1.2 | UPS 1.2.2<br>Manutenção Com Parada<br>CHG0180817",
+      "observacao": "<img style=\"width: 100%;\" src=\"../img-CHG/CHG0180817.png\" alt=\"\" />"
+    },
+    {
+      "data": "2026-02-19",
+      "empresa": "VERTIV",
       "descricao_atividade": "STS - DATAHALL",
       "observacao": "<br><b>SALA 1-1</b> <br>(1-1-1-1) - (1-2-1-1)<br>(1-1-2-1) - (1-2-2-1)<br>(1-1-3-1) - (1-2-3-1)<br>(1-1-4-1) - (1-2-4-1)<br><br><b>SALA 1-2</b> <br>(1-1-1-2) - (1-2-1-2)<br>(1-1-2-2) - (1-2-2-2)<br>(1-1-3-2) - (1-2-3-2)<br>(1-1-4-2) - (1-2-4-2)"
     },
@@ -26,16 +50,28 @@
       "observacao": "<br><b>SALA 1-3</b><br>(1-1-1-3) - (1-2-1-3)<br>(1-1-2-3) - (1-2-2-3)<br>(1-1-3-3) - (1-2-3-3)<br>(1-1-4-3) - (1-2-4-3)<br><br><b>SALA 1-4</b><br>(1-1-1-4) - (1-1-2-4)<br>(1-1-3-4) - (1-1-4-4)"
     },
     {
-    "data": "2026-02-23",
-    "empresa": "VERTIV",
-    "descricao_atividade": "STS - DATAHALL",
-    "observacao": "<br><b>SALA 1-5</b> <br>(1-1-1-5) - (1-2-1-5)<br>(1-1-2-5) - (1-2-2-5)<br>(1-1-3-5) - (1-2-3-5)<br>(1-1-4-5) - (1-2-4-5)<br><br><b>SALA 2-1</b><br>(2-1-1-1) - (2-2-1-1)<br>(2-1-2-1) - (2-2-2-1)<br>(2-1-3-1) - (2-2-3-1)<br>(2-1-4-1) - (2-2-4-1)"
-  },
-  {
-    "data": "2026-02-24",
-    "empresa": "VERTIV",
-    "descricao_atividade": "STS - DATAHALL",
-    "observacao": "<br><b>SALA 2-2</b> <br>(2-1-1-2) - (2-1-3-2)<br>(2-2-3-2) - (2-2-4-2)<br><br><b>SALA NOC</b> <br>(NOC - 1) - (NOC - 2)<br><br><b>SALA TI</b><br>(TI - 1) - (TI - 2)"
-  }
+      "data": "2026-02-23",
+      "empresa": "VERTIV",
+      "descricao_atividade": "STS - DATAHALL",
+      "observacao": "<br><b>SALA 1-5</b> <br>(1-1-1-5) - (1-2-1-5)<br>(1-1-2-5) - (1-2-2-5)<br>(1-1-3-5) - (1-2-3-5)<br>(1-1-4-5) - (1-2-4-5)<br><br><b>SALA 2-1</b><br>(2-1-1-1) - (2-2-1-1)<br>(2-1-2-1) - (2-2-2-1)<br>(2-1-3-1) - (2-2-3-1)<br>(2-1-4-1) - (2-2-4-1)"
+    },
+    {
+      "data": "2026-02-24",
+      "empresa": "VERTIV",
+      "descricao_atividade": "STS - DATAHALL",
+      "observacao": "<br><b>SALA 2-2</b> <br>(2-1-1-2) - (2-1-3-2)<br>(2-2-3-2) - (2-2-4-2)<br><br><b>SALA NOC</b> <br>(NOC - 1) - (NOC - 2)<br><br><b>SALA TI</b><br>(TI - 1) - (TI - 2)"
+    },
+    {
+      "data": "2026-02-24",
+      "empresa": "VERTIV",
+      "descricao_atividade": "UPS 2.R1.6 | UPS 2.R2.6<br>Manutenção Com Parada<br>CHG0180275",
+      "observacao": "<img style=\"width: 100%;\" src=\"../img-CHG/CHG0180275.png\" alt=\"\" />"
+    },
+    {
+      "data": "2026-03-04",
+      "empresa": "VERTIV",
+      "descricao_atividade": "Manutenção Preventiva UPS<br>UPS 2.1.1 | UPS 2.1.2<br>Manutenção Com Parada<br>CHG0179409",
+      "observacao": "<img style=\"width: 100%;\" src=\"../img-CHG/CHG0179409.png\" alt=\"\" />"
+    }
   ]
 }
