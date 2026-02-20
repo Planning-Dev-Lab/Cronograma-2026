@@ -13,13 +13,6 @@
         "freezing": [],
         "vendors": [
             {
-                "company": "VERTIV",
-                "description": "UPS 2.1.1 | 2.1.2 (COM PARADA)",
-                "periodicity": "ANUAL",
-                "company_group": "VERTIV_POWER",
-                "service_type": ""
-            },
-            {
                 "company": "LG",
                 "description": "PREV. CHILLER",
                 "periodicity": "MENSAL",
