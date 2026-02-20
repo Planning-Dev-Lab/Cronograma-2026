@@ -104,21 +104,36 @@
         "data": "2026-03-07",
         "on_call_dia": "Equipe C",
         "on_call_noite": "Equipe D",
-        "freezing": [],
+        "freezing": [
+            {
+                "group": "TBRA",
+                "description": "FREEZING - RELEASE"
+            }
+        ],
         "vendors": []
     },
     {
         "data": "2026-03-08",
         "on_call_dia": "Equipe C",
         "on_call_noite": "Equipe D",
-        "freezing": [],
+        "freezing": [
+            {
+                "group": "TBRA",
+                "description": "FREEZING - RELEASE"
+            }
+        ],
         "vendors": []
     },
     {
         "data": "2026-03-09",
         "on_call_dia": "Equipe A",
         "on_call_noite": "Equipe B",
-        "freezing": [],
+        "freezing": [
+            {
+                "group": "TBRA",
+                "description": "FREEZING - RELEASE"
+            }
+        ],
         "vendors": [
             {
                 "company": "Engemon",
@@ -200,7 +215,12 @@
         "data": "2026-03-15",
         "on_call_dia": "Equipe A",
         "on_call_noite": "Equipe B",
-        "freezing": [],
+        "freezing": [
+            {
+                "group": "TBRA_FREEZING",
+                "description": "Semana do Consumidor"
+            }
+        ],
         "vendors": []
     },
     {
@@ -209,6 +229,12 @@
         "on_call_noite": "Equipe D",
         "freezing": [],
         "vendors": [
+            {
+                "company": "COTEPE",
+                "description": "<b>Manutenção dos Trafos</b><br>Sala UPS1-1",
+                "periodicity": "ANUAL",
+                "company_group": "COTEPE"
+            },
             {
                 "company": "Engemon",
                 "description": "SISTEMA DE INCÊNDIO",
@@ -225,6 +251,12 @@
         "freezing": [],
         "vendors": [
             {
+                "company": "COTEPE",
+                "description": "<b>Manutenção dos Trafos</b><br>Sala UPS1-3",
+                "periodicity": "ANUAL",
+                "company_group": "COTEPE"
+            },
+            {
                 "company": "Engemon",
                 "description": "SISTEMA DE INCÊNDIO",
                 "periodicity": "MENSAL",
@@ -239,6 +271,12 @@
         "on_call_noite": "Equipe D",
         "freezing": [],
         "vendors": [
+            {
+                "company": "COTEPE",
+                "description": "<b>Manutenção dos Trafos</b><br>Sala UPS2-1",
+                "periodicity": "ANUAL",
+                "company_group": "COTEPE"
+            },
             {
                 "company": "Engemon",
                 "description": "SISTEMA DE INCÊNDIO",
@@ -283,7 +321,14 @@
         "on_call_dia": "Equipe C",
         "on_call_noite": "Equipe D",
         "freezing": [],
-        "vendors": []
+        "vendors": [
+            {
+                "company": "COTEPE",
+                "description": "<b>Manutenção dos Trafos</b><br>Sala CAG 1 (Painel MS 2-1 FASE 1)",
+                "periodicity": "ANUAL",
+                "company_group": "COTEPE"
+            }
+        ]
     },
     {
         "data": "2026-03-22",
