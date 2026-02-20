@@ -281,6 +281,7 @@ main {
 .activity-item.border-group-ENERG { border-left-color: #E6B8B7; }
 .activity-item.border-group-COTEPE { border-left-color: #DEC97C; }
 .activity-item.border-group-LG { border-left-color: #883b77; }
+.activity-item.border-group-M2E {border-left-color: #856c20;}
 
 .p-FREEZING, .activity-item.border-p-FREEZING { background-color: #fec0fe; border-left-color: #fec0fe; }
 .p-MENSAL, .activity-item.border-p-MENSAL { background-color: #da9694; border-left-color: #da9694; }

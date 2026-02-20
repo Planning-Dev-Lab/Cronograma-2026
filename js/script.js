@@ -53,7 +53,7 @@ const DAY_COLOR_PRIORITY_ORDER = ['FREEZING_COMERCIAIS', 'B2B_TBRA', 'TBRA'];
 
 const EMPRESAS_DISPONIVEIS = [
     'VERTIV', 'Engemon', 'COTEPE', 'CARRIER', 'LG',
-    'SOTREQ', 'ENERG', 'FERIADO', 'TBRA', 'B2B TBRA'
+    'SOTREQ', 'ENERG', 'FERIADO', 'TBRA', 'B2B TBRA', 'M2E'
 ];
 
 // ==========================================================
