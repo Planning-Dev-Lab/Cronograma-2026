@@ -56,7 +56,7 @@
         "vendors": [
             {
                 "company": "VERTIV",
-                "description": "UPS 2.1.1 | UPS 2.1.2 (22:00 - 06:00)(COM PARADA)CHG0179409",
+                "description": "Manutenção Preventiva UPS<br>UPS 2.1.1 | UPS 2.1.2<br>Manutenção Com Parada<br>CHG0179409",
                 "periodicity": "ANUAL",
                 "company_group": "VERTIV_POWER",
                 "service_type": ""
