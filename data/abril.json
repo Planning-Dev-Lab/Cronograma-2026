@@ -22,10 +22,10 @@
         "vendors": [
             {
                 "company": "Engemon",
-                "description": "SISTEMA DE INCÊNDIO",
+                "description": "SISTEMA DE AUTOMAÇÃO",
                 "periodicity": "MENSAL",
                 "company_group": "ENGEMON",
-                "service_type": "engemon-incendio"
+                "service_type": "engemon-automacao"
             }
         ]
     },
@@ -37,10 +37,10 @@
         "vendors": [
             {
                 "company": "Engemon",
-                "description": "SISTEMA DE INCÊNDIO",
+                "description": "SISTEMA DE AUTOMAÇÃO",
                 "periodicity": "MENSAL",
                 "company_group": "ENGEMON",
-                "service_type": "engemon-incendio"
+                "service_type": "engemon-automacao"
             }
         ]
     },
@@ -49,30 +49,14 @@
         "on_call_dia": "Equipe C",
         "on_call_noite": "Equipe D",
         "freezing": [],
-        "vendors": [
-            {
-                "company": "Engemon",
-                "description": "SISTEMA DE INCÊNDIO",
-                "periodicity": "MENSAL",
-                "company_group": "ENGEMON",
-                "service_type": "engemon-incendio"
-            }
-        ]
+        "vendors": []
     },
     {
         "data": "2026-04-05",
         "on_call_dia": "Equipe C",
         "on_call_noite": "Equipe D",
         "freezing": [],
-        "vendors": [
-            {
-                "company": "Engemon",
-                "description": "SISTEMA DE INCÊNDIO",
-                "periodicity": "MENSAL",
-                "company_group": "ENGEMON",
-                "service_type": "engemon-incendio"
-            }
-        ]
+        "vendors": []
     },
     {
         "data": "2026-04-06",
@@ -163,10 +147,10 @@
         "vendors": [
             {
                 "company": "Engemon",
-                "description": "SISTEMA DE INCÊNDIO",
+                "description": "SISTEMA DE AUTOMAÇÃO",
                 "periodicity": "MENSAL",
                 "company_group": "ENGEMON",
-                "service_type": "engemon-incendio"
+                "service_type": "engemon-automacao"
             }
         ]
     },
@@ -184,10 +168,10 @@
             },
             {
                 "company": "Engemon",
-                "description": "SISTEMA DE INCÊNDIO",
+                "description": "SISTEMA DE AUTOMAÇÃO",
                 "periodicity": "MENSAL",
                 "company_group": "ENGEMON",
-                "service_type": "engemon-incendio"
+                "service_type": "engemon-automacao"
             }
         ]
     },
@@ -196,30 +180,14 @@
         "on_call_dia": "Equipe A",
         "on_call_noite": "Equipe B",
         "freezing": [],
-        "vendors": [
-            {
-                "company": "Engemon",
-                "description": "SISTEMA DE INCÊNDIO",
-                "periodicity": "MENSAL",
-                "company_group": "ENGEMON",
-                "service_type": "engemon-incendio"
-            }
-        ]
+        "vendors": []
     },
     {
         "data": "2026-04-12",
         "on_call_dia": "Equipe A",
         "on_call_noite": "Equipe B",
         "freezing": [],
-        "vendors": [
-            {
-                "company": "Engemon",
-                "description": "SISTEMA DE INCÊNDIO",
-                "periodicity": "MENSAL",
-                "company_group": "ENGEMON",
-                "service_type": "engemon-incendio"
-            }
-        ]
+        "vendors": []
     },
     {
         "data": "2026-04-13",
@@ -304,10 +272,10 @@
             },
             {
                 "company": "Engemon",
-                "description": "SISTEMA DE INCÊNDIO",
+                "description": "SISTEMA DE AUTOMAÇÃO",
                 "periodicity": "MENSAL",
                 "company_group": "ENGEMON",
-                "service_type": "engemon-incendio"
+                "service_type": "engemon-automacao"
             }
         ]
     },
@@ -331,10 +299,10 @@
             },
             {
                 "company": "Engemon",
-                "description": "SISTEMA DE INCÊNDIO",
+                "description": "SISTEMA DE AUTOMAÇÃO",
                 "periodicity": "MENSAL",
                 "company_group": "ENGEMON",
-                "service_type": "engemon-incendio"
+                "service_type": "engemon-automacao"
             }
         ]
     },
@@ -355,13 +323,6 @@
                 "description": "<b>Manutenção dos Painéis de Média Tensão</b><br>Sala MS 3-1",
                 "periodicity": "ANUAL",
                 "company_group": "M2E"
-            },
-            {
-                "company": "Engemon",
-                "description": "SISTEMA DE INCÊNDIO",
-                "periodicity": "MENSAL",
-                "company_group": "ENGEMON",
-                "service_type": "engemon-incendio"
             }
         ]
     },
@@ -370,15 +331,7 @@
         "on_call_dia": "Equipe C",
         "on_call_noite": "Equipe D",
         "freezing": [],
-        "vendors": [
-            {
-                "company": "Engemon",
-                "description": "SISTEMA DE INCÊNDIO",
-                "periodicity": "MENSAL",
-                "company_group": "ENGEMON",
-                "service_type": "engemon-incendio"
-            }
-        ]
+        "vendors": []
     },
     {
         "data": "2026-04-20",
@@ -433,10 +386,10 @@
         "vendors": [
             {
                 "company": "Engemon",
-                "description": "SISTEMA DE INCÊNDIO",
+                "description": "SISTEMA DE AUTOMAÇÃO",
                 "periodicity": "MENSAL",
                 "company_group": "ENGEMON",
-                "service_type": "engemon-incendio"
+                "service_type": "engemon-automacao"
             }
         ]
     },
@@ -448,10 +401,10 @@
         "vendors": [
             {
                 "company": "Engemon",
-                "description": "SISTEMA DE INCÊNDIO",
+                "description": "SISTEMA DE AUTOMAÇÃO",
                 "periodicity": "MENSAL",
                 "company_group": "ENGEMON",
-                "service_type": "engemon-incendio"
+                "service_type": "engemon-automacao"
             }
         ]
     },
@@ -460,30 +413,14 @@
         "on_call_dia": "Equipe A",
         "on_call_noite": "Equipe B",
         "freezing": [],
-        "vendors": [
-            {
-                "company": "Engemon",
-                "description": "SISTEMA DE INCÊNDIO",
-                "periodicity": "MENSAL",
-                "company_group": "ENGEMON",
-                "service_type": "engemon-incendio"
-            }
-        ]
+        "vendors": []
     },
     {
         "data": "2026-04-26",
         "on_call_dia": "Equipe A",
         "on_call_noite": "Equipe B",
         "freezing": [],
-        "vendors": [
-            {
-                "company": "Engemon",
-                "description": "SISTEMA DE INCÊNDIO",
-                "periodicity": "MENSAL",
-                "company_group": "ENGEMON",
-                "service_type": "engemon-incendio"
-            }
-        ]
+        "vendors": []
     },
     {
         "data": "2026-04-27",
@@ -538,10 +475,10 @@
         "vendors": [
             {
                 "company": "Engemon",
-                "description": "SISTEMA DE INCÊNDIO",
+                "description": "SISTEMA DE AUTOMAÇÃO",
                 "periodicity": "MENSAL",
                 "company_group": "ENGEMON",
-                "service_type": "engemon-incendio"
+                "service_type": "engemon-automacao"
             }
         ]
     }
