@@ -81,6 +81,18 @@
         "freezing": [],
         "vendors": [
             {
+                "company": "COTEPE",
+                "description": "<b>Manutenção dos Trafos</b><br>Sala UPS 1-6",
+                "periodicity": "ANUAL",
+                "company_group": "COTEPE"
+            },
+            {
+                "company": "M2E",
+                "description": "<b>Manutenção dos Painéis de Média Tensão</b><br>Sala UPS 1-6",
+                "periodicity": "ANUAL",
+                "company_group": "M2E"
+            },
+            {
                 "company": "Engemon",
                 "description": "SISTEMA DE INCÊNDIO",
                 "periodicity": "MENSAL",
@@ -96,6 +108,18 @@
         "freezing": [],
         "vendors": [
             {
+                "company": "COTEPE",
+                "description": "<b>Manutenção dos Trafos</b><br>Sala UPS 2-6",
+                "periodicity": "ANUAL",
+                "company_group": "COTEPE"
+            },
+            {
+                "company": "M2E",
+                "description": "<b>Manutenção dos Painéis de Média Tensão</b><br>Sala UPS 2-6",
+                "periodicity": "ANUAL",
+                "company_group": "M2E"
+            },
+            {
                 "company": "Engemon",
                 "description": "SISTEMA DE INCÊNDIO",
                 "periodicity": "MENSAL",
@@ -110,6 +134,18 @@
         "on_call_noite": "Equipe B",
         "freezing": [],
         "vendors": [
+            {
+                "company": "COTEPE",
+                "description": "<b>Manutenção dos Trafos</b><br>Sala UPS 1-2",
+                "periodicity": "ANUAL",
+                "company_group": "COTEPE"
+            },
+            {
+                "company": "M2E",
+                "description": "<b>Manutenção dos Painéis de Média Tensão</b><br>Sala UPS 1-2",
+                "periodicity": "ANUAL",
+                "company_group": "M2E"
+            },
             {
                 "company": "Engemon",
                 "description": "SISTEMA DE INCÊNDIO",
@@ -140,6 +176,12 @@
         "on_call_noite": "Equipe B",
         "freezing": [],
         "vendors": [
+            {
+                "company": "M2E",
+                "description": "<b>Manutenção dos Painéis de Média Tensão</b><br>Sala MSB",
+                "periodicity": "ANUAL",
+                "company_group": "M2E"
+            },
             {
                 "company": "Engemon",
                 "description": "SISTEMA DE INCÊNDIO",
@@ -201,6 +243,18 @@
         "freezing": [],
         "vendors": [
             {
+                "company": "COTEPE",
+                "description": "<b>Manutenção dos Trafos</b><br>Sala MS 1-1 / MS 1-2",
+                "periodicity": "ANUAL",
+                "company_group": "COTEPE"
+            },
+            {
+                "company": "M2E",
+                "description": "<b>Manutenção dos Painéis de Média Tensão</b><br>Sala MS 1-1 / MS 1-2",
+                "periodicity": "ANUAL",
+                "company_group": "M2E"
+            },
+            {
                 "company": "Engemon",
                 "description": "SISTEMA DE INCÊNDIO",
                 "periodicity": "MENSAL",
@@ -215,6 +269,18 @@
         "on_call_noite": "Equipe D",
         "freezing": [],
         "vendors": [
+            {
+                "company": "COTEPE",
+                "description": "<b>Manutenção dos Trafos</b><br>Sala MS 6-1 / MS 6-2",
+                "periodicity": "ANUAL",
+                "company_group": "COTEPE"
+            },
+            {
+                "company": "M2E",
+                "description": "<b>Manutenção dos Painéis de Média Tensão</b><br>Sala MS 6-1 / MS 6-2",
+                "periodicity": "ANUAL",
+                "company_group": "M2E"
+            },
             {
                 "company": "Engemon",
                 "description": "SISTEMA DE INCÊNDIO",
@@ -231,6 +297,12 @@
         "freezing": [],
         "vendors": [
             {
+                "company": "M2E",
+                "description": "<b>Manutenção dos Painéis de Média Tensão</b><br>GPSR",
+                "periodicity": "ANUAL",
+                "company_group": "M2E"
+            },
+            {
                 "company": "Engemon",
                 "description": "SISTEMA DE INCÊNDIO",
                 "periodicity": "MENSAL",
@@ -246,6 +318,18 @@
         "freezing": [],
         "vendors": [
             {
+                "company": "COTEPE",
+                "description": "<b>Manutenção dos Trafos</b><br>GMG 1-1 / 1-2 / 1-3",
+                "periodicity": "ANUAL",
+                "company_group": "COTEPE"
+            },
+            {
+                "company": "M2E",
+                "description": "<b>Manutenção dos Painéis de Média Tensão</b><br>GMG 1-1 / 1-2 / 1-3",
+                "periodicity": "ANUAL",
+                "company_group": "M2E"
+            },
+            {
                 "company": "Engemon",
                 "description": "SISTEMA DE INCÊNDIO",
                 "periodicity": "MENSAL",
@@ -260,6 +344,18 @@
         "on_call_noite": "Equipe D",
         "freezing": [],
         "vendors": [
+            {
+                "company": "COTEPE",
+                "description": "<b>Manutenção dos Trafos</b><br>Sala MS 3-1",
+                "periodicity": "ANUAL",
+                "company_group": "COTEPE"
+            },
+            {
+                "company": "M2E",
+                "description": "<b>Manutenção dos Painéis de Média Tensão</b><br>Sala MS 3-1",
+                "periodicity": "ANUAL",
+                "company_group": "M2E"
+            },
             {
                 "company": "Engemon",
                 "description": "SISTEMA DE INCÊNDIO",

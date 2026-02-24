@@ -74,6 +74,13 @@
         "freezing": [],
         "vendors": [
             {
+                "company": "SOTREQ",
+                "description": "MANUTENÇÃO PREVENTIVA ANUAL DE GERADORES",
+                "periodicity": "ANUAL",
+                "company_group": "SOTREQ",
+                "service_type": ""
+            },
+            {
                 "company": "VERTIV",
                 "description": "BATERIAS UPS | DATAHALL",
                 "periodicity": "TRIMESTRAL",
@@ -96,6 +103,13 @@
         "freezing": [],
         "vendors": [
             {
+                "company": "SOTREQ",
+                "description": "MANUTENÇÃO PREVENTIVA ANUAL DE GERADORES",
+                "periodicity": "ANUAL",
+                "company_group": "SOTREQ",
+                "service_type": ""
+            },
+            {
                 "company": "VERTIV",
                 "description": "BATERIAS UPS | DATAHALL",
                 "periodicity": "TRIMESTRAL",
@@ -117,6 +131,13 @@
         "on_call_noite": "Equipe D",
         "freezing": [],
         "vendors": [
+            {
+                "company": "SOTREQ",
+                "description": "MANUTENÇÃO PREVENTIVA ANUAL DE GERADORES",
+                "periodicity": "ANUAL",
+                "company_group": "SOTREQ",
+                "service_type": ""
+            },
             {
                 "company": "VERTIV",
                 "description": "BATERIAS UPS | DATAHALL",
@@ -141,6 +162,13 @@
         "freezing": [],
         "vendors": [
             {
+                "company": "SOTREQ",
+                "description": "MANUTENÇÃO PREVENTIVA ANUAL DE GERADORES",
+                "periodicity": "ANUAL",
+                "company_group": "SOTREQ",
+                "service_type": ""
+            },
+            {
                 "company": "VERTIV",
                 "description": "BATERIAS UPS | DATAHALL",
                 "periodicity": "TRIMESTRAL",
@@ -163,6 +191,13 @@
         "on_call_noite": "Equipe D",
         "freezing": [],
         "vendors": [
+            {
+                "company": "SOTREQ",
+                "description": "MANUTENÇÃO PREVENTIVA ANUAL DE GERADORES",
+                "periodicity": "ANUAL",
+                "company_group": "SOTREQ",
+                "service_type": ""
+            },
             {
                 "company": "VERTIV",
                 "description": "BATERIAS UPS | DATAHALL",
@@ -202,7 +237,15 @@
                 "description": "FREEZING  - RELEASE"
             }
         ],
-        "vendors": []
+        "vendors": [
+            {
+                "company": "SOTREQ",
+                "description": "MANUTENÇÃO PREVENTIVA ANUAL DE GERADORES",
+                "periodicity": "ANUAL",
+                "company_group": "SOTREQ",
+                "service_type": ""
+            }
+        ]
     },
     {
         "data": "2026-01-12",
@@ -215,6 +258,13 @@
             }
         ],
         "vendors": [
+            {
+                "company": "SOTREQ",
+                "description": "MANUTENÇÃO PREVENTIVA ANUAL DE GERADORES",
+                "periodicity": "ANUAL",
+                "company_group": "SOTREQ",
+                "service_type": ""
+            },
             {
                 "company": "VERTIV",
                 "description": "BATERIAS UPS | DATAHALL",
@@ -237,6 +287,13 @@
         "on_call_noite": "Equipe D",
         "freezing": [],
         "vendors": [
+            {
+                "company": "SOTREQ",
+                "description": "MANUTENÇÃO PREVENTIVA ANUAL DE GERADORES",
+                "periodicity": "ANUAL",
+                "company_group": "SOTREQ",
+                "service_type": ""
+            },
             {
                 "company": "VERTIV",
                 "description": "BATERIAS UPS | DATAHALL",
@@ -516,13 +573,6 @@
                 "periodicity": "BIMESTRAL",
                 "company_group": "CARRIER",
                 "service_type": ""
-            },
-            {
-                "company": "SOTREQ",
-                "description": "PREV. GERADORES",
-                "periodicity": "BIMESTRAL",
-                "company_group": "SOTREQ",
-                "service_type": ""
             }
         ]
     },
@@ -543,13 +593,6 @@
                 "periodicity": "BIMESTRAL",
                 "company_group": "CARRIER",
                 "service_type": ""
-            },
-            {
-                "company": "SOTREQ",
-                "description": "PREV. GERADORES",
-                "periodicity": "BIMESTRAL",
-                "company_group": "SOTREQ",
-                "service_type": "" 
             },
             {
                 "company": "LG",
@@ -581,13 +624,6 @@
                 "periodicity": "BIMESTRAL",
                 "company_group": "CARRIER",
                 "service_type": ""
-            },
-            {
-                "company": "SOTREQ",
-                "description": "PREV. GERADORES",
-                "periodicity": "BIMESTRAL",
-                "company_group": "SOTREQ",
-                "service_type": ""
             }
         ]
     },
@@ -605,15 +641,7 @@
                 "description": "FREEZING - NGIM"
             }
         ],
-        "vendors": [
-            {
-                "company": "SOTREQ",
-                "description": "PREV. GERADORES",
-                "periodicity": "BIMESTRAL",
-                "company_group": "SOTREQ",
-                "service_type": ""
-            }
-        ]
+        "vendors": []
     },
     {
         "data": "2026-01-30",
@@ -629,15 +657,7 @@
                 "description": "FREEZING - NGIM"
             }
         ],
-        "vendors": [
-            {
-                "company": "SOTREQ",
-                "description": "PREV. GERADORES",
-                "periodicity": "BIMESTRAL",
-                "company_group": "SOTREQ",
-                "service_type": ""
-            }
-        ]
+        "vendors": []
     },
     {
         "data": "2026-01-31",
