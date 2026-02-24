@@ -6,6 +6,13 @@
         "freezing": [],
         "vendors": [
             {
+                "company": "LG",
+                "description": "PREV. CHILLER",
+                "periodicity": "MENSAL",
+                "company_group": "LG",
+                "service_type": ""
+            },
+            {
                 "company": "Engemon",
                 "description": "SISTEMA DE INCÊNDIO",
                 "periodicity": "MENSAL",

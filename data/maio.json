@@ -4,7 +4,15 @@
         "on_call_dia": "Equipe C",
         "on_call_noite": "Equipe D",
         "freezing": [],
-        "vendors": []
+        "vendors": [
+            {
+                "company": "LG",
+                "description": "PREV. CHILLER",
+                "periodicity": "MENSAL",
+                "company_group": "LG",
+                "service_type": ""
+            }
+        ]
     },
     {
         "data": "2026-05-02",
