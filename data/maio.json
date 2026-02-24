@@ -1,0 +1,270 @@
+[
+    {
+        "data": "2026-05-01",
+        "on_call_dia": "Equipe C",
+        "on_call_noite": "Equipe D",
+        "freezing": [],
+        "vendors": []
+    },
+    {
+        "data": "2026-05-02",
+        "on_call_dia": "Equipe C",
+        "on_call_noite": "Equipe D",
+        "freezing": [],
+        "vendors": []
+    },
+    {
+        "data": "2026-05-03",
+        "on_call_dia": "Equipe C",
+        "on_call_noite": "Equipe D",
+        "freezing": [],
+        "vendors": []
+    },
+    {
+        "data": "2026-05-04",
+        "on_call_dia": "Equipe A",
+        "on_call_noite": "Equipe B",
+        "freezing": [],
+        "vendors": []
+    },
+    {
+        "data": "2026-05-05",
+        "on_call_dia": "Equipe C",
+        "on_call_noite": "Equipe D",
+        "freezing": [],
+        "vendors": [
+            {
+                "company": "SOTREQ",
+                "description": "MANUTENÇÃO PREVENTIVA DE GERADORES",
+                "periodicity": "BIMESTRAL",
+                "company_group": "SOTREQ",
+                "service_type": ""
+            }
+        ]
+    },
+    {
+        "data": "2026-05-06",
+        "on_call_dia": "Equipe A",
+        "on_call_noite": "Equipe B",
+        "freezing": [],
+        "vendors": [
+            {
+                "company": "SOTREQ",
+                "description": "MANUTENÇÃO PREVENTIVA DE GERADORES",
+                "periodicity": "BIMESTRAL",
+                "company_group": "SOTREQ",
+                "service_type": ""
+            },
+            {
+                "company": "COTEPE",
+                "description": "<b>Manutenção dos Trafos</b><br>GMG 1-6 / 1-R / 2-1 / 2-6",
+                "periodicity": "ANUAL",
+                "company_group": "COTEPE"
+            },
+            {
+                "company": "M2E",
+                "description": "<b>Manutenção dos Painéis de Média Tensão</b><br>GMG 1-6 / 1-R / 2-1 / 2-6",
+                "periodicity": "ANUAL",
+                "company_group": "M2E"
+            },
+            {
+                "company": "Engemon",
+                "description": "SISTEMA DE INCÊNDIO",
+                "periodicity": "MENSAL",
+                "company_group": "ENGEMON",
+                "service_type": "engemon-incendio"
+            }
+        ]
+    },
+    {
+        "data": "2026-05-07",
+        "on_call_dia": "Equipe C",
+        "on_call_noite": "Equipe D",
+        "freezing": [],
+        "vendors": [
+            {
+                "company": "SOTREQ",
+                "description": "MANUTENÇÃO PREVENTIVA DE GERADORES",
+                "periodicity": "BIMESTRAL",
+                "company_group": "SOTREQ",
+                "service_type": ""
+            }
+        ]
+    },
+    {
+        "data": "2026-05-08",
+        "on_call_dia": "Equipe A",
+        "on_call_noite": "Equipe B",
+        "freezing": [],
+        "vendors": [
+            {
+                "company": "SOTREQ",
+                "description": "MANUTENÇÃO PREVENTIVA DE GERADORES",
+                "periodicity": "BIMESTRAL",
+                "company_group": "SOTREQ",
+                "service_type": ""
+            }
+        ]
+    },
+    {
+        "data": "2026-05-09",
+        "on_call_dia": "Equipe A",
+        "on_call_noite": "Equipe B",
+        "freezing": [],
+        "vendors": []
+    },
+    {
+        "data": "2026-05-10",
+        "on_call_dia": "Equipe A",
+        "on_call_noite": "Equipe B",
+        "freezing": [],
+        "vendors": []
+    },
+    {
+        "data": "2026-05-11",
+        "on_call_dia": "Equipe C",
+        "on_call_noite": "Equipe D",
+        "freezing": [],
+        "vendors": []
+    },
+    {
+        "data": "2026-05-12",
+        "on_call_dia": "Equipe A",
+        "on_call_noite": "Equipe B",
+        "freezing": [],
+        "vendors": []
+    },
+    {
+        "data": "2026-05-13",
+        "on_call_dia": "Equipe C",
+        "on_call_noite": "Equipe D",
+        "freezing": [],
+        "vendors": []
+    },
+    {
+        "data": "2026-05-14",
+        "on_call_dia": "Equipe A",
+        "on_call_noite": "Equipe B",
+        "freezing": [],
+        "vendors": []
+    },
+    {
+        "data": "2026-05-15",
+        "on_call_dia": "Equipe C",
+        "on_call_noite": "Equipe D",
+        "freezing": [],
+        "vendors": []
+    },
+    {
+        "data": "2026-05-16",
+        "on_call_dia": "Equipe C",
+        "on_call_noite": "Equipe D",
+        "freezing": [],
+        "vendors": []
+    },
+    {
+        "data": "2026-05-17",
+        "on_call_dia": "Equipe C",
+        "on_call_noite": "Equipe D",
+        "freezing": [],
+        "vendors": []
+    },
+    {
+        "data": "2026-05-18",
+        "on_call_dia": "Equipe A",
+        "on_call_noite": "Equipe B",
+        "freezing": [],
+        "vendors": []
+    },
+    {
+        "data": "2026-05-19",
+        "on_call_dia": "Equipe C",
+        "on_call_noite": "Equipe D",
+        "freezing": [],
+        "vendors": []
+    },
+    {
+        "data": "2026-05-20",
+        "on_call_dia": "Equipe A",
+        "on_call_noite": "Equipe B",
+        "freezing": [],
+        "vendors": []
+    },
+    {
+        "data": "2026-05-21",
+        "on_call_dia": "Equipe C",
+        "on_call_noite": "Equipe D",
+        "freezing": [],
+        "vendors": []
+    },
+    {
+        "data": "2026-05-22",
+        "on_call_dia": "Equipe A",
+        "on_call_noite": "Equipe B",
+        "freezing": [],
+        "vendors": []
+    },
+    {
+        "data": "2026-05-23",
+        "on_call_dia": "Equipe A",
+        "on_call_noite": "Equipe B",
+        "freezing": [],
+        "vendors": []
+    },
+    {
+        "data": "2026-05-24",
+        "on_call_dia": "Equipe A",
+        "on_call_noite": "Equipe B",
+        "freezing": [],
+        "vendors": []
+    },
+    {
+        "data": "2026-05-25",
+        "on_call_dia": "Equipe C",
+        "on_call_noite": "Equipe D",
+        "freezing": [],
+        "vendors": []
+    },
+    {
+        "data": "2026-05-26",
+        "on_call_dia": "Equipe A",
+        "on_call_noite": "Equipe B",
+        "freezing": [],
+        "vendors": []
+    },
+    {
+        "data": "2026-05-27",
+        "on_call_dia": "Equipe C",
+        "on_call_noite": "Equipe D",
+        "freezing": [],
+        "vendors": []
+    },
+    {
+        "data": "2026-05-28",
+        "on_call_dia": "Equipe A",
+        "on_call_noite": "Equipe B",
+        "freezing": [],
+        "vendors": []
+    },
+    {
+        "data": "2026-05-29",
+        "on_call_dia": "Equipe C",
+        "on_call_noite": "Equipe D",
+        "freezing": [],
+        "vendors": []
+    },
+    {
+        "data": "2026-05-30",
+        "on_call_dia": "Equipe C",
+        "on_call_noite": "Equipe D",
+        "freezing": [],
+        "vendors": []
+    },
+    {
+        "data": "2026-05-31",
+        "on_call_dia": "Equipe C",
+        "on_call_noite": "Equipe D",
+        "freezing": [],
+        "vendors": []
+    }
+]
