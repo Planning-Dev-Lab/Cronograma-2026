@@ -231,9 +231,15 @@
         "vendors": [
             {
                 "company": "COTEPE",
-                "description": "<b>Manutenção dos Trafos</b><br>Sala UPS1-1",
+                "description": "<b>Manutenção dos Trafos</b><br>Sala UPS1-1<br>STS 4 - STS 5",
                 "periodicity": "ANUAL",
                 "company_group": "COTEPE"
+            },
+            {
+                "company": "M2E",
+                "description": "<b>Manutenção dos Painéis de Média Tensão</b><br>Sala UPS1-1<br>STS 4 - STS 5",
+                "periodicity": "ANUAL",
+                "company_group": "M2E"
             },
             {
                 "company": "Engemon",
@@ -252,9 +258,15 @@
         "vendors": [
             {
                 "company": "COTEPE",
-                "description": "<b>Manutenção dos Trafos</b><br>Sala UPS1-3",
+                "description": "<b>Manutenção dos Trafos</b><br>Sala UPS1-3<br>STS 5",
                 "periodicity": "ANUAL",
                 "company_group": "COTEPE"
+            },
+            {
+                "company": "M2E",
+                "description": "<b>Manutenção dos Painéis de Média Tensão</b><br>Sala UPS1-3<br>STS 5",
+                "periodicity": "ANUAL",
+                "company_group": "M2E"
             },
             {
                 "company": "Engemon",
@@ -276,6 +288,12 @@
                 "description": "<b>Manutenção dos Trafos</b><br>Sala UPS2-1",
                 "periodicity": "ANUAL",
                 "company_group": "COTEPE"
+            },
+            {
+                "company": "M2E",
+                "description": "<b>Manutenção dos Painéis de Média Tensão</b><br>Sala UPS2-1",
+                "periodicity": "ANUAL",
+                "company_group": "M2E"
             },
             {
                 "company": "Engemon",
@@ -308,6 +326,12 @@
         "freezing": [],
         "vendors": [
             {
+                "company": "M2E",
+                "description": "<b>Manutenção dos Painéis de Média Tensão</b><br>Sala MSA",
+                "periodicity": "ANUAL",
+                "company_group": "M2E"
+            },
+            {
                 "company": "Engemon",
                 "description": "SISTEMA DE AUTOMAÇÃO",
                 "periodicity": "MENSAL",
@@ -324,9 +348,15 @@
         "vendors": [
             {
                 "company": "COTEPE",
-                "description": "<b>Manutenção dos Trafos</b><br>Sala CAG 1 (Painel MS 2-1 FASE 1)",
+                "description": "<b>Manutenção dos Trafos</b><br>MS 2-1",
                 "periodicity": "ANUAL",
                 "company_group": "COTEPE"
+            },
+            {
+                "company": "M2E",
+                "description": "<b>Manutenção dos Painéis de Média Tensão</b><br>MS 2-1",
+                "periodicity": "ANUAL",
+                "company_group": "M2E"
             }
         ]
     },
