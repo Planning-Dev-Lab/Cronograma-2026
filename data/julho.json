@@ -107,7 +107,12 @@
         "data": "2026-07-09",
         "on_call_dia": "Equipe A",
         "on_call_noite": "Equipe B",
-        "freezing": [],
+        "freezing": [
+            {
+                "group": "TBRA_FREEZING",
+                "description": "REVOLUÇÃO CONSTITUÍNTE"
+            }
+        ],
         "vendors": [
             {
                 "company": "Engemon",
@@ -137,21 +142,36 @@
         "data": "2026-07-11",
         "on_call_dia": "Equipe C",
         "on_call_noite": "Equipe D",
-        "freezing": [],
+        "freezing": [
+            {
+                "group": "TBRA",
+                "description": "FREEZING - RELEASE"
+            }
+        ],
         "vendors": []
     },
     {
         "data": "2026-07-12",
         "on_call_dia": "Equipe C",
         "on_call_noite": "Equipe D",
-        "freezing": [],
+        "freezing": [
+            {
+                "group": "TBRA",
+                "description": "FREEZING - RELEASE"
+            }
+        ],
         "vendors": []
     },
     {
         "data": "2026-07-13",
         "on_call_dia": "Equipe A",
         "on_call_noite": "Equipe B",
-        "freezing": [],
+        "freezing": [
+            {
+                "group": "TBRA",
+                "description": "FREEZING - RELEASE"
+            }
+        ],
         "vendors": [
             {
                 "company": "Engemon",
@@ -233,7 +253,12 @@
         "data": "2026-07-19",
         "on_call_dia": "Equipe A",
         "on_call_noite": "Equipe B",
-        "freezing": [],
+        "freezing": [
+            {
+                "group": "TBRA_FREEZING",
+                "description": "FINAL DA COPA DO MUNDO DE FUTEBOL"
+            }
+        ],
         "vendors": []
     },
     {
@@ -315,21 +340,36 @@
         "data": "2026-07-25",
         "on_call_dia": "Equipe C",
         "on_call_noite": "Equipe D",
-        "freezing": [],
+        "freezing": [
+            {
+                "group": "TBRA",
+                "description": "FREEZING - NGIN"
+            }
+        ],
         "vendors": []
     },
     {
         "data": "2026-07-26",
         "on_call_dia": "Equipe C",
         "on_call_noite": "Equipe D",
-        "freezing": [],
+        "freezing": [
+            {
+                "group": "TBRA",
+                "description": "FREEZING - NGIN"
+            }
+        ],
         "vendors": []
     },
     {
         "data": "2026-07-27",
         "on_call_dia": "Equipe A",
         "on_call_noite": "Equipe B",
-        "freezing": [],
+        "freezing": [
+            {
+                "group": "TBRA",
+                "description": "FREEZING - NGIN"
+            }
+        ],
         "vendors": [
             {
                 "company": "Engemon",
@@ -344,7 +384,12 @@
         "data": "2026-07-28",
         "on_call_dia": "Equipe C",
         "on_call_noite": "Equipe D",
-        "freezing": [],
+        "freezing": [
+            {
+                "group": "TBRA",
+                "description": "FREEZING - NGIN"
+            }
+        ],
         "vendors": [
             {
                 "company": "Engemon",
@@ -359,7 +404,12 @@
         "data": "2026-07-29",
         "on_call_dia": "Equipe A",
         "on_call_noite": "Equipe B",
-        "freezing": [],
+        "freezing": [
+            {
+                "group": "TBRA",
+                "description": "FREEZING - NGIN"
+            }
+        ],
         "vendors": [
             {
                 "company": "Engemon",
@@ -374,7 +424,12 @@
         "data": "2026-07-30",
         "on_call_dia": "Equipe C",
         "on_call_noite": "Equipe D",
-        "freezing": [],
+        "freezing": [
+            {
+                "group": "TBRA",
+                "description": "FREEZING - NGIN"
+            }
+        ],
         "vendors": [
             {
                 "company": "Engemon",
@@ -389,7 +444,12 @@
         "data": "2026-07-31",
         "on_call_dia": "Equipe A",
         "on_call_noite": "Equipe B",
-        "freezing": [],
+        "freezing": [
+            {
+                "group": "TBRA",
+                "description": "FREEZING - NGIN"
+            }
+        ],
         "vendors": [
             {
                 "company": "Engemon",
