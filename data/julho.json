@@ -131,6 +131,12 @@
         "freezing": [],
         "vendors": [
             {
+                "company": "VERTIV",
+                "description": "Prev. PDU",
+                "periodicity": "QUADRIMESTRAL",
+                "company_group": "VERTIV_POWER"
+            },
+            {
                 "company": "Engemon",
                 "description": "SISTEMA DE INCÊNDIO",
                 "periodicity": "MENSAL",
