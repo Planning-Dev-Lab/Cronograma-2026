@@ -454,7 +454,7 @@ function renderActivityDetails(activity, observacoesDaAtividade) {
             }
 
             obsDiv.innerHTML = `
-                <p style="margin: 0 0 5px 0;"><strong>Observação:</strong> ${obs.observacao}</p>
+                <p style="margin: 0 0 5px 0;">${obs.observacao}</p>
                 ${dataEnvio ? `<small style="color: #888;">Enviado em: ${dataEnvio}</small>` : ''}
             `;
 
