@@ -12,10 +12,11 @@
                 "company_group": "LG"
             },
             {
-                "company": "ENGEMON",
+                "company": "Engemon",
                 "description": "SISTEMA DE INCÊNDIO",
                 "periodicity": "MENSAL",
-                "company_group": "engemon-incendio"
+                "company_group": "ENGEMON",
+                "service_type": "engemon-incendio"
             }
         ]
     }
