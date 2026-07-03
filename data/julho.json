@@ -131,6 +131,12 @@
         "freezing": [],
         "vendors": [
             {
+                "company": "VERTIV",
+                "description": "Prev. PDU",
+                "periodicity": "QUADRIMESTRAL",
+                "company_group": "VERTIV_POWER"
+            },
+            {
                 "company": "Engemon",
                 "description": "SISTEMA DE INCÊNDIO",
                 "periodicity": "MENSAL",
@@ -173,21 +179,8 @@
         "data": "2026-07-09",
         "on_call_dia": "Equipe A",
         "on_call_noite": "Equipe B",
-        "freezing": [
-            {
-                "group": "TBRA_FREEZING",
-                "description": "REVOLUÇÃO CONSTITUÍNTE"
-            }
-        ],
-        "vendors": [
-            {
-                "company": "Engemon",
-                "description": "SISTEMA DE AUTOMAÇÃO",
-                "periodicity": "MENSAL",
-                "company_group": "ENGEMON",
-                "service_type": "engemon-automacao"
-            }
-        ]
+        "freezing": [],
+        "vendors": []
     },
     {
         "data": "2026-07-10",

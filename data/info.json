@@ -139,6 +139,12 @@
       "empresa": "SOTREQ",
       "descricao_atividade": "Prev. Geradores",
       "observacao": "<b>Equipamentos</b><br>(<b>Gen 1-3) - (<b>Gen 1-6</b>)"
+    },
+    {
+      "data": "2026-07-06",
+      "empresa": "VERTIV",
+      "descricao_atividade": "Prev. PDU",
+      "observacao": "<b>Equipamentos</b><br>(PDU-TI-1A) - (PDU-TI-1B)<br>(PDU-TI-2A) - (PDU-TI-2B)"
     }
   ]
 }
