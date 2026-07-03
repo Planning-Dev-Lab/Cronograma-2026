@@ -15,13 +15,18 @@
                 "company": "VERTIV",
                 "description": "Prev. CRAH",
                 "periodicity": "QUADRIMESTRAL",
-                "company_group": "VERTIV_THERMAL"
+                "company_group": "VERTIV_COOLING"
             },
             {
                 "company": "VERTIV",
                 "description": "Prev. FANCOIL",
                 "periodicity": "QUADRIMESTRAL",
-                "company_group": "VERTIV_THERMAL"
+                "company_group": "VERTIV_COOLING"
+            },
+            {
+                "company": "HEATINGCOOLING",
+                "description": "Troca da tubulação de água potável na ETE",
+                "company_group": "HEATINGCOOLING"
             },
             {
                 "company": "Engemon",
@@ -42,13 +47,13 @@
                 "company": "VERTIV",
                 "description": "Prev. CRAH",
                 "periodicity": "QUADRIMESTRAL",
-                "company_group": "VERTIV_THERMAL"
+                "company_group": "VERTIV_COOLING"
             },
             {
                 "company": "VERTIV",
                 "description": "Prev. FANCOIL",
                 "periodicity": "QUADRIMESTRAL",
-                "company_group": "VERTIV_THERMAL"
+                "company_group": "VERTIV_COOLING"
             },
             {
                 "company": "VERTIV",
@@ -61,6 +66,12 @@
                 "description": "Prev. Geradores",
                 "periodicity": "BIMESTRAL",
                 "company_group": "SOTREQ"
+            },
+            {
+                "company": "HEATINGCOOLING",
+                "description": "Troca da tubulação de água potável na ETE",
+                "periodicity": "",
+                "company_group": "HEATINGCOOLING"
             },
             {
                 "company": "Engemon",
@@ -81,13 +92,13 @@
                 "company": "VERTIV",
                 "description": "Prev. CRAH",
                 "periodicity": "QUADRIMESTRAL",
-                "company_group": "VERTIV_THERMAL"
+                "company_group": "VERTIV_COOLING"
             },
             {
                 "company": "VERTIV",
                 "description": "Prev. FANCOIL",
                 "periodicity": "QUADRIMESTRAL",
-                "company_group": "VERTIV_THERMAL"
+                "company_group": "VERTIV_COOLING"
             },
             {
                 "company": "VERTIV",
@@ -100,6 +111,11 @@
                 "description": "Prev. Geradores",
                 "periodicity": "BIMESTRAL",
                 "company_group": "SOTREQ"
+            },
+            {
+                "company": "HEATINGCOOLING",
+                "description": "Troca da tubulação de água potável na ETE",
+                "company_group": "HEATINGCOOLING"
             },
             {
                 "company": "Engemon",
