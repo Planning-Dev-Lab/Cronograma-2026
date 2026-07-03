@@ -1,0 +1,16 @@
+[
+    {
+        "data": "2026-08-03",
+        "on_call_dia": "Equipe C",
+        "on_call_noite": "Equipe D",
+        "freezing": [],
+        "vendors": [
+            {
+                "company": "LG",
+                "description": "Prev. CHILLER",
+                "periodicity": "MENSAL",
+                "company_group": "LG"
+            }
+        ]
+    }
+]
