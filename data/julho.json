@@ -137,6 +137,12 @@
                 "company_group": "VERTIV_POWER"
             },
             {
+                "company": "SOTREQ",
+                "description": "Prev. Geradores",
+                "periodicity": "BIMESTRAL",
+                "company_group": "SOTREQ"
+            },
+            {
                 "company": "Engemon",
                 "description": "SISTEMA DE INCÊNDIO",
                 "periodicity": "MENSAL",
@@ -151,6 +157,12 @@
         "on_call_noite": "Equipe B",
         "freezing": [],
         "vendors": [
+            {
+                "company": "SOTREQ",
+                "description": "Prev. Geradores",
+                "periodicity": "BIMESTRAL",
+                "company_group": "SOTREQ"
+            },
             {
                 "company": "Engemon",
                 "description": "SISTEMA DE INCÊNDIO",
