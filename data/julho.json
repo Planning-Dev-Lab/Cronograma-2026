@@ -6,6 +6,24 @@
         "freezing": [],
         "vendors": [
             {
+                "company": "VERTIV",
+                "description": "Prev. STS",
+                "periodicity": "ANUAL",
+                "company_group": "VERTIV_POWER"
+            },
+            {
+                "company": "VERTIV",
+                "description": "Prev. CRAH",
+                "periodicity": "QUADRIMESTRAL",
+                "company_group": "VERTIV_THERMAL"
+            },
+            {
+                "company": "VERTIV",
+                "description": "Prev. FANCOIL",
+                "periodicity": "QUADRIMESTRAL",
+                "company_group": "VERTIV_THERMAL"
+            },
+            {
                 "company": "Engemon",
                 "description": "SISTEMA DE INCÊNDIO",
                 "periodicity": "MENSAL",
@@ -21,6 +39,30 @@
         "freezing": [],
         "vendors": [
             {
+                "company": "VERTIV",
+                "description": "Prev. CRAH",
+                "periodicity": "QUADRIMESTRAL",
+                "company_group": "VERTIV_THERMAL"
+            },
+            {
+                "company": "VERTIV",
+                "description": "Prev. FANCOIL",
+                "periodicity": "QUADRIMESTRAL",
+                "company_group": "VERTIV_THERMAL"
+            },
+            {
+                "company": "VERTIV",
+                "description": "Teste de descarga de bateria",
+                "periodicity": "ANUAL",
+                "company_group": "VERTIV_POWER"
+            },
+            {
+                "company": "SOTREQ",
+                "description": "Prev. Geradores",
+                "periodicity": "BIMESTRAL",
+                "company_group": "SOTREQ"
+            },
+            {
                 "company": "Engemon",
                 "description": "SISTEMA DE AUTOMAÇÃO",
                 "periodicity": "MENSAL",
@@ -35,6 +77,30 @@
         "on_call_noite": "Equipe B",
         "freezing": [],
         "vendors": [
+            {
+                "company": "VERTIV",
+                "description": "Prev. CRAH",
+                "periodicity": "QUADRIMESTRAL",
+                "company_group": "VERTIV_THERMAL"
+            },
+            {
+                "company": "VERTIV",
+                "description": "Prev. FANCOIL",
+                "periodicity": "QUADRIMESTRAL",
+                "company_group": "VERTIV_THERMAL"
+            },
+            {
+                "company": "VERTIV",
+                "description": "Teste de descarga de bateria",
+                "periodicity": "ANUAL",
+                "company_group": "VERTIV_POWER"
+            },
+            {
+                "company": "SOTREQ",
+                "description": "Prev. Geradores",
+                "periodicity": "BIMESTRAL",
+                "company_group": "SOTREQ"
+            },
             {
                 "company": "Engemon",
                 "description": "SISTEMA DE AUTOMAÇÃO",
@@ -327,6 +393,12 @@
         "on_call_noite": "Equipe D",
         "freezing": [],
         "vendors": [
+            {
+                "company": "COTEPE",
+                "description": "Inspeção Sensitiva",
+                "periodicity": "MENSAL",
+                "company_group":"COTEPE"
+            },
             {
                 "company": "Engemon",
                 "description": "SISTEMA DE AUTOMAÇÃO",

@@ -72,6 +72,73 @@
       "empresa": "VERTIV",
       "descricao_atividade": "Manutenção Preventiva UPS<br>UPS 2.1.1 | UPS 2.1.2<br>Manutenção Com Parada<br>CHG0179409",
       "observacao": "<img style=\"width: 100%;\" src=\"img-CHG/CHG0179409.png\" alt=\"\" />"
+    },
+    {
+      "data": "2026-07-01",
+      "empresa": "VERTIV",
+      "descricao_atividade": "Prev. STS",
+      "observacao": "Sala UPS2-1<br>(STS2-1-3-1) - (STS2-1-4-1)<br>(STS2-2-3-1) - (STS2-2-4-1)"
+    }
+    ,
+    {
+      "data": "2026-07-01",
+      "empresa": "VERTIV",
+      "descricao_atividade": "Prev. CRAH",
+      "observacao": "<b>Corredor técnico A</b><br>(CRAH 1 - 10)"
+    },
+    {
+      "data": "2026-07-01",
+      "empresa": "VERTIV",
+      "descricao_atividade": "Prev. FANCOIL",
+      "observacao": "<b>Sala UPS-4</b><br>(HVAC1-4-1) - (HVAC1-4-4)<br><b>Sala UPS-5</b><br>(HVAC1-5-1) - (HVAC1-5-4)<br><b>Sala UPS-6</b><br>(HVAC1-6-1) - (HVAC1-6-2)<br>(HVAC1-6-3) - (HVAC1-6-4)"
+    },
+    {
+      "data": "2026-07-02",
+      "empresa": "VERTIV",
+      "descricao_atividade": "Prev. CRAH",
+      "observacao": "<b>Corredor técnico A</b><br>CRAH 11 - 20)"
+    },
+    {
+      "data": "2026-07-02",
+      "empresa": "VERTIV",
+      "descricao_atividade": "Prev. FANCOIL",
+      "observacao": ""
+    },
+    {
+      "data": "2026-07-02",
+      "empresa": "VERTIV",
+      "descricao_atividade": "Teste de descarga de bateria",
+      "observacao": "<b>FASE 1</b><br>UPS1.R2.6<br>CHG0195627"
+    },
+    {
+      "data": "2026-07-02",
+      "empresa": "SOTREQ",
+      "descricao_atividade": "Prev. Geradores",
+      "observacao": "<b>Equipamentos</b><br>(<b>Gen 1-1</b>) - (<b>Gen 1-2</b>)"
+    },
+    {
+      "data": "2026-07-03",
+      "empresa": "VERTIV",
+      "descricao_atividade": "Prev. CRAH",
+      "observacao": "<b>Corredor técnico A</b><br>CRAH 21 - 24)"
+    },
+    {
+      "data": "2026-07-03",
+      "empresa": "VERTIV",
+      "descricao_atividade": "Prev. FANCOIL",
+      "observacao": "<b>UPS-1</b><br>(HVAC1-1-1) - (HVAC1-1-2)<br>(HVAC1-1-3) - (HVAC1-1-4)<br><b>UPS-2</b><br>(HVAC1-2-1) - (HVAC1-2-)<br>(HVAC1-2-2) - (HVAC1-2-3)"
+    },
+    {
+      "data": "2026-07-03",
+      "empresa": "VERTIV",
+      "descricao_atividade": "Teste de descarga de bateria",
+      "observacao": "<b>FASE 1</b><br>UPS1.R2.6<br>CHG0195627"
+    },
+    {
+      "data": "2026-07-03",
+      "empresa": "SOTREQ",
+      "descricao_atividade": "Prev. Geradores",
+      "observacao": "<b>Equipamentos</b><br>(<b>Gen 1-3) - (<b>Gen 1-6</b>)"
     }
   ]
 }
