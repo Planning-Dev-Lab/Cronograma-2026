@@ -10,6 +10,12 @@
                 "description": "Prev. CHILLER",
                 "periodicity": "MENSAL",
                 "company_group": "LG"
+            },
+            {
+                "company": "ENGEMON",
+                "description": "SISTEMA DE INCÊNDIO",
+                "periodicity": "MENSAL",
+                "company_group": "engemon-incendio"
             }
         ]
     }
