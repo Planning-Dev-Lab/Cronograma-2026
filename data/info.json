@@ -78,8 +78,7 @@
       "empresa": "VERTIV",
       "descricao_atividade": "Prev. STS",
       "observacao": "Sala UPS2-1<br>(STS2-1-3-1) - (STS2-1-4-1)<br>(STS2-2-3-1) - (STS2-2-4-1)"
-    }
-    ,
+    },
     {
       "data": "2026-07-01",
       "empresa": "VERTIV",
@@ -96,7 +95,7 @@
       "data": "2026-07-02",
       "empresa": "VERTIV",
       "descricao_atividade": "Prev. CRAH",
-      "observacao": "<b>Corredor técnico A</b><br>CRAH 11 - 20)"
+      "observacao": "<b>Corredor técnico A</b><br>(CRAH 11 - 20)"
     },
     {
       "data": "2026-07-02",
@@ -120,7 +119,7 @@
       "data": "2026-07-03",
       "empresa": "VERTIV",
       "descricao_atividade": "Prev. CRAH",
-      "observacao": "<b>Corredor técnico A</b><br>CRAH 21 - 24)"
+      "observacao": "<b>Corredor técnico A</b><br>(CRAH 21 - 24)<BR><b>Corredor técnico B</b><br>(CRAH 1 - 6)"
     },
     {
       "data": "2026-07-03",
@@ -143,6 +142,12 @@
     {
       "data": "2026-07-06",
       "empresa": "VERTIV",
+      "descricao_atividade": "Prev. CRAH",
+      "observacao": "<b>Corredor técnico B</b><br>(CRAH 7 - 21)"
+    },
+    {
+      "data": "2026-07-06",
+      "empresa": "VERTIV",
       "descricao_atividade": "Prev. PDU",
       "observacao": "<b>Equipamentos</b><br>(PDU-TI-1A) - (PDU-TI-1B)<br>(PDU-TI-2A) - (PDU-TI-2B)"
     },
@@ -151,6 +156,12 @@
       "empresa": "SOTREQ",
       "descricao_atividade": "Prev. Geradores",
       "observacao": "<b>Equipamentos</b><br>(<b>Gen 2-1</b>) - (<b>Gen 2-6</b>)"
+    },
+    {
+      "data": "2026-07-07",
+      "empresa": "VERTIV",
+      "descricao_atividade": "Prav. CRAH",
+      "observacao": "<b>Corredor técnico B</b><br>(CRAH 22)"
     },
     {
       "data": "2026-07-07",
