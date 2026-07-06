@@ -159,6 +159,11 @@
                 "company_group": "VERTIV_COOLING"
             },
             {
+                "company": "HEATINGCOOLING",
+                "description": "Troca da tubulação de água potável na ETE",
+                "company_group": "HEATINGCOOLING"
+            },
+            {
                 "company": "SOTREQ",
                 "description": "Prev. Geradores",
                 "periodicity": "BIMESTRAL",
