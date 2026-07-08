@@ -165,6 +165,12 @@
     },
     {
       "data": "2026-07-07",
+      "empresa": "VERTIV",
+      "descricao_atividade": "Medição de Baterias",
+      "observacao": "<b>Equipamentos</b><br>(<b>UPS BMS 01 - 02</b>)<br>(<b>UPS TI 01 - 02</b>)"
+    },
+    {
+      "data": "2026-07-07",
       "empresa": "SOTREQ",
       "descricao_atividade": "Prev. Geradores",
       "observacao": "<b>Equipamentos</b><br>(<b>Gen 1-R</b>)"

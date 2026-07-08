@@ -191,6 +191,12 @@
                 "company_group": "VERTIV_COOLING"
             },
             {
+                "company": "VERTIV",
+                "description": "Medição de Baterias",
+                "periodicity": "TRIMESTRAL",
+                "company_group": "VERTIV_POWER"
+            },
+            {
                 "company": "SOTREQ",
                 "description": "Prev. Geradores",
                 "periodicity": "BIMESTRAL",
@@ -211,6 +217,12 @@
         "on_call_noite": "Equipe D",
         "freezing": [],
         "vendors": [
+            {
+                "company": "VERTIV",
+                "description": "Prev. CRAH",
+                "periodicity": "QUADRIMESTRAL",
+                "company_group": "VERTIV_COOLING"
+            },
             {
                 "company": "Engemon",
                 "description": "SISTEMA DE INCÊNDIO",
