@@ -384,6 +384,12 @@
         "freezing": [],
         "vendors": [
             {
+                "company": "ENERG",
+                "description": "Sistema Diesel",
+                "periodicity": "BIMESTRAL",
+                "company_group": "ENERG"
+            },
+            {
                 "company": "Engemon",
                 "description": "SISTEMA DE INCÊNDIO",
                 "periodicity": "MENSAL",
@@ -398,6 +404,12 @@
         "on_call_noite": "Equipe B",
         "freezing": [],
         "vendors": [
+            {
+                "company": "ENERG",
+                "description": "Sistema Diesel",
+                "periodicity": "BIMESTRAL",
+                "company_group": "ENERG"
+            },
             {
                 "company": "Engemon",
                 "description": "SISTEMA DE INCÊNDIO",
@@ -414,6 +426,12 @@
         "freezing": [],
         "vendors": [
             {
+                "company": "ENERG",
+                "description": "Sistema Diesel",
+                "periodicity": "BIMESTRAL",
+                "company_group": "ENERG"
+            },
+            {
                 "company": "Engemon",
                 "description": "SISTEMA DE INCÊNDIO",
                 "periodicity": "MENSAL",
@@ -429,6 +447,12 @@
         "freezing": [],
         "vendors": [
             {
+                "company": "ENERG",
+                "description": "Sistema Diesel",
+                "periodicity": "BIMESTRAL",
+                "company_group": "ENERG"
+            },
+            {
                 "company": "Engemon",
                 "description": "SISTEMA DE AUTOMAÇÃO",
                 "periodicity": "MENSAL",
@@ -443,6 +467,12 @@
         "on_call_noite": "Equipe D",
         "freezing": [],
         "vendors": [
+            {
+                "company": "ENERG",
+                "description": "Sistema Diesel",
+                "periodicity": "BIMESTRAL",
+                "company_group": "ENERG"
+            },
             {
                 "company": "COTEPE",
                 "description": "Inspeção Sensitiva",
