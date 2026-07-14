@@ -305,6 +305,18 @@
         "freezing": [],
         "vendors": [
             {
+                "company": "COTEPE",
+                "description": "Manutenção Preventiva Anual dos Painéis de MT - GMG 1.6/1.R",
+                "periodicity": "ANUAL",
+                "company_group": "COTEPE"
+            },
+            {
+                "company": "M2E",
+                "description": "Manutenção Preventiva Anual dos Painéis de MT - GMG 1.6/1.R",
+                "periodicity": "ANUAL",
+                "company_group": "M2E"
+            },
+            {
                 "company": "Engemon",
                 "description": "SISTEMA DE INCÊNDIO",
                 "periodicity": "MENSAL",
